@@ -30,7 +30,7 @@ export default function LandmarkMap() {
   }
 
   const handleInput = (lon, lat) => {
-    Axios.get("http://vicish.herokuapp.com/landmark", {params: { lat: lat, lon: lon }}).then((response) => {
+    Axios.get("https://vicish.herokuapp.com/landmark", {params: { lat: lat, lon: lon }}).then((response) => {
       setLandmarks(response.data);
     });
   }
