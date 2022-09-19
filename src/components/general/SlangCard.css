@@ -8,6 +8,7 @@
     margin-right: 5rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
+    z-index: 1;
   }
   
   .slangcard .content {
@@ -17,11 +18,12 @@
     background-color: rgb(127, 204, 240);
     padding: 5em;
     transform-style: preserve-3d;
+     z-index: 1;
   }
   
   .slangcard:hover .content {
     transform: rotateY(0.5turn);
-    z-index: 999;
+    z-index: 1;
   }
   
   .slangcard .front,
@@ -34,6 +36,7 @@
     padding: 2em;
     transform-style: preserve-3d;
     backface-visibility: hidden;
+      z-index: 1;
   }
   
   .title {
@@ -48,6 +51,7 @@
   .slangcard .back {
     transform: rotateY(0.5turn);
     background-color: #009bff;
+     z-index: 1;
   }
   
   .description {
