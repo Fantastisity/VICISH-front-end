@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c71afe42.css",
+    "main.js": "/static/js/main.9bc3dd97.js",
+    "static/media/mealbg.png": "/static/media/mealbg.11d8babc2d64253b0322.png",
+    "static/media/recipebg.jpg": "/static/media/recipebg.c754de57ea97fac42dcc.jpg",
+    "static/media/transBg.png": "/static/media/transBg.dcb9c0df147c805e6ac5.png",
+    "static/media/tramzone.png": "/static/media/tramzone.bf5c312b4d71acbed95b.png",
+    "static/js/mapbox-gl-csp-worker.9a90b9e4.worker.js": "/static/js/mapbox-gl-csp-worker.9a90b9e4.worker.js",
+    "static/media/vocabImage.jpg": "/static/media/vocabImage.68e1c7bae91971ea693e.jpg",
+    "static/media/recipecard.jpg": "/static/media/recipecard.550bd52f702f488007af.jpg",
+    "static/media/life.jpg": "/static/media/life.69983d797b82a1965384.jpg",
+    "static/media/plancard.jpg": "/static/media/plancard.359fdfc6d3585775703e.jpg",
+    "static/media/learneng.jpg": "/static/media/learneng.d59865f24a9d72643e60.jpg",
+    "static/media/entertain.jpg": "/static/media/entertain.2b5e069220dae00a38d2.jpg",
+    "static/media/homeBg.jpg": "/static/media/homeBg.917a5c6af6701f9fbc95.jpg",
+    "static/media/slangcard.jpg": "/static/media/slangcard.4f4ada0a380282ee8210.jpg",
+    "static/media/west.jpg": "/static/media/west.3da981c43f0eaa74fdef.jpg",
+    "static/media/ANZ.jpeg": "/static/media/ANZ.eff3a064af685dd12d67.jpeg",
+    "static/media/logo1.png": "/static/media/logo1.cd4dc3c9e5e434d49e80.png",
+    "static/media/grammarcard.jpg": "/static/media/grammarcard.54dedc90249bd6015cdf.jpg",
+    "static/media/nba.webp": "/static/media/nba.941bec403fe927ddec3c.webp",
+    "static/media/common.webp": "/static/media/common.9c04570da96527b350a7.webp",
+    "static/media/chequePic.png": "/static/media/chequePic.b82c0869f422e21ae143.png",
+    "static/media/homeIcon1.png": "/static/media/homeIcon1.5184b5e9557adfb76b56.png",
+    "static/media/accountPic.png": "/static/media/accountPic.c33744167cc9c96b6c6f.png",
+    "static/media/creditPic.png": "/static/media/creditPic.c1ffcb74f178e253a8c9.png",
+    "static/media/homeIcon2.png": "/static/media/homeIcon2.ae30d9faf589b8143ce7.png",
+    "static/media/landmarker.svg": "/static/media/landmarker.118e90aa2d76337ad760f88c49135e9d.svg",
+    "index.html": "/index.html",
+    "main.c71afe42.css.map": "/static/css/main.c71afe42.css.map",
+    "main.9bc3dd97.js.map": "/static/js/main.9bc3dd97.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c71afe42.css",
+    "static/js/main.9bc3dd97.js"
+  ]
+}
