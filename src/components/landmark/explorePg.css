@@ -1,6 +1,8 @@
 .content-item {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     transition: 0.4s;
+    height: 360px;
+    width: 400px;
   }
   
   .content-item:hover {
