@@ -4,7 +4,7 @@ import "./WriteCheck.css";
 
 const WriteCheck = () => {
   return (
-    <div style={{backgroundColor: "#F0BA98", height: "1000px"}}>
+    <div style={{backgroundColor: "#F0BA98", height: "1800px"}}>
       <div className="headerBg">Grammar Checker</div>
       <div className="slangIntro" style={{
           marginLeft: "320px", 
