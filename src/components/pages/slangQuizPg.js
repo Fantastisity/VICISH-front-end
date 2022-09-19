@@ -42,7 +42,7 @@ const SlangQuiz = () => {
   },[]);
 
   return (
-    <div style={{backgroundColor: "#F0BA98", height: "1820px"}}>
+    <div style={{backgroundColor: "#F0BA98", height: "1860px"}}>
       <div className="headerBg">Australia Slang Game</div>
       <div className="slangIntro" style={{
           marginLeft: "360px", 
