@@ -1,0 +1,24 @@
+.cloud {
+    position: relative;
+}
+
+.writingAss {
+    position: relative;
+}
+
+.VocabLayout{
+    display: flex;
+    justify-content: center;
+}
+
+.VocabPgBg {
+    display: flex;
+    margin: 5px;
+    height:23rem;
+    background-size: cover;
+    background-image: url('../../images/vocabImage.jpg');
+    background-repeat: no-repeat;
+}
+
+
+    
