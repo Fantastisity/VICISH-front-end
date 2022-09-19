@@ -100,9 +100,9 @@ export const socialObj = {
   ),
   cards: [
     {
-      title: "Melbourne Landmark",
+      title: "Explore Melbourne",
       info: "empty",
-      nav: "landmark",
+      nav: "explore-melb",
       col: "#e8b582",
     },
   ],
