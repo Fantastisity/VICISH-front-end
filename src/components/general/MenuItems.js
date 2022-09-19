@@ -38,7 +38,7 @@ export const LearnEnglish = [
 export const Entertainment = [
   {
     title: 'Melbourne Landmark',
-    path: '/landmark',
+    path: '/explore-melb',
     cName: 'dropdown-link'
   },
   // {
