@@ -68,7 +68,9 @@
   color: #000000;
   background-color: #91785D;
   border-color: #91785D;
-  width: 600px;
+  max-width: 800px;
+  max-height: 200px;
+  overflow: scroll;
   height: fit-content;
   box-shadow: 3px 3px 2px #8B5D33;
   font-family: 'Oswald';
