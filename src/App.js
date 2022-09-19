@@ -6,7 +6,6 @@ import Home from './components/pages/homePg';
 import Life from './components/pages/lifePg';
 import Entertainment from './components/pages/entertainPg';
 import ExplorePg from './components/landmark/explorePg';
-import OutdoorPg from './components/landmark/outdoorPg';
 import LandmarkMap from './components/landmark/LandmarkMap';
 import ArtworkMap from './components/landmark/ArtworkMap';
 import Quizzes from './components/pages/quizzesPg';
