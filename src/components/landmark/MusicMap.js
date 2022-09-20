@@ -30,7 +30,7 @@ export default function MusicMap() {
   }
 
   const handleInput = (lon, lat) => {
-    Axios.get("https://vicish.herokuapp.com/music", {params: { lat: lat, lon: lon }}).then((response) => {
+    Axios.get("https://vicish.herokuapp.com/music", {params: { lat: lat, lon: lon }, withCredentials: true}).then((response) => {
         setPlaces(response.data);
     });
   }
