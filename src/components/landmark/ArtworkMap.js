@@ -56,6 +56,7 @@ export default function ArtworkMap() {
           position="top-left" 
           zoom="11"
           language="english" 
+          placeholder="Enter an Address"
           handleInput={handleInput}/>
               {artwork.map((city, index) => (
                 <Marker
