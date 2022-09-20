@@ -55,6 +55,7 @@ export default function LandmarkMap() {
           position="top-left" 
           zoom="11"
           language="english" 
+          placeholder="Enter an Address"
           handleInput={handleInput}/>
               {landmarks.map((city, index) => (
                 <Marker
