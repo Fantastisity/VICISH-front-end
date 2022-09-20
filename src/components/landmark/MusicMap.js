@@ -55,6 +55,7 @@ export default function MusicMap() {
           position="top-left" 
           zoom="11"
           language="english" 
+          placeholder="Enter an Address"
           handleInput={handleInput}/>
               {musicplaces.map((city, index) => (
                 <Marker
