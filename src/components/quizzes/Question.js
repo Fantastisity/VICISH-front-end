@@ -45,7 +45,7 @@ export const SlangQuestion = ({
             className="answer"
             onClick={() => handleClick(answer.correctAnswer)}
           >
-            <p>{answer.answerText}</p>
+            <p style={{fontSize: "25px"}}>{answer.answerText}</p>
           </div>
         ))}
       </div>
@@ -124,7 +124,7 @@ export const EnglishQuestion = ({
             style={{color: `${col}`}}
             onClick={() => handleClick(answer.answerText)}
           >
-            <p  style={{fontSize: "15px"}}>{answer.answerText}</p>
+            <p  style={{fontSize: "25px"}}>{answer.answerText}</p>
           </div>
           )
         })}
