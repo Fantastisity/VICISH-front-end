@@ -192,13 +192,13 @@ export default function VICISHMap() {
                   onClick={e => {
                     e.originalEvent.stopPropagation();
                     console.log(obj);
-                    setPopupInfo2(obj);
+                    setPopupInfo(obj);
                   }}
                 >
                   <img src={musicicon}  alt="" style={{width: "30px"}}/>
                 </Marker>
               ))}
-              {popupInfo2 && (
+              {popupInfo && (
                 <Popup
                   latitude={popupInfo.lat}
                   longitude={popupInfo.lon}
@@ -229,7 +229,7 @@ export default function VICISHMap() {
                   <img src={artworkicon}  alt="" style={{width: "30px"}}/>
                 </Marker>
               ))}
-              {popupInfo3 && (
+              {popupInfo && (
                 <Popup
                   latitude={popupInfo.lat}
                   longitude={popupInfo.lon}
