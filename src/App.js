@@ -6,7 +6,7 @@ import Home from './components/pages/homePg';
 import Life from './components/pages/lifePg';
 import Entertainment from './components/pages/entertainPg';
 import ExplorePg from './components/landmark/explorePg';
-import VICISHMap from './components/landmark/Map';
+import VICISHMap from './components/landmark/VICISHMap';
 import SlangQuiz from './components/pages/slangQuizPg';
 import EnglishQuiz from './components/pages/englishQuiz';
 import Bank from './components/pages/bankPg';
