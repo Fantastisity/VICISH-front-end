@@ -170,7 +170,7 @@ export default function VICISHMap() {
                   <img src={landmarkicon} alt=""/>
                 </Marker>
               ))}
-              {popupInfo && (
+              {popupInfo && console.log(popupInfo) && (
                 <Popup
                   latitude={popupInfo.Latitude}
                   longitude={popupInfo.Longitude}
