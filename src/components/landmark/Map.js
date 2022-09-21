@@ -170,7 +170,7 @@ export default function VICISHMap() {
                   <img src={landmarkicon} alt=""/>
                 </Marker>
               ))}
-              {popupInfo && console.log(popupInfo) && (
+              {popupInfo && (
                 <Popup
                   latitude={popupInfo.Latitude}
                   longitude={popupInfo.Longitude}
@@ -212,7 +212,7 @@ export default function VICISHMap() {
                 >
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
                     <h5>{popupInfo.venue_name}</h5>
-                    <p>{popupInfo.website}</p>
+                    <span><a href = {popupInfo.website} target="_blank">To Website</a></span>
                   </div>
                 </Popup>
               )}
