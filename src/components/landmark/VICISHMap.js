@@ -5,8 +5,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import {
   Box,
   TextField,
-  Button,
-  Drawer
+  Button
 } from '@material-ui/core';
 import Map, {Marker, Popup,  NavigationControl,
   FullscreenControl,
@@ -14,6 +13,7 @@ import Map, {Marker, Popup,  NavigationControl,
   GeolocateControl} from 'react-map-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
 import musicicon from '../../images/concert.png';
+import closebt from "../../images/close.png";
 import artworkicon from '../../images/painting.png';
 import landmarkicon from '../../images/landmarker.svg';
 import mapboxgl from 'mapbox-gl';
@@ -33,7 +33,9 @@ export default function VICISHMap() {
   const [landmarks, setLandmarks] = useState([]);
   const [musicplaces, setMusicVenue] = useState([]);
   const [artworks, setArtworks] = useState([]);
-  const [popupInfo, setPopupInfo] = useState(null);
+  const [popupInfo1, setPopupInfo1] = useState(null);
+  const [popupInfo2, setPopupInfo2] = useState(null);
+  const [popupInfo3, setPopupInfo3] = useState(null);
 
   const [enteredLandmarkNum, setEnteredLandmarkNum] = useState(10);
   const [enteredMusicNum, setEnteredMusicNum] = useState(10);
@@ -161,24 +163,27 @@ export default function VICISHMap() {
                   onClick={e => {
                     e.originalEvent.stopPropagation();
                     console.log(obj);
-                    setPopupInfo(obj);
+                    setPopupInfo1(obj);
                   }}
                 >
                   <img src={landmarkicon} alt=""/>
                 </Marker>
               ))}
-              {popupInfo && (
+              {popupInfo1 && (
                 <Popup
-                  latitude={popupInfo.lat}
-                  longitude={popupInfo.lon}
-                  onClose={() => setPopupInfo(null)}
+                  latitude={popupInfo1.lat}
+                  longitude={popupInfo1.lon}
+                  onClose={() => setPopupInfo1(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
                 >
+                <button onClick={() => setPopupInfo1(null)} style={{marginLeft: "76%"}}>
+                    <img src={closebt} style={{width: "20px"}}/>
+                  </button>
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo.Title}</h5>
-                    <p>{popupInfo.Description}</p>
+                    <h5>{popupInfo1.Title}</h5>
+                    <p>{popupInfo1.Description}</p>
                   </div>
                 </Popup>
               )}
@@ -192,24 +197,27 @@ export default function VICISHMap() {
                   onClick={e => {
                     e.originalEvent.stopPropagation();
                     console.log(obj);
-                    setPopupInfo(obj);
+                    setPopupInfo2(obj);
                   }}
                 >
                   <img src={musicicon}  alt="" style={{width: "30px"}}/>
                 </Marker>
               ))}
-              {popupInfo && (
+              {popupInfo2 && (
                 <Popup
-                  latitude={popupInfo.lat}
-                  longitude={popupInfo.lon}
-                  onClose={() => setPopupInfo(null)}
+                  latitude={popupInfo2.lat}
+                  longitude={popupInfo2.lon}
+                  onClose={() => setPopupInfo2(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
                 >
+                <button onClick={() => setPopupInfo2(null)} style={{marginLeft: "76%"}}>
+                    <img src={closebt} style={{width: "20px"}}/>
+                  </button>
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo.Title}</h5>
-                    <span><a href = {popupInfo.Description} target="_blank">To Website</a></span>
+                    <h5>{popupInfo2.Title}</h5>
+                    <span><a href = {popupInfo2.Description} target="_blank">To Website</a></span>
                   </div>
                 </Popup>
               )}
@@ -223,24 +231,27 @@ export default function VICISHMap() {
                   onClick={e => {
                     e.originalEvent.stopPropagation();
                     console.log(obj);
-                    setPopupInfo(obj);
+                    setPopupInfo3(obj);
                   }}
                 >
                   <img src={artworkicon}  alt="" style={{width: "30px"}}/>
                 </Marker>
               ))}
-              {popupInfo && (
+              {popupInfo3 && (
                 <Popup
-                  latitude={popupInfo.lat}
-                  longitude={popupInfo.lon}
-                  onClose={() => setPopupInfo(null)}
+                  latitude={popupInfo3.lat}
+                  longitude={popupInfo3.lon}
+                  onClose={() => setPopupInfo3(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
                 >
+                <button onClick={() => setPopupInfo3(null)} style={{marginLeft: "76%"}}>
+                    <img src={closebt} style={{width: "20px"}}/>
+                  </button>
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo.Title}</h5>
-                    <p>{popupInfo.Description}</p>
+                    <h5>{popupInfo3.Title}</h5>
+                    <p>{popupInfo3.Description}</p>
                   </div>
                 </Popup>
               )}
