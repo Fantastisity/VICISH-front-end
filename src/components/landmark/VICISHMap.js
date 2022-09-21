@@ -173,7 +173,7 @@ export default function VICISHMap() {
                 <Popup
                   latitude={popupInfo1.Latitude}
                   longitude={popupInfo1.Longitude}
-                  onClose={() => setPopupInfo(null)}
+                  onClose={() => setPopupInfo1(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
@@ -204,7 +204,7 @@ export default function VICISHMap() {
                 <Popup
                   latitude={popupInfo2.lat}
                   longitude={popupInfo2.lon}
-                  onClose={() => setPopupInfo(null)}
+                  onClose={() => setPopupInfo2(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
@@ -235,7 +235,7 @@ export default function VICISHMap() {
                 <Popup
                   latitude={popupInfo3.lat}
                   longitude={popupInfo3.lon}
-                  onClose={() => setPopupInfo(null)}
+                  onClose={() => setPopupInfo3(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
