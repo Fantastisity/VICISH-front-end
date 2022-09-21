@@ -28,7 +28,7 @@ export default function VICISHMap() {
   const [viewState, setViewState] = useState({
       longitude: 144.9621,  
       latitude: -37.8166,
-      zoom: 14
+      zoom: 12
   });
   const [landmarks, setLandmarks] = useState([]);
   const [musicplaces, setMusicVenue] = useState([]);
