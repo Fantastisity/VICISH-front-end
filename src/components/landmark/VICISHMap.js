@@ -209,7 +209,7 @@ export default function VICISHMap() {
                 >
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
                     <h5>{popupInfo.Title}</h5>
-                    <a href = {popupInfo.Description} target="_blank">To Website</a>
+                    <a href={popupInfo.Description} target="_blank">To Website</a>
                   </div>
                 </Popup>
               )}
