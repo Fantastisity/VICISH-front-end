@@ -126,10 +126,7 @@ export default function VICISHMap() {
             </Button>
       </Box>
     </div>
-  );
-
-
-  
+  );  
 
   const onMove = React.useCallback(({viewState}) => {
     const newCenter = [viewState.longitude, viewState.latitude];
@@ -155,16 +152,16 @@ export default function VICISHMap() {
           language="english" 
           placeholder="Enter an Address"
           handleInput={handleInput}/> */}
-              {landmarks && landmarks.map((city, index) => (
+              {landmarks && landmarks.map((obj, index) => (
                 <Marker
                   key={`marker-${index}`}
-                  longitude={city.Longitude}
-                  latitude={city.Latitude}
+                  longitude={obj.Longitude}
+                  latitude={obj.Latitude}
                   style={promptAlert}
                   onClick={e => {
                     e.originalEvent.stopPropagation();
-                    console.log(city);
-                    setPopupInfo(city);
+                    console.log(obj);
+                    setPopupInfo(obj);
                   }}
                 >
                   <img src={landmarkicon} alt=""/>
@@ -186,22 +183,22 @@ export default function VICISHMap() {
                 </Popup>
               )}
 
-            {musicplaces && musicplaces.map((city, index) => (
+            {musicplaces && musicplaces.map((obj, index) => (
                 <Marker
                   key={`marker-${index}`}
-                  longitude={city.lon}
-                  latitude={city.lat}
+                  longitude={obj.lon}
+                  latitude={obj.lat}
                   style={promptAlert}
                   onClick={e => {
                     e.originalEvent.stopPropagation();
-                    console.log(city);
-                    setPopupInfo(city);
+                    console.log(obj);
+                    setPopupInfo(obj);
                   }}
                 >
                   <img src={musicicon}  alt="" style={{width: "30px"}}/>
                 </Marker>
               ))}
-              {popupInfo && (
+              {popupInfo && console.log(popupInfo.lat + " " + popupInfo.lon)  && (
                 <Popup
                   latitude={popupInfo.lat}
                   longitude={popupInfo.lon}
@@ -217,16 +214,16 @@ export default function VICISHMap() {
                 </Popup>
               )}
 
-              {artworks && artworks.map((city, index) => (
+              {artworks && artworks.map((obj, index) => (
                 <Marker
                   key={`marker-${index}`}
-                  longitude={city.lon}
-                  latitude={city.lat}
+                  longitude={obj.lon}
+                  latitude={obj.lat}
                   style={promptAlert}
                   onClick={e => {
                     e.originalEvent.stopPropagation();
-                    console.log(city);
-                    setPopupInfo(city);
+                    console.log(obj);
+                    setPopupInfo(obj);
                   }}
                 >
                   <img src={artworkicon}  alt="" style={{width: "30px"}}/>
