@@ -225,7 +225,7 @@ export default function VICISHMap() {
                   onClick={e => {
                     e.originalEvent.stopPropagation();
                     console.log(obj);
-                    setPopupInfo(obj);
+                    setPopupInfo3(obj);
                   }}
                 >
                   <img src={artworkicon}  alt="" style={{width: "30px"}}/>
