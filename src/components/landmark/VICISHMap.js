@@ -28,7 +28,7 @@ export default function VICISHMap() {
   const [viewState, setViewState] = useState({
       longitude: 144.9621,  
       latitude: -37.8166,
-      zoom: 12
+      zoom: 14
   });
   const [landmarks, setLandmarks] = useState([]);
   const [musicplaces, setMusicVenue] = useState([]);
@@ -209,7 +209,7 @@ export default function VICISHMap() {
                 >
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
                     <h5>{popupInfo.Title}</h5>
-                    <a href={popupInfo.Description} target="_blank">To Website</a>
+                    <span><a href = {popupInfo.Description} target="_blank">To Website</a></span>
                   </div>
                 </Popup>
               )}
