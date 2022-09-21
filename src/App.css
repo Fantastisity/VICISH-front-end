@@ -63,17 +63,30 @@
   width: 880px;
 }
 
-
+/* Add a border and shadow to the rounded rectangle */
 .mapboxgl-popup-content {
-  color: #000000;
-  background-color: #91785D;
-  border-color: #91785D;
+  border: 1px solid #e0d7d7;
+  box-shadow: 0px 2px 4px 2px rgba(178, 148, 148, 0.617);
   max-width: 800px;
   max-height: 200px;
   overflow: scroll;
   height: fit-content;
-  box-shadow: 3px 3px 2px #8B5D33;
-  font-family: 'Oswald';
+}
+
+/* Move the content above the :before element so rotated rectangle doesn't cover content */
+.mapboxgl-popup-content div {
+  position: relative;
+  background-color: rgba(255, 253, 222, 0.892);
+}
+
+/* Since the new tip is absolutely-positioned, it doesn't force the rectangle up on its own */
+.mapboxgl-popup {
+  margin-top: -5px;
+}
+
+/* Hide the old tip */
+.mapboxgl-popup-tip {
+  display: none;
 }
 
 
