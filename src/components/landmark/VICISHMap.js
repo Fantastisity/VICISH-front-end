@@ -178,7 +178,7 @@ export default function VICISHMap() {
                   anchor="top"
                   offsetLeft={10}
                 >
-                <button onClick={() => setPopupInfo1(null)} style={{marginLeft: "76%"}}>
+                <button onClick={() => setPopupInfo1(null)} style={{marginLeft: "90%"}}>
                     <img src={closebt} style={{width: "20px"}}/>
                   </button>
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
@@ -246,7 +246,7 @@ export default function VICISHMap() {
                   anchor="top"
                   offsetLeft={10}
                 >
-                <button onClick={() => setPopupInfo3(null)} style={{marginLeft: "76%"}}>
+                <button onClick={() => setPopupInfo3(null)} style={{marginLeft: "90%"}}>
                     <img src={closebt} style={{width: "20px"}}/>
                   </button>
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
