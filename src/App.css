@@ -76,7 +76,7 @@
 /* Move the content above the :before element so rotated rectangle doesn't cover content */
 .mapboxgl-popup-content div {
   position: relative;
-  background-color: rgba(255, 253, 222, 0.892);
+  background-color: rgba(245, 250, 232, 0.892);
 }
 
 /* Since the new tip is absolutely-positioned, it doesn't force the rectangle up on its own */
