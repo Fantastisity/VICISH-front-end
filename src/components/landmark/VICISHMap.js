@@ -33,7 +33,9 @@ export default function VICISHMap() {
   const [landmarks, setLandmarks] = useState([]);
   const [musicplaces, setMusicVenue] = useState([]);
   const [artworks, setArtworks] = useState([]);
-  const [popupInfo, setPopupInfo] = useState(null);
+  const [popupInfo1, setPopupInfo1] = useState(null);
+  const [popupInfo2, setPopupInfo2] = useState(null);
+  const [popupInfo3, setPopupInfo3] = useState(null);
 
   const [enteredLandmarkNum, setEnteredLandmarkNum] = useState(10);
   const [enteredMusicNum, setEnteredMusicNum] = useState(10);
@@ -161,24 +163,24 @@ export default function VICISHMap() {
                   onClick={e => {
                     e.originalEvent.stopPropagation();
                     console.log(obj);
-                    setPopupInfo(obj);
+                    setPopupInfo1(obj);
                   }}
                 >
                   <img src={landmarkicon} alt=""/>
                 </Marker>
               ))}
-              {popupInfo && (
+              {popupInfo1 && (
                 <Popup
-                  latitude={popupInfo.Latitude}
-                  longitude={popupInfo.Longitude}
+                  latitude={popupInfo1.Latitude}
+                  longitude={popupInfo1.Longitude}
                   onClose={() => setPopupInfo(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
                 >
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo.Title}</h5>
-                    <p>{popupInfo.Description}</p>
+                    <h5>{popupInfo1.Title}</h5>
+                    <p>{popupInfo1.Description}</p>
                   </div>
                 </Popup>
               )}
@@ -192,24 +194,24 @@ export default function VICISHMap() {
                   onClick={e => {
                     e.originalEvent.stopPropagation();
                     console.log(obj);
-                    setPopupInfo(obj);
+                    setPopupInfo2(obj);
                   }}
                 >
                   <img src={musicicon}  alt="" style={{width: "30px"}}/>
                 </Marker>
               ))}
-              {popupInfo && console.log(popupInfo.lat + " " + popupInfo.lon)  && (
+              {popupInfo2 && (
                 <Popup
-                  latitude={popupInfo.lat}
-                  longitude={popupInfo.lon}
+                  latitude={popupInfo2.lat}
+                  longitude={popupInfo2.lon}
                   onClose={() => setPopupInfo(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
                 >
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo.venue_name}</h5>
-                    <span><a href = {popupInfo.website} target="_blank">To Website</a></span>
+                    <h5>{popupInfo2.venue_name}</h5>
+                    <span><a href = {popupInfo2.website} target="_blank">To Website</a></span>
                   </div>
                 </Popup>
               )}
@@ -229,18 +231,18 @@ export default function VICISHMap() {
                   <img src={artworkicon}  alt="" style={{width: "30px"}}/>
                 </Marker>
               ))}
-              {popupInfo && (
+              {popupInfo3 && (
                 <Popup
-                  latitude={popupInfo.lat}
-                  longitude={popupInfo.lon}
+                  latitude={popupInfo3.lat}
+                  longitude={popupInfo3.lon}
                   onClose={() => setPopupInfo(null)}
                   closeButton={false}
                   anchor="top"
                   offsetLeft={10}
                 >
                   <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo.venue_name}</h5>
-                    <p>{popupInfo.description}</p>
+                    <h5>{popupInfo3.venue_name}</h5>
+                    <p>{popupInfo3.description}</p>
                   </div>
                 </Popup>
               )}
