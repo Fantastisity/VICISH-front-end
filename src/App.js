@@ -18,6 +18,7 @@ import { MenuPlanner } from './components/menuplan/menuplanHandler';
 import PTV from './components/pages/ptvPg';
 import ScrollToTop from "./components/general/scrollToTop.js"
 import Transport from './components/pages/tranportPg';
+import StatisticsPg from './components/pages/statisticsPg';
 function App() {
   return (
     <div className='App'>
@@ -39,7 +40,8 @@ function App() {
         <Route path='/ptv' element={<PTV/>} />
         <Route path='/bank' element={<Bank/>} />
         <Route path='/meal-plan' element={<MenuPlanner/>} />
-        <Route path='/transport' element={<Transport/>} />\
+        <Route path='/statistics' element={<StatisticsPg/>} />
+        <Route path='/transport' element={<Transport/>} />
       </Routes>
     </Router>
     </div>
