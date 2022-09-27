@@ -43,7 +43,7 @@ export const Entertainment = [
   },
   // {
   //   title: 'Venues and Events statistics',
-  //   path: '/stat',
+  //   path: '/statistics',
   //   cName: 'dropdown-link'
   // }
 ];
