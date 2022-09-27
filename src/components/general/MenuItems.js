@@ -41,11 +41,11 @@ export const Entertainment = [
     path: '/explore-melb',
     cName: 'dropdown-link'
   },
-  // {
-  //   title: 'Venues and Events statistics',
-  //   path: '/statistics',
-  //   cName: 'dropdown-link'
-  // }
+  {
+    title: 'Venues and Events statistics',
+    path: '/statistics',
+    cName: 'dropdown-link'
+  }
 ];
 
 
