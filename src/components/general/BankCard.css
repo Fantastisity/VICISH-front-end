@@ -21,7 +21,7 @@ translateY(var(--translate-y,0));
      position: relative;
      height: 12rem;
      transition: all 2.25s;
-     background-color: rgb(255, 255, 255);
+     background-color: transparent;
      /* background-image: url(../../images/); */
      padding: 5em;
      transform-style: preserve-3d;
