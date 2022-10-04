@@ -206,7 +206,7 @@ const BankPg = () => {
                   <p className="description">{account.explain}</p>
                 </div>
               </div>
-              <div className="type-name">{account.type}</div>
+              <div className="type-name" style={{textAlign: "center"}}>{account.type}</div>
             </div>
           ))}
         </div>
