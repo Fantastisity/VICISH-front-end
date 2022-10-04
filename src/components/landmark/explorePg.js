@@ -25,7 +25,7 @@ const ExplorePg = () => {
         for you to better experience the local culture.
       </div>
       <div style={{ display: "flex", cursor: "pointer", marginLeft: "30px" }}>
-          <Link to='/map' state={{ from: 'landmark' }} style={{ textDecoration: 'none', color: "black" }}>
+          <Link to='/landmarks' style={{ textDecoration: 'none', color: "black" }}>
           <div
             className="content-item"
             style={{
@@ -52,7 +52,7 @@ const ExplorePg = () => {
           </div>
           </Link>
 
-          <Link to='/map' state={{ from: 'music' }} style={{ textDecoration: 'none' }}>
+          <Link to='/music-venue' style={{ textDecoration: 'none', color: "black" }}>
           <div
             className="content-item"
             style={{
@@ -79,7 +79,7 @@ const ExplorePg = () => {
           </div>
           </Link>
 
-          <Link to='/map' state={{ from: 'artwork' }} style={{ textDecoration: 'none' }}>
+          <Link to='/artworks' style={{ textDecoration: 'none', color: "black" }}>
             <div
               className="content-item"
               style={{
