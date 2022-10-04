@@ -4,6 +4,25 @@ import landmarkPic from "../../images/landmark.jpg";
 import musicPic from "../../images/music.jpg";
 import outdoorPic from "../../images/outdoor.jpg";
 import { Link } from "react-router-dom";
+import "animate.css/animate.min.css";
+ import { AnimationOnScroll } from 'react-animation-on-scroll';
+ import { fadeInDown } from 'react-animations';
+ import Radium, {StyleRoot} from 'radium';
+
+const styles = {
+   fadeInDown1: {
+     animation: 'x 1.5s',
+     animationName: Radium.keyframes(fadeInDown, 'fadeInDown'),
+   },
+   fadeInDown2: {
+     animation: 'x 3s',
+     animationName: Radium.keyframes(fadeInDown, 'fadeInDown'),
+   },
+   fadeInDown3: {
+     animation: 'x 4.5s',
+     animationName: Radium.keyframes(fadeInDown, 'fadeInDown'),
+   }
+ }
 
 const ExplorePg = () => {
 
@@ -25,6 +44,8 @@ const ExplorePg = () => {
         for you to better experience the local culture.
       </div>
       <div style={{ display: "flex", cursor: "pointer", marginLeft: "30px" }}>
+        <StyleRoot>
+         <div style={styles.fadeInDown1}>
           <Link to='/landmarks' style={{ textDecoration: 'none', color: "black" }}>
           <div
             className="content-item"
@@ -51,6 +72,10 @@ const ExplorePg = () => {
             </div>
           </div>
           </Link>
+</div>
+           </StyleRoot>
+ <StyleRoot>
+         <div style={styles.fadeInDown2}>
 
           <Link to='/music-venue' style={{ textDecoration: 'none', color: "black" }}>
           <div
@@ -78,6 +103,10 @@ const ExplorePg = () => {
             </div>
           </div>
           </Link>
+</div>
+           </StyleRoot>
+<StyleRoot>
+         <div style={styles.fadeInDown3}>
 
           <Link to='/artworks' style={{ textDecoration: 'none', color: "black" }}>
             <div
@@ -105,6 +134,8 @@ const ExplorePg = () => {
               </div>
             </div>
           </Link>
+</div>
+           </StyleRoot>
       </div>
     </div>
   );
