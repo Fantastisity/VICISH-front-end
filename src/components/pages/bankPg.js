@@ -56,9 +56,8 @@ const Slideshow = () => {
         {slideImages.map((each, index) => (
           <div>
             <img
-            className="slide-image"
               key={index}
-              style={{ width: "100%", height: "40rem", backgroundSize:"cover" }}
+              style={{ width: "100%", height: "40rem", backgroundSize:"cover"}}
               src={each.pic}
             />
             <button
@@ -164,7 +163,7 @@ const userData = [
     name: (
       <div className="checkBoxSection">
         <p>
-          Other documents on which your name and address appear:
+          Other documents with your name and address:
           <br />
           · Car registration
           <br />
@@ -182,7 +181,7 @@ const BankPg = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div style={{backgroundColor: "#FFF4E2", height: "2680px"}}>
+    <div style={{backgroundColor: "#FFF4E2"}}>
       <div className="headerBg">Set up Bank Account</div>
       <div className="mainBankPage">
         <div className="slideLayout">
@@ -206,20 +205,20 @@ const BankPg = () => {
                   <p className="description">{account.explain}</p>
                 </div>
               </div>
-              <div className="type-name" style={{textAlign: "center"}}>{account.type}</div>
+              <div className="type-name">{account.type}</div>
             </div>
           ))}
         </div>
 
         <div className="checkListBg" style={{backgroundColor: "#D5E5DB"}}>
           <div className="main-checkBox">
-            <form className="form w-100">
+            <form>
               <h2 style={{color: "#EC5F55"}}>Documents Checklist</h2>
               {userData.map((user, index) => (
                 <div key={index} className="checkBoxDiv">
                   <FormControlLabel control={<Checkbox />} label={user.name} />
                   <Tooltip title={user.note}>
-                    <ContactSupportIcon sx={{ m: 0 }}>
+                    <ContactSupportIcon>
                       Default Width [300px]
                     </ContactSupportIcon>
                   </Tooltip>
@@ -238,9 +237,10 @@ const BankPg = () => {
           <div className="container-fluid mt-3 mb-3">
             <h2 className="text-left">Users Proportion of Big Four Banks</h2>
             <Chart
+            className="chartSize"
               type="donut"
-              width={1349}
-              height={500}
+              // width={1200}
+              // height={500}
               series={[17, 14, 9, 8.5]}
               options={{
                 labels: [
