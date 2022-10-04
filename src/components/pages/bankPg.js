@@ -227,7 +227,7 @@ const BankPg = () => {
               ))}
             </form>
             <div className="download-div">
-            <a href="../../IACR.pdf" download>
+            <a href="../../Checklist.pdf" download>
             Click to download
           </a>
           </div>
