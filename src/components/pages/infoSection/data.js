@@ -58,12 +58,6 @@ export const learnObj = {
       col: "#f0e9c5",
     },
     {
-      title: <p style={{ color: "black" }}>Catch Keyword</p>,
-      info: "empty",
-      nav: "catch-keyword",
-      col: "#bfe8f5",
-    },
-    {
       title: "Grammar Checker",
       info: "empty",
       nav: "writing",
