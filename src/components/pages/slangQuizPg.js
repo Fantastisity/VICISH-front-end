@@ -62,7 +62,6 @@ const SlangQuiz = () => {
                   <div className="front">
                     <p>{quizzes[i].Slang}</p>
                     <br></br>
-                    <p>Hover me :)</p>
                   </div>
 
                   <div style={{backgroundColor: colors[key]}} className="back">
