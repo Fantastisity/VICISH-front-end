@@ -33,14 +33,14 @@ function App() {
         <Route path='/map' element={<VICISHMap/>} />
         <Route path='/slang' element={<SlangQuiz/>} />
         <Route path='/english-quiz' element={<EnglishQuiz/>} />
-        <Route path='/catch-keyword' element={<VocabPg />}/>
+        {/* <Route path='/catch-keyword' element={<VocabPg />}/> */}
         <Route path='/writing' element={<WriteCheck />}/>
         <Route path='/diet' element={<Diet/>} />
         <Route path='/recipe' element={<RecipeReq/>} />
         <Route path='/ptv' element={<PTV/>} />
         <Route path='/bank' element={<Bank/>} />
         <Route path='/meal-plan' element={<MenuPlanner/>} />
-//         <Route path='/statistics' element={<StatisticsPg/>} />
+        {/* <Route path='/statistics' element={<StatisticsPg/>} /> */}
         <Route path='/transport' element={<Transport/>} />
       </Routes>
     </Router>
