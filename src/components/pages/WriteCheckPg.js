@@ -2,6 +2,7 @@ import React from "react";
 import WritingHandler from "../writingAssessment/WritingHandler";
 import "./WriteCheck.css";
 import GrammarPic from "../../images/grammarPic.png";
+import GrammarPic2 from "../../images/GrammarPic2.png";
 import { fadeInDown } from 'react-animations';
  import Radium, {StyleRoot} from 'radium';
 
