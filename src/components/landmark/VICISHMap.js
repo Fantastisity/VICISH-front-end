@@ -1,21 +1,8 @@
-import React, {useState, useEffect} from "react";
-import Axios from "axios";
+import React, {useState, useEffect, useRef} from "react";
 import { useLocation } from "react-router-dom";
-import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import {
-  Box,
-  TextField,
-  Button
-} from '@material-ui/core';
-import Map, {Marker, Popup,  NavigationControl,
-  FullscreenControl,
-  ScaleControl,
-  GeolocateControl} from 'react-map-gl';
-import "mapbox-gl/dist/mapbox-gl.css";
-import musicicon from '../../images/concert.png';
-import closebt from "../../images/close.png";
-import artworkicon from '../../images/painting.png';
-import landmarkicon from '../../images/landmarker.svg';
+import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+import 'mapbox-gl/dist/mapbox-gl.css';
+import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
 import mapboxgl from 'mapbox-gl';
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default; // eslint-disable-line
 
@@ -24,238 +11,33 @@ const MAPBOX_TOKEN =
 
 export default function VICISHMap() {
   const location = useLocation();
-  const { from } = location.state;
-  const [viewState, setViewState] = useState({
-      longitude: 144.9621,  
-      latitude: -37.8166,
-      zoom: 12
-  });
-  const [landmarks, setLandmarks] = useState([]);
-  const [musicplaces, setMusicVenue] = useState([]);
-  const [artworks, setArtworks] = useState([]);
-  const [popupInfo1, setPopupInfo1] = useState(null);
-  const [popupInfo2, setPopupInfo2] = useState(null);
-  const [popupInfo3, setPopupInfo3] = useState(null);
+  const { destLat, destLon } = location.state;
 
-  const [enteredLandmarkNum, setEnteredLandmarkNum] = useState(10);
-  const [enteredMusicNum, setEnteredMusicNum] = useState(10);
-  const [enteredArtworkNum, setEnteredArtworkNum] = useState(10);
+  const mapContainerRef = useRef(null);
+    const [lng, setLng] = useState(144.9621);
+    const [lat, setLat] = useState(-37.8166);
+    const [zoom, setZoom] = useState(9);
 
-  const promptAlert = {
-    width: '38px',
-    height: '38px',
-    background:'transparent'
-  }
-
-  const handleLandmarkInput = (e) => {
-    Axios.get("https://vicish.herokuapp.com/landmark", {params: { num: enteredLandmarkNum }}).then((response) => {
-      setLandmarks(response.data);
-    });
-  }
-
-  const handleMusicInput = (e) => {
-    Axios.get("https://vicish.herokuapp.com/music", {params: { num: enteredMusicNum }}).then((response) => {
-      setMusicVenue(response.data);
-    });
-  }
-
-  const handleArtworkInput = (e) => {
-    Axios.get("https://vicish.herokuapp.com/artwork", {params: { num: enteredArtworkNum }}).then((response) => {
-      setArtworks(response.data);
-    });
-  }
-
-  useEffect(() => {
-    if (from === "landmark") handleLandmarkInput(null);
-    else if (from === "music") handleMusicInput(null);
-    else if (from === "artwork") handleArtworkInput(null);
-  }, [from]);
-
-
-  const content = (
-    <div>
-      <TextField label="Enter a value between 0 and 116" id="outlined-size-normal" variant="filled" 
-            style={{background: "rgba(204, 229, 254, 0.92)",
-            borderRadius: "16px",
-            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-            backdropFilter: "blur(5.3px)",
-            border: "1px solid rgba(254, 214, 204, 0.48)",
-            width: "300px"}} onChange={(e) => setEnteredLandmarkNum(e.target.value)}/>
-      <Box>
-      <Button
-              color="secondary"
-              variant='contained'
-              onClick={(e) => handleLandmarkInput(e)}
-              style = {{marginLeft: "98px", marginTop: "10px", width: "200px", marginBottom: "10px", backgroundColor: "#e6d8cf", color: "black"}}
-            >
-              Find Landmarks
-            </Button>
-      </Box>
-
-      <TextField label="Enter a value between 0 and 202" id="outlined-size-normal" variant="filled" 
-            style={{background: "rgba(204, 254, 225, 0.9)",
-            borderRadius: "16px",
-            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-            backdropFilter: "blur(5.3px)",
-            border: "1px solid rgba(254, 214, 204, 0.48)",
-            width: "300px"}} onChange={(e) => setEnteredMusicNum(e.target.value)}/>
-      <Box>
-      <Button
-              color="secondary"
-              variant='contained'
-              onClick={(e) => handleMusicInput(e)}
-              style = {{marginLeft: "98px", marginTop: "10px", width: "200px", marginBottom: "10px", backgroundColor: "#e6d8cf", color: "black"}}
-            >
-              Find Music Venues
-            </Button>
-      </Box>
-
-      <TextField label="Enter a value between 0 and 201" id="outlined-size-normal" variant="filled" 
-            style={{background: "rgba(228, 204, 254, 0.9)",
-            borderRadius: "16px",
-            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-            backdropFilter: "blur(5.3px)",
-            border: "1px solid rgba(254, 214, 204, 0.48)",
-            width: "300px"}}  onChange={(e) => setEnteredArtworkNum(e.target.value)}/>
-      <Box>
-      <Button
-              color="secondary"
-              variant='contained'
-              onClick={(e) => handleArtworkInput(e)}
-              style = {{marginLeft: "98px", marginTop: "10px", width: "200px", marginBottom: "10px", backgroundColor: "#e6d8cf", color: "black"}}
-            >
-              Find Artwork Venues
-            </Button>
-      </Box>
-    </div>
-  );  
-
-  const onMove = React.useCallback(({viewState}) => {
-    const newCenter = [viewState.longitude, viewState.latitude];
-    setViewState(newCenter);
-  }, [])
-  return (
-    <div style={{ height: "100vh", marginTop: "10px" }}>
-      <Map
-      {...viewState}
-      mapStyle="mapbox://styles/jackieghost/cl7eqxr9r000314nyhfpov3wl"
-      onMove = {onMove}
-      mapboxAccessToken={MAPBOX_TOKEN}
-      >
-        <GeolocateControl position="top-right" />
-        <FullscreenControl position="top-right" />
-        <NavigationControl position="top-right" />
-        <ScaleControl />
-        {content}
-        {/* <GeocoderControl 
-          mapboxAccessToken={MAPBOX_TOKEN} 
-          position="top-left" 
-          zoom="11"
-          language="english" 
-          placeholder="Enter an Address"
-          handleInput={handleInput}/> */}
-              {landmarks && landmarks.map((obj, index) => (
-                <Marker
-                  key={`marker-${index}`}
-                  longitude={obj.lon}
-                  latitude={obj.lat}
-                  style={promptAlert}
-                  onClick={e => {
-                    e.originalEvent.stopPropagation();
-                    console.log(obj);
-                    setPopupInfo1(obj);
-                  }}
-                >
-                  <img src={landmarkicon} alt=""/>
-                </Marker>
-              ))}
-              {popupInfo1 && (
-                <Popup
-                  latitude={popupInfo1.lat}
-                  longitude={popupInfo1.lon}
-                  onClose={() => setPopupInfo1(null)}
-                  closeButton={false}
-                  anchor="top"
-                  offsetLeft={10}
-                >
-                <button onClick={() => setPopupInfo1(null)} style={{marginLeft: "90%"}}>
-                    <img src={closebt} style={{width: "20px"}}/>
-                  </button>
-                  <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo1.Title}</h5>
-                    <p>{popupInfo1.Description}</p>
-                  </div>
-                </Popup>
-              )}
-
-            {musicplaces && musicplaces.map((obj, index) => (
-                <Marker
-                  key={`marker-${index}`}
-                  longitude={obj.lon}
-                  latitude={obj.lat}
-                  style={promptAlert}
-                  onClick={e => {
-                    e.originalEvent.stopPropagation();
-                    console.log(obj);
-                    setPopupInfo2(obj);
-                  }}
-                >
-                  <img src={musicicon}  alt="" style={{width: "30px"}}/>
-                </Marker>
-              ))}
-              {popupInfo2 && (
-                <Popup
-                  latitude={popupInfo2.lat}
-                  longitude={popupInfo2.lon}
-                  onClose={() => setPopupInfo2(null)}
-                  closeButton={false}
-                  anchor="top"
-                  offsetLeft={10}
-                >
-                <button onClick={() => setPopupInfo2(null)} style={{marginLeft: "76%"}}>
-                    <img src={closebt} style={{width: "20px"}}/>
-                  </button>
-                  <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo2.Title}</h5>
-                    <span><a href = {popupInfo2.Description} target="_blank">To Website</a></span>
-                  </div>
-                </Popup>
-              )}
-
-              {artworks && artworks.map((obj, index) => (
-                <Marker
-                  key={`marker-${index}`}
-                  longitude={obj.lon}
-                  latitude={obj.lat}
-                  style={promptAlert}
-                  onClick={e => {
-                    e.originalEvent.stopPropagation();
-                    console.log(obj);
-                    setPopupInfo3(obj);
-                  }}
-                >
-                  <img src={artworkicon}  alt="" style={{width: "30px"}}/>
-                </Marker>
-              ))}
-              {popupInfo3 && (
-                <Popup
-                  latitude={popupInfo3.lat}
-                  longitude={popupInfo3.lon}
-                  onClose={() => setPopupInfo3(null)}
-                  closeButton={false}
-                  anchor="top"
-                  offsetLeft={10}
-                >
-                <button onClick={() => setPopupInfo3(null)} style={{marginLeft: "90%"}}>
-                    <img src={closebt} style={{width: "20px"}}/>
-                  </button>
-                  <div style={{fontSize: "1vw", fontFamily: "Poppins"}}>
-                    <h5>{popupInfo3.Title}</h5>
-                    <p>{popupInfo3.Description}</p>
-                  </div>
-                </Popup>
-              )}
-          </Map>
-    </div>
-  );
+    let map
+    useEffect(() => {
+        map = new mapboxgl.Map({
+            container: mapContainerRef.current,
+            style: "mapbox://styles/mapbox/streets-v11",
+            center: [lng, lat],
+            zoom: zoom,
+            accessToken: MAPBOX_TOKEN
+        });
+        const directions = new MapboxDirections({
+            accessToken: MAPBOX_TOKEN,
+            unit: "metric",
+            profile: "mapbox/driving",
+        });
+        map.addControl(directions, "top-left");
+        map.addControl(new mapboxgl.NavigationControl());
+        map.on('load',  function() {
+          directions.setDestination([destLon, destLat]); // can be address
+      })
+        return () => map.remove();
+    }, []);
+  return <div className="map-container" style={{ height: "100vh", marginTop: "10px" }} ref={mapContainerRef}/>
 };
