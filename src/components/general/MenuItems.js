@@ -24,11 +24,6 @@ export const LearnEnglish = [
     cName: 'dropdown-link'
   },
   {
-    title: 'Catch Keyword',
-    path: '/catch-keyword',
-    cName: 'dropdown-link'
-  },
-  {
     title: 'Grammar Checker',
     path: '/writing',
     cName: 'dropdown-link'
