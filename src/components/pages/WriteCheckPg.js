@@ -7,7 +7,11 @@ import { fadeInDown } from 'react-animations';
 
  const styles = {
    fadeInDown: {
-     animation: 'x 1.5s',
+     animation: 'x 2s',
+     animationName: Radium.keyframes(fadeInDown, 'fadeInDown'),
+   },
+  fadeInDown2: {
+     animation: 'x 4s',
      animationName: Radium.keyframes(fadeInDown, 'fadeInDown'),
    }
  }
@@ -16,11 +20,18 @@ const WriteCheck = () => {
   return (
     <div style={{backgroundColor: "#F0BA98", height: "1800px"}}>
       <div className="headerBg">Grammar Checker</div>
+<div style={{ display:"flex"}}>
 <StyleRoot>
        <div style={styles.fadeInDown} className="grammarPic">
        <img src={GrammarPic} width='500' height='1000'></img>
        </div>
        </StyleRoot>
+<StyleRoot>
+       <div style={styles.fadeInDown2} className="grammarPic2">
+       <img src={GrammarPic2} style={{marginLeft:"35%"}}></img>
+       </div>
+       </StyleRoot>
+       </div>
       <div className="slangIntro" style={{
           marginLeft: "320px", 
           marginTop: "30px", 
