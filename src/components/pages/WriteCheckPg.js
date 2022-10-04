@@ -1,11 +1,18 @@
 import React from "react";
 import WritingHandler from "../writingAssessment/WritingHandler";
 import "./WriteCheck.css";
+import GrammarPic from "../../images/grammarPic.png";
 
 const WriteCheck = () => {
   return (
     <div style={{backgroundColor: "#F0BA98", height: "1800px"}}>
       <div className="headerBg">Grammar Checker</div>
+<div style={{
+         marginTop: "50px",
+         marginLeft: "100px"
+       }}>
+       <img src={GrammarPic} width='500' height='1000'></img>
+       </div>
       <div className="slangIntro" style={{
           marginLeft: "320px", 
           marginTop: "30px", 
