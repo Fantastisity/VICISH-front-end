@@ -77,7 +77,7 @@ const SlangQuiz = () => {
             Get New Slangs
           </Button>
         </div>
-    <div className="slangTotal">
+    <div className="slangTotal" style={{width: "700px", marginLeft: "-680px"}}>
       <div className="slangPage">
         <div className="quizPos">
           {showStartingPage && (
