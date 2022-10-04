@@ -2,17 +2,25 @@ import React from "react";
 import WritingHandler from "../writingAssessment/WritingHandler";
 import "./WriteCheck.css";
 import GrammarPic from "../../images/grammarPic.png";
+import { fadeInDown } from 'react-animations';
+ import Radium, {StyleRoot} from 'radium';
+
+ const styles = {
+   fadeInDown: {
+     animation: 'x 1.5s',
+     animationName: Radium.keyframes(fadeInDown, 'fadeInDown'),
+   }
+ }
 
 const WriteCheck = () => {
   return (
     <div style={{backgroundColor: "#F0BA98", height: "1800px"}}>
       <div className="headerBg">Grammar Checker</div>
-<div style={{
-         marginTop: "50px",
-         marginLeft: "100px"
-       }}>
+<StyleRoot>
+       <div style={styles.fadeInDown} className="grammarPic">
        <img src={GrammarPic} width='500' height='1000'></img>
        </div>
+       </StyleRoot>
       <div className="slangIntro" style={{
           marginLeft: "320px", 
           marginTop: "30px", 
