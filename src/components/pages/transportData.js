@@ -1,4 +1,7 @@
 import zonebg from '../../images/tramzone.png';
+import mykiPic from '../../images/mykiPic.png';
+ import { height } from '@mui/system';
+
 export const faqs = [
     {
       question: "Where to buy and top up a Myki card?",
@@ -16,6 +19,8 @@ export const faqs = [
     {
       question: "Full Fare, Concession and Child",
       answer:
+      <div>
+         <img src={mykiPic} alt="" style={{width: "300px", height:"300px", marginLeft:"20%"}}/>
         <p style={{marginLeft: "-12px"}}>
           Full fare ($6 for myki card)
           <ol style={{marginLeft: "50px"}}>
@@ -34,7 +39,8 @@ export const faqs = [
           <li>Teenagers aged 17 and 18 must carry government-issued proof of age ID (such as a passport, learner permit, or Proof of Age card), 
             or another concession entitlement (such as a PTV School Student ID or Health Care Card)</li>
           </ol>
-        </p>,
+        </p>
+         </div>
     },
     {
       question: "Zone 1 & Zone 2",
