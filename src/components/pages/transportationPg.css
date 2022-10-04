@@ -1,8 +1,14 @@
 .main-myki {
+  position: relative;
   margin-top: 10rem;
-  margin-left: 45rem;
+  margin-left: 50%;
   width: 30rem;
   text-align: center;
+}
+
+.bannerPic{
+  background-size: cover;
+  width: 100%;
 }
 
 .input-label {
