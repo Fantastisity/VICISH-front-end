@@ -50,7 +50,6 @@
 
 .slangcard .back {
   transform: rotateY(0.5turn);
-  background-color: #009bff;
    z-index: 1;
 }
 
