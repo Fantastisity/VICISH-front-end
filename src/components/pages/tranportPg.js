@@ -134,9 +134,9 @@ const Transport = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: "#F0BA98", height: "2080px" }}>
+    <div style={{ backgroundColor: "#F0BA98", height: "2580px" }}>
       <div className="headerBg">Public Transport in Victoria</div>
-      <div className="slangIntro" style={{
+      <div style={{
           marginLeft: "290px", 
           marginTop: "30px", 
           borderRadius: "60px",
@@ -147,7 +147,7 @@ const Transport = () => {
             Myki, stylised as myki, is a reloadable credit card-sized contactless smart card ticketing 
             system used for electronic payment of fares on most public transport services in Melbourne and regional Victoria, Australia.
       </div>
-      <img src={transBg} alt="" style={{ height: "40rem", backgroundSize:"cover", marginLeft: "-4px", width: "1444px" }}/>
+      <img src={transBg} alt="" className="bannerPic"/>
       <div className="container">
         <Accordion />
       </div>
