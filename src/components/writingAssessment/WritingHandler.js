@@ -52,8 +52,8 @@ const WritingHandler = () => {
     <div className="layout">
       <textarea
         className="Writetextarea"
-        rows="8"
-        cols="64"
+        rows="18"
+        cols="90"
         placeholder="type something..."
         style={{backgroundColor: "#FFF4E2", color:"#000"}}
         type="text"
