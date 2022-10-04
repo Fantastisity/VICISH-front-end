@@ -40,7 +40,7 @@ function App() {
         <Route path='/ptv' element={<PTV/>} />
         <Route path='/bank' element={<Bank/>} />
         <Route path='/meal-plan' element={<MenuPlanner/>} />
-        <Route path='/statistics' element={<StatisticsPg/>} />
+//         <Route path='/statistics' element={<StatisticsPg/>} />
         <Route path='/transport' element={<Transport/>} />
       </Routes>
     </Router>
