@@ -19,7 +19,7 @@ import { fadeInDown } from 'react-animations';
 
 const WriteCheck = () => {
   return (
-    <div style={{backgroundColor: "#F0BA98", height: "1800px"}}>
+    <div style={{backgroundColor: "#F0BA98", height: "2200px"}}>
       <div className="headerBg">Grammar Checker</div>
 <div style={{ display:"flex"}}>
 <StyleRoot>
