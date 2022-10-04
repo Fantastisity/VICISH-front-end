@@ -1,12 +1,13 @@
 .main-checkBox {
-  width: 32rem;
+  width: 30%;
   margin-top: 5rem;
-  margin-left: 35rem;
+  margin-left: 40%;
   margin-bottom: 5rem;
 }
 
 .checkBoxDiv {
   display: inline-block;
+  position: relative;
 }
 
 .slide-image {
@@ -71,23 +72,29 @@
 }
 
 .slideLayout {
-  margin-left: 5rem;
   margin-top: 5rem;
-  width: 80%;
+  width: 100%;
 }
 
 .slide-container{
   height: 59rem;
-  width: 90rem;
-  margin-left: -15rem;
+  width: 100%;
+   margin-left: -5%;
   margin-top: -128px;
 }
 
 .download-div{
+  position: relative;
   margin-top: 2rem;
-  margin-left: 42rem;
+  margin-bottom: 2rem;
+   margin-left: 100%;
   width: 8rem;
 }
+
+.chartSize{
+   width: 70%;
+   height: 40%;
+ }
 
 
 .web-button {
@@ -104,7 +111,7 @@
   box-shadow: 4px 8px 19px -3px rgba(110, 105, 135, 0.27);
   transition: all 250ms;
   overflow: hidden;
-  margin-left: 40rem;
+  margin-left: 45%;
   margin-top: -50rem;
   top: -8rem;
  }
