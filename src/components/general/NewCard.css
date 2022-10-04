@@ -10,7 +10,7 @@
     text-align: center;
     position: relative;
     transition: all 2.25s;
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
     padding: 5em;
     transform-style: preserve-3d;
   }
@@ -42,6 +42,7 @@
   
   .back {
     transform: rotateY(0.5turn);
+    background-color: #ffffff;
   }
   
   .description {
@@ -61,7 +62,7 @@
     text-align: center;
     position: relative;
     transition: all 2.25s;
-    background-color: rgb(127, 204, 240);
+    background-color: rgb(255, 255, 255);
     padding: 5em;
     transform-style: preserve-3d;
   }
@@ -93,7 +94,7 @@
   
   .back {
     transform: rotateY(0.5turn);
-    background-color: #009bff;
+    background-color: #ffffff;
   }
   
   .description {
@@ -112,7 +113,7 @@
     text-align: center;
     position: relative;
     transition: all 2.25s;
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
     padding: 5em;
     transform-style: preserve-3d;
   }
@@ -144,6 +145,7 @@
   
   .back {
     transform: rotateY(0.5turn);
+    background-color: #ffffff;
   }
   
   .description {
