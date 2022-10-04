@@ -10,7 +10,6 @@ import VICISHMap from './components/landmark/VICISHMap';
 import SlangQuiz from './components/pages/slangQuizPg';
 import EnglishQuiz from './components/pages/englishQuiz';
 import Bank from './components/pages/bankPg';
-import VocabPg from './components/pages/VocabPg';
 import WriteCheck from './components/pages/WriteCheckPg';
 import Diet from './components/pages/dietPg';
 import { RecipeReq } from "./components/recipe/recipeReqHandler";
@@ -19,6 +18,9 @@ import PTV from './components/pages/ptvPg';
 import ScrollToTop from "./components/general/scrollToTop.js"
 import Transport from './components/pages/tranportPg';
 import StatisticsPg from './components/pages/statisticsPg';
+import Artwork from './components/landmark/artworkPg';
+import Landmark from './components/landmark/landmarkPg';
+import MusicVenue from './components/landmark/musicPg';
 function App() {
   return (
     <div className='App'>
@@ -33,7 +35,6 @@ function App() {
         <Route path='/map' element={<VICISHMap/>} />
         <Route path='/slang' element={<SlangQuiz/>} />
         <Route path='/english-quiz' element={<EnglishQuiz/>} />
-        {/* <Route path='/catch-keyword' element={<VocabPg />}/> */}
         <Route path='/writing' element={<WriteCheck />}/>
         <Route path='/diet' element={<Diet/>} />
         <Route path='/recipe' element={<RecipeReq/>} />
@@ -42,6 +43,9 @@ function App() {
         <Route path='/meal-plan' element={<MenuPlanner/>} />
         {/* <Route path='/statistics' element={<StatisticsPg/>} /> */}
         <Route path='/transport' element={<Transport/>} />
+        <Route path='/landmarks' element={<Landmark/>}/>
+        <Route path='/artworks' element={<Artwork/>}/>
+        <Route path='/music-venue' element={<MusicVenue/>}/>
       </Routes>
     </Router>
     </div>
