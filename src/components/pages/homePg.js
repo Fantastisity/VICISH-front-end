@@ -6,6 +6,8 @@ import homebg from "../../images/homeBg.jpg";
 import homeIcon1 from "../../images/homeIcon1.png";
 import homeIcon2 from "../../images/homeIcon2.png";
 import homeIcon3 from "../../images/homeIcon3.png";
+import "animate.css/animate.min.css";
+ import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 export default function Home() {
   return (
@@ -59,9 +61,15 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <InfoSection {...lifeObj} />
-      <InfoSection {...learnObj} />
-      <InfoSection {...socialObj} />
+      <AnimationOnScroll animateOnce={true} duration={1.5} animateIn="animate__fadeInDown">
+       <InfoSection {...lifeObj}/>
+       </AnimationOnScroll>
+       <AnimationOnScroll animateOnce={true} duration={1.8} animateIn="animate__fadeInDown">
+       <InfoSection {...learnObj} />
+       </AnimationOnScroll>
+       <AnimationOnScroll animateOnce={true} duration={2.1} animateIn="animate__fadeInDown">
+       <InfoSection {...socialObj} />
+       </AnimationOnScroll>
     </>
   );
 }
