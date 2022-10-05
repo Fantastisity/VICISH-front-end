@@ -19,7 +19,7 @@ import { fadeInDown } from 'react-animations';
 
 const WriteCheck = () => {
   return (
-    <div style={{backgroundColor: "#F0BA98", height: "2200px"}}>
+    <div style={{backgroundColor: "#F0BA98", height: "100%"}}>
       <div className="headerBg">Grammar Checker</div>
 <div style={{ display:"flex"}}>
 <StyleRoot>
@@ -35,7 +35,7 @@ const WriteCheck = () => {
        </div>
       <div className="slangIntro" style={{
           marginLeft: "320px", 
-          marginTop: "30px", 
+          marginTop: "20%", 
           borderRadius: "60px",
           padding: "25px",
           width: "56%",
@@ -44,7 +44,7 @@ const WriteCheck = () => {
            Wondering where to improve your grammar? This grammar check feature helps you to identify any mistake made in a paragraph. 
           </div>
           <div className="titleBg" style={{
-          marginLeft: "550px", 
+          marginLeft: "35%", 
           marginTop: "30px", 
           borderRadius: "20px",
           padding: "20px",
