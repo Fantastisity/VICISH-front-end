@@ -31,8 +31,8 @@ const EnglishQuiz = () => {
       <div style={{backgroundColor: "#F0BA98", height: "1500px"}}>
         <div className="headerBg">Grammar Ability Test</div>
         <div className="slangIntro" style={{
-          marginLeft: "280px", 
-          marginTop: "30px", 
+          marginLeft: "20%", 
+           marginTop: "5%", 
           borderRadius: "60px",
           padding: "25px",
           width: "60%",
@@ -43,7 +43,7 @@ const EnglishQuiz = () => {
           </div>
       <div className="slangTotal">
         <div className="slangPage">
-          <div className="quizPos" style={{marginLeft: "225px"}}>
+          <div>
             {showStartingPage && (
               <GrammarStartingPage
                 setShowStartingPage={setShowStartingPage}
