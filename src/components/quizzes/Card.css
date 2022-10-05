@@ -1,8 +1,9 @@
 .card1 {
-  margin-top: 950px;
-  margin-left: -53%;
+  margin-top: 1050px;
+  margin-left: -260%;
+  margin-right: 16%;
     height: 710px;
-    width: 1280px;
+    width: 360%;
     background-color: #FFF4E2;
     padding: 2rem;
     border-radius: 1rem;
@@ -11,10 +12,11 @@
   }
 
 .card2 {
-  margin-top: 850px;
-  margin-left: -36%;
+  margin-top: 880px;
+  margin-left: -20%;
+  margin-right: 18%;
   height: 850px;
-  width: 1300px;
+  width: 60%;
   background-color: #FFF4E2;
   padding: 1rem;
   border-radius: 1rem;
