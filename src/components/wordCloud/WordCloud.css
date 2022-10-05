@@ -1,0 +1,80 @@
+.word-cloud {
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+  margin-top: 3rem;
+}
+
+
+.Vocatextarea {
+  resize: none;
+  overflow: auto;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.subDiv {
+  width: 28rem;
+  margin-left: 12rem;
+  background-color: #f3f3f3;
+  margin-top: 3rem;
+  padding: 1rem;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: 100;
+}
+
+.titleBg {
+  background-color: #f3f3f3;
+  border: 1px;
+  border-color: #000000;
+  border-radius: 10px;
+  margin: 0;
+  padding: 1rem;
+}
+
+
+/* From uiverse.io by @alexroumi */
+.wordcloudBt {  
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: #32373b;
+  z-index: 1;
+  background: #EC7F6A;
+  width: 140px;
+  height: 50px;
+  top: 60px;
+  left: -340px;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+ }
+ 
+ .wordcloudBt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #ffffff;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(91, 76, 76, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(86, 88, 109, 0.27);
+  transition: all 250ms
+ }
+ 
+ .wordcloudBt:hover {
+  color: #343232;
+ }
+ 
+ .wordcloudBt:hover::before {
+  width: 100%;
+ }
