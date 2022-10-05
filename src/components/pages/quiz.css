@@ -1,6 +1,8 @@
 .slangPage {
-    margin-left: 360px;
-    margin-top: -907px;
+    width: 80%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: -900px;
 }
 
 .CardView {
@@ -30,7 +32,7 @@
 }
 
 .slangIntro {
-    width: 34rem;
+    width: 70%;
     padding: 1rem;
     display: flex;
     align-content: center;
@@ -51,6 +53,7 @@
     display: inline-block;
     justify-content: space-around;
     align-items: center;
+    margin-left: 40%;
 }
 .aussieP {
     padding: 1rem;
@@ -62,7 +65,7 @@
 }
 
 .learnSlang {
-    width: 90%;
-    margin-left: 5rem;
+    width: 70%;
+    margin-left: 16%;
     margin-top: 4rem;
 }
