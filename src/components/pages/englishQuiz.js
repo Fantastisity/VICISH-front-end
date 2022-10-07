@@ -6,6 +6,7 @@ import "./quiz.css";
 import {englishqz} from "../quizzes/questions";
 import { Card2 } from "../quizzes/Card";
 import Axios from "axios";
+import learnBg from "../../images/learnBg.png";
 
 const EnglishQuiz = () => {
     const [answers, setAnswers] = useState([]);
@@ -29,7 +30,7 @@ const EnglishQuiz = () => {
     }
     return (
       <div style={{backgroundColor: "#F0BA98", height: "1500px"}}>
-        <div className="headerBg">Grammar Ability Test</div>
+        <div className="headerBg" style={{backgroundImage:`url(${learnBg}`, backgroundSize:"cover", color:"#EC7F6A"}}>Grammar Ability Test</div>
         <div className="slangIntro" style={{
           marginLeft: "20%", 
            marginTop: "5%", 
