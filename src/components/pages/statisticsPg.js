@@ -145,8 +145,9 @@ import React, { useState, useEffect } from "react";
       };
 
       const gen = () => {
+       console.log(place)
         for (var i in place) {
-            if (i == 17) {
+            if (i == 15) {
                 state2.series.push(Object.values(popular[i])[0])
                 state2.series.push(Object.values(classic[i])[0])
                 state2.series.push(Object.values(art[i])[0])
