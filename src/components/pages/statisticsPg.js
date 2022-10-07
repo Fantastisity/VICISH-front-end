@@ -225,7 +225,7 @@ import React, { useState, useEffect } from "react";
       
      return(
          <div>
-            {place && gen()}
+            {place && popular && classic && art && gallery && park && garden && museum && library && cinema && gen()}
          </div>
 
      )
