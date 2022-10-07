@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./transportationPg.css";
 import Accordion from "./Accordion";
 import transBg from '../../images/transBg.png';
-// import Select from 'react-select';
+import transportBg from "../../images/transportBg.png";
 
 const colourStyles = {
   control: (styles) => ({ ...styles, backgroundColor: "white" }),
@@ -135,7 +135,7 @@ const Transport = () => {
 
   return (
     <div style={{ backgroundColor: "#F0BA98", height: "90%" }}>
-      <div className="headerBg">Public Transport in Victoria</div>
+<div className="headerBg" style={{backgroundImage:`url(${transportBg}`, backgroundSize:"cover"}}>Public Transport in Victoria</div>
       <div style={{
           marginLeft: "290px", 
           marginTop: "30px", 
