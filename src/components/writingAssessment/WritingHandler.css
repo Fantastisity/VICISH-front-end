@@ -17,13 +17,14 @@ margin-top: 1.5rem;
 /* From uiverse.io by @alexroumi */
 .writingHandlerBt {
   padding: 15px 25px;
+  width: 60%;
   border: unset;
   border-radius: 15px;
   color: #32373b;
   z-index: 1;
   background: #EC7F6A;
 position: relative;
-margin-left: 200px;
+margin-left: 115%;
 font-weight: 1000;
 font-size: 17px;
 -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
