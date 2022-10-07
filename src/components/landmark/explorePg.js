@@ -8,6 +8,7 @@ import "animate.css/animate.min.css";
  import { AnimationOnScroll } from 'react-animation-on-scroll';
  import { fadeInDown } from 'react-animations';
  import Radium, {StyleRoot} from 'radium';
+import exploreBg from "../../images/exploreBg.png";
 
 const styles = {
    fadeInDown1: {
@@ -28,7 +29,7 @@ const ExplorePg = () => {
 
   return (
     <div style={{ backgroundColor: "#FFF4E2", height: "1000px" }}>
-      <div className="headerBg">Explore Melbourne CBD</div>
+      <div className="headerBg" style={{backgroundImage:`url(${exploreBg}`, backgroundSize:"cover"}}>Explore Melbourne CBD</div>
       <div
         style={{
           marginLeft: "420px",
