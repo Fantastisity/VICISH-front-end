@@ -36,7 +36,7 @@ export default function VICISHMap() {
         map.addControl(directions, "top-left");
         map.addControl(new mapboxgl.NavigationControl());
         map.on('load',  function() {
-          directions.setDestination([destLon, destLat]); // can be address
+          directions.setDestination([destLon, destLat]);
       })
         return () => map.remove();
     }, []);
