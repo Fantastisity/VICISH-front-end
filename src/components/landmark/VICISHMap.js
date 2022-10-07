@@ -31,6 +31,7 @@ export default function VICISHMap() {
             accessToken: MAPBOX_TOKEN,
             unit: "metric",
             profile: "mapbox/driving",
+            interactive: false
         });
         map.addControl(directions, "top-left");
         map.addControl(new mapboxgl.NavigationControl());
