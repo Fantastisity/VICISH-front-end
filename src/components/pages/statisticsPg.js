@@ -225,7 +225,7 @@ import React, { useState, useEffect } from "react";
       
      return(
          <div>
-            {gen()}
+            {place && gen()}
          </div>
 
      )
