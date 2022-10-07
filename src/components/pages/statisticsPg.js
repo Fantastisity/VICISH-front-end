@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from "react";
+ import React, { useState, useEffect } from "react";
  import ReactApexChart from "react-apexcharts";
  import Axios from "axios";
 
  const StatisticsPg = () => {
-    const [place, setPlace] = useState([]);
-    const [popular, setPop] = useState([]);
-    const [classic, setClassic] = useState([]);
-    const [art, setArt] = useState([]);
-    const [gallery, setGallery] = useState([]);
-    const [park, setPark] = useState([]);
-    const [garden, setGarden] = useState([]);
-    const [museum, setMuseum] = useState([]);
-    const [library, setLibrary] = useState([]);
-    const [cinema, setCinema] = useState([]);
+  const [stat, setStat] = useState([]);
 
     var state = {   
         series: [{
@@ -145,30 +136,29 @@ import React, { useState, useEffect } from "react";
       };
 
       const gen = () => {
-       console.log(place)
-        for (var i in place) {
+        for (var i in stat) {
             if (i == 15) {
-                state2.series.push(Object.values(popular[i])[0])
-                state2.series.push(Object.values(classic[i])[0])
-                state2.series.push(Object.values(art[i])[0])
-                state2.series.push(Object.values(gallery[i])[0])
-                state2.series.push(Object.values(park[i])[0])
-                //state2.series.push(Object.values(garden[i])[0])
-                state2.series.push(Object.values(museum[i])[0])
-                state2.series.push(Object.values(library[i])[0])
-                state2.series.push(Object.values(cinema[i])[0])
+                state2.series.push(stat[i].Popular_music)
+                state2.series.push(stat[i].Classical_music)
+                state2.series.push(stat[i].Performing_arts)
+                state2.series.push(stat[i].Art_galleries)
+                state2.series.push(stat[i].Zoological_parks)
+                state2.series.push(stat[i].Botanic_gardens)
+                state2.series.push(stat[i].Museums)
+                state2.series.push(stat[i].Libraries_and_Archives)
+                state2.series.push(stat[i].Cinemas)
                 continue
             }
-            state.options.xaxis.categories.push(Object.values(place[i])[0])
-            state.series[0].data.push(Object.values(popular[i])[0])
-            state.series[1].data.push(Object.values(classic[i])[0])
-            state.series[2].data.push(Object.values(art[i])[0])
-            state.series[3].data.push(Object.values(gallery[i])[0])
-            state.series[4].data.push(Object.values(park[i])[0])
-            //state.series[5].data.push(Object.values(garden[i])[0])
-            state.series[6].data.push(Object.values(museum[i])[0])
-            state.series[7].data.push(Object.values(library[i])[0])
-            state.series[8].data.push(Object.values(cinema[i])[0])
+            state.options.xaxis.categories.push(stat[i].Place)
+            state.series[0].data.push(stat[i].Popular_music)
+            state.series[1].data.push(stat[i].Classical_music)
+            state.series[2].data.push(stat[i].Performing_arts)
+            state.series[3].data.push(stat[i].Art_galleries)
+            state.series[4].data.push(stat[i].Zoological_parks)
+            state.series[5].data.push(stat[i].Botanic_gardens)
+            state.series[6].data.push(stat[i].Museums)
+            state.series[7].data.push(stat[i].Libraries_and_Archives)
+            state.series[8].data.push(stat[i].Cinemas)
         }
         return (
             <>
@@ -180,53 +170,14 @@ import React, { useState, useEffect } from "react";
       }
 
     useEffect(() =>{
-        Axios.get("https://vicish.herokuapp.com/statistics/place").then((response) => {
-          setPlace(response.data);
-          
+      Axios.get("https://vicish.herokuapp.com/statistics").then((response) => {
+          setStat(response.data);
         })
-
-        Axios.get("https://vicish.herokuapp.com/statistics/popular-music").then((response) => {
-          setPop(response.data);
-        })
-        Axios.get("https://vicish.herokuapp.com/statistics/classic-music").then((response) => {
-            setClassic(response.data);
-            
-        })
-        Axios.get("https://vicish.herokuapp.com/statistics/art").then((response) => {
-          setArt(response.data);
-          
-        })
-        Axios.get("https://vicish.herokuapp.com/statistics/gallery").then((response) => {
-          setGallery(response.data);
-          
-        })
-        Axios.get("https://vicish.herokuapp.com/statistics/park").then((response) => {
-          setPark(response.data);
-          
-        })
-        Axios.get("https://vicish.herokuapp.com/statistics/garden").then((response) => {
-          setGarden(response.data);
-          
-        })
-        Axios.get("https://vicish.herokuapp.com/statistics/museum").then((response) => {
-          setMuseum(response.data);
-          
-        })
-        Axios.get("https://vicish.herokuapp.com/statistics/library").then((response) => {
-          setLibrary(response.data);
-          
-        })
-        Axios.get("https://vicish.herokuapp.com/statistics/cinema").then((response) => {
-          setCinema(response.data);
-          
-        })
-
-        
       },[])
       
      return(
          <div>
-            {place && popular && classic && art && gallery && park && garden && museum && library && cinema && gen()}
+            {stat && gen()}
          </div>
 
      )
