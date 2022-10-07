@@ -7,6 +7,7 @@ import {slangqs} from "../quizzes/questions";
 import "../general/SlangCard.css";
 import Axios from "axios";
 import { Button } from "@mui/material";
+import learnBg from "../../images/learnBg.png";
 
 const colors = [
   "#FFF4E2", "#EC7F6A", "#D5E5DB", "#FFE0DB", "#FFF4E2", "#FFE0DB", "#FFF4E2", "#FFE4D8", "#EC7F6A", "#D5E5DB"
@@ -43,7 +44,7 @@ const SlangQuiz = () => {
 
   return (
     <div style={{backgroundColor: "#F0BA98", height: "100%"}}>
-      <div className="headerBg">Australia Slang Game</div>
+<div className="headerBg" style={{backgroundImage:`url(${learnBg}`, backgroundSize:"cover", color:"#EC7F6A"}}>Australia Slang Game</div>
       <div className="slangIntro" style={{
           marginLeft: "25%", 
            marginRight:"25%",
