@@ -44,7 +44,7 @@ export default function MusicVenue() {
                     </td>
                     <td>
                         <div style={{width: "800px", height: "60px", overflow: "auto"}}>
-                            {item.Description}
+                            <a href={item.Description}>{item.Description}</a>
                         </div>
                      </td>
                   </tr>
