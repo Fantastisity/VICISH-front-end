@@ -179,43 +179,43 @@ import React, { useState, useEffect } from "react";
       }
 
     useEffect(() =>{
-        Axios.get("http://vicish.herokuapp.com/statistics/place").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-place").then((response) => {
           setPlace(response.data);
           
         })
 
-        Axios.get("http://vicish.herokuapp.com/statistics/popular-music").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-popular-music").then((response) => {
           setPop(response.data);
         })
-        Axios.get("http://vicish.herokuapp.com/statistics/classic-music").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-classic-music").then((response) => {
             setClassic(response.data);
             
         })
-        Axios.get("http://vicish.herokuapp.com/statistics/art").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-art").then((response) => {
           setArt(response.data);
           
         })
-        Axios.get("http://vicish.herokuapp.com/statistics/gallery").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-gallery").then((response) => {
           setGallery(response.data);
           
         })
-        Axios.get("http://vicish.herokuapp.com/statistics/park").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-park").then((response) => {
           setPark(response.data);
           
         })
-        Axios.get("http://vicish.herokuapp.com/statistics/garden").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-garden").then((response) => {
           setGarden(response.data);
           
         })
-        Axios.get("http://vicish.herokuapp.com/statistics/museum").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-museum").then((response) => {
           setMuseum(response.data);
           
         })
-        Axios.get("http://vicish.herokuapp.com/statistics/library").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-library").then((response) => {
           setLibrary(response.data);
           
         })
-        Axios.get("http://vicish.herokuapp.com/statistics/cinema").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics-cinema").then((response) => {
           setCinema(response.data);
           
         })
