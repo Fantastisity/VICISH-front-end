@@ -179,7 +179,7 @@ import React, { useState, useEffect } from "react";
       }
 
     useEffect(() =>{
-        Axios.get("http://vicish.herokuapp.com/statistics-place").then((response) => {
+        Axios.get("http://vicish.herokuapp.com/statistics", params: {val: "place"}).then((response) => {
           setPlace(response.data);
           
         })
