@@ -16,6 +16,7 @@ import accountPic from "../../images/accountPic.png";
 import chequePic from "../../images/chequePic.png";
 import creditPic from "../../images/creditPic.png";
 import { borderColor, height } from "@mui/system";
+import bankBg from "../../images/bankBg.png";
 
 const openInNewTab = (url) => {
   window.open(url, "_blank", "noopener,noreferrer");
@@ -182,7 +183,7 @@ const BankPg = () => {
 
   return (
     <div style={{backgroundColor: "#FFF4E2", height: "100%"}}>
-      <div className="headerBg">Set up Bank Account</div>
+      <div className="headerBg" style={{backgroundImage:`url(${bankBg}`, backgroundSize:"cover", color:"#000000"}}>Set up Bank Account</div>
       <div className="mainBankPage">
         <div className="slideLayout">
           <Slideshow />
