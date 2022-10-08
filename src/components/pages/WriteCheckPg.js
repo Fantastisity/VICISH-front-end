@@ -58,7 +58,7 @@ const WriteCheck = () => {
         <div
           className="titleBg"
           style={{
-            marginLeft: "42%",
+            marginLeft: "33%",
             marginTop: "30px",
             borderRadius: "20px",
             padding: "20px",
