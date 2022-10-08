@@ -1,6 +1,12 @@
  import React, { useState, useEffect } from "react";
  import ReactApexChart from "react-apexcharts";
  import Axios from "axios";
+ import statisticBg from "../../images/statisticBg.png";
+ import libPic from "../../images/libPic.png"
+import cinPic from "../../images/cinPic.png"
+import artPic from "../../images/artPic.png"
+import parPic from "../../images/parPic.png"
+import zooPic from "../../images/zooPic.png"
 
  const StatisticsPg = () => {
   const [stat, setStat] = useState([]);
@@ -161,11 +167,40 @@
             state.series[8].data.push(stat[i].Cinemas)
         }
         return (
-            <>
-            <ReactApexChart options={state.options} series={state.series} type="bar" height={350} />
-            <br></br>
-            <ReactApexChart options={state2.options} series={state2.series} type="radialBar" height={390} />
-            </>
+            <div style={{ backgroundColor: "#FFF4E2" }}>
+            <div className="headerBg" style={{backgroundImage:`url(${statisticBg}`, backgroundSize:"cover"}}>Venues and Events Statistics</div>
+            <div style={{display:"flex", marginLeft:"5%", marginTop:"5%"}}>
+              <div style={{backgroundColor:"#FFFFFF", borderRadius:"20px", width:"30%"}}>
+                <div>Select</div>
+                <ReactApexChart options={state2.options} series={state2.series} type="radialBar" height={350} />
+              </div>
+              <div style={{backgroundColor:"#FFFFFF", borderRadius:"20px", width:"60%", marginLeft:"5%"}}>
+                Text
+              </div>
+            </div>
+            <div style={{marginTop:"5%", marginLeft:"5%",borderRadius:"20px",width:"85%",backgroundColor:"#FFFFFF"}}>
+              <div style={{display:"flex"}}>
+              <div><img src={zooPic} style={{width:"400px", height:"300px"}}></img></div>
+              <div><img src={parPic} style={{width:"400px", height:"300px"}}></img></div>
+              <div><img src={artPic} style={{width:"400px", height:"300px"}}></img></div>
+              <div style={{width:"400px", height:"300px", backgroundColor:"#FFF4E2"}}><p>qwertttttttttttttttttttttttttttttttttttttttttttttttttttttttttattttttttttt</p></div>
+              </div>
+              <div style={{display:"flex"}}>
+              <div style={{width:"400px", height:"300px", backgroundColor:"#F0AB98"}}>qwertttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt</div>
+              <div><img src={libPic} style={{width:"400px", height:"300px"}}></img></div>
+              <div style={{width:"400px", height:"300px", backgroundColor:"#EC7F6A"}}>qwertttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt</div>
+              <div><img src={cinPic} style={{width:"400px", height:"300px"}}></img></div>
+              </div>
+              
+            </div>
+            
+            <div style={{marginTop:"5%", marginLeft:"5%",borderRadius:"20px", width:"90%",backgroundColor:"#FFFFFF"}}>
+            <ReactApexChart options={state.options} series={state.series} type="bar" height={350}/>
+            </div>
+            {/* <ReactApexChart options={state2.options} series={state2.series} type="radialBar" height={390} />
+            <ReactApexChart options={state.options} series={state.series} type="bar" height={350} /> */}
+            
+            </div>
         );
       }
 
