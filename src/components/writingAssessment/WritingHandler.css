@@ -8,7 +8,7 @@
   border-radius: 20px;
   padding: 10px;
   margin-top: 5px;
-  margin-left: 70%;
+  margin-left: 80%;
 }
 .result {
 margin-top: 1.5rem;
@@ -24,7 +24,7 @@ margin-top: 1.5rem;
   z-index: 1;
   background: #EC7F6A;
 position: relative;
-margin-left: 115%;
+margin-left: 80%;
 font-weight: 1000;
 font-size: 17px;
 -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
