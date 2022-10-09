@@ -107,7 +107,7 @@ export default function Home() {
       <div className="home">
         {/* <div className="IconDivider" style={{backgroudColor: "#FFF4E2"}}>
           <div className="SingleIcon">
-            <p className="IconP" style={{marginLeft: "50px"}}>Number of Chinese students abroad</p>
+            <p className="IconP" style={{marginLeft: "50px"}}>Number of Chinese Students Abroad</p>
             <img src={homeIcon1} style={{marginLeft: "65px"}}/>
             <p className="IconP1" style={{marginLeft: "125px"}}>1.27 million</p>
           </div>
@@ -117,7 +117,7 @@ export default function Home() {
             <p className="IconP1" style={{marginLeft: "122px"}}>21%</p>
           </div>
           <div className="SingleIcon">
-            <p className="IconP" style={{marginLeft: "-3px"}}>Expect to increase</p>
+            <p className="IconP" style={{marginLeft: "-3px"}}>Expect to Increase</p>
             <img src={homeIcon3} style={{marginLeft: "-29px"}}/>
             <p className="IconP1" style={{marginLeft: "69px"}}>17.65%</p>
           </div>
