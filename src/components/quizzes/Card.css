@@ -1,0 +1,25 @@
+.card1 {
+  margin-top: 1050px;
+  margin-left: -260%;
+  margin-right: 16%;
+    height: 710px;
+    width: 360%;
+    background-color: #FFF4E2;
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    border: 1px solid black;
+  }
+
+.card2 {
+  margin-top: 880px;
+  margin-left: -20%;
+  margin-right: 18%;
+  height: 850px;
+  width: 60%;
+  background-color: #FFF4E2;
+  padding: 1rem;
+  border-radius: 1rem;
+  position:absolute;
+  border: 1px solid black;
+}
