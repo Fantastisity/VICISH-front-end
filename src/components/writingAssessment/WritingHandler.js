@@ -30,14 +30,25 @@ const WritingHandler = () => {
 
   const printdt = () => {
     return (
-      <ol>
+      <div>
+        <div style={{backgroundColor:"#FFFFFF", borderRadius:"20px"}}>
+        <h1 style={{ color: 'red', marginLeft:"8%"}}>Error</h1>
+        <ol style={{ listStyleType: 'decimal' }}>
         {dt.grammar.errors.map((res, idx) => (
-            <li><span style={{fontWeight: "600"}}>Error</span>: {res.bad}   <span style={{fontWeight: "600"}}>Suggestion</span>: {res.description.en}</li>
+            <li style={{ listStyleType: 'decimal',marginTop:"1%",marginLeft:"8%", marginRight:"2%" }}><span style={{fontWeight: "700"}}>Error</span>: <span style={{color:"red"}}>{res.bad}</span>   <span style={{fontWeight: "600"}}>&nbsp;&nbsp;  Suggestion</span>: {res.description.en}</li>
         ))}
-        <li><span style={{fontWeight: "600"}}>Emotion</span>: positive: {dt.stats.emotion.positive} negative: {dt.stats.emotion.negative}</li>
-        <li><span style={{fontWeight: "600"}}>Grade</span>: {dt.stats.fleschKincaid.grade}</li>
-        <li><span style={{fontWeight: "600"}}>Interpretation</span>: {dt.stats.fleschKincaid.interpretation}</li>
-      </ol>
+        </ol>
+        </div>
+        <div style={{backgroundColor:"#FFFFFF", borderRadius:"20px", marginTop:"5%"}}>
+        <h1 style={{ color: '#FAB098', marginLeft:"8%"}}>Text analysis</h1>
+          <ol style={{ listStyleType: 'square', marginLeft:"5%"}}>
+        <li><span style={{fontWeight: "600",marginTop:"1%",marginLeft:"1%"}}>Text emotion classifier</span>: positive: {dt.stats.emotion.positive} negative: {dt.stats.emotion.negative}</li>
+        <li><span style={{fontWeight: "600",marginTop:"1%",marginLeft:"1%"}}>ReadingEase</span>: {dt.stats.fleschKincaid.readingEase}</li>
+        <li><span style={{fontWeight: "600",marginTop:"1%",marginLeft:"1%"}}>Grade</span>: {dt.stats.fleschKincaid.grade}</li>
+        <li><span style={{fontWeight: "600",marginTop:"1%",marginLeft:"1%"}}>Interpretation</span>: {dt.stats.fleschKincaid.interpretation}</li>
+        </ol>
+        </div>
+      </div>
     );
   }
 
@@ -57,11 +68,12 @@ const WritingHandler = () => {
       <br></br>
       <br></br>
 
-      <button className = "writingHandlerBt" type="submit" onClick={submitHandler}>
+      <button className = "writingHandlerBt" type="submit" onClick={submitHandler} style={{marginLeft:"30%", width:"50%"}}>
         <span> Check My Grammar
         </span>
       </button>
       <br></br>
+      <div style={{marginTop:"8%"}}></div>
       <span>{dt && printdt()}</span>
     </div>
   );
