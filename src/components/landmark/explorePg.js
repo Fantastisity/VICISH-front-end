@@ -49,7 +49,7 @@ const ExplorePg = () => {
       <div style={{ display: "flex", cursor: "pointer", marginLeft: "15%" }}>
       <StyleRoot>
         <div style={styles.fadeInDown1}>
-          <Link to='/landmark-map' style={{ textDecoration: 'none',color: "black"  }}>
+          <Link to='/landmarks' style={{ textDecoration: 'none',color: "black"  }}>
           <div
             className="content-item"
             style={{
@@ -80,7 +80,7 @@ const ExplorePg = () => {
 
           <StyleRoot>
         <div style={styles.fadeInDown2}>
-          <Link to='/music-map' style={{ textDecoration: 'none',color: "black"  }}>
+          <Link to='/music-venue' style={{ textDecoration: 'none',color: "black"  }}>
           <div
             className="content-item"
             style={{
@@ -111,7 +111,7 @@ const ExplorePg = () => {
 
           <StyleRoot>
         <div style={styles.fadeInDown3}>
-          <Link to='/artwork-map' style={{ textDecoration: 'none',color: "black"  }}>
+          <Link to='/artworks' style={{ textDecoration: 'none',color: "black"  }}>
             <div
               className="content-item"
               style={{
