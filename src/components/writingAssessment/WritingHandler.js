@@ -62,7 +62,7 @@ const WritingHandler = () => {
         </span>
       </button>
       <br></br>
-      <span>{printdt()}</span>
+      <span>{dt && printdt()}</span>
     </div>
   );
 };
