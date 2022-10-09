@@ -35,7 +35,7 @@ export default function Home() {
                 Number of Chinese students abroad
               </p>
               <img src={homeIcon1} style={{ marginLeft: "1%" }} />
-              <div className="IconP1" style={{ marginLeft: "15%" }}>
+              <div className="IconP1" style={{ marginLeft: "13%" }}>
               <CountUp start={0} end={166319} duration={2}>
                 {({ countUpRef, start }) => (
                   <VisibilitySensor onChange={start}>
