@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import useTrait from "../utility/useTrait";
 import "./WritingHandler.css";
+import textgears from 'textgears-api';
+
+const textgearsApi = textgears('gDFMS8ww9P2r2Ej0', {language: 'en-US', ai: false});
 
 const WritingHandler = () => {
   const [enteredText, setEnteredText] = useState("");
@@ -11,40 +14,30 @@ const WritingHandler = () => {
   };
 
   const getSuggestions = (inputValue) => {
-    var writeGood = require('write-good');
-    return writeGood(inputValue);
+    textgearsApi.analyzeText(inputValue)
+    .then((data) => {
+        setDt(data.response)
+    })
+    .catch((err) => {});
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     str.set(enteredText);
-    setDt(getSuggestions(str.get()));
+    getSuggestions(str.get())
   };
   
 
   const printdt = () => {
-    if (!dt || dt === null) {
-      return <></>
-    }
-    if(dt.length===0 && enteredText.length!==0){
-      return <><p>all good</p></>
-    }
     return (
-      <ul>
-        {dt.map((res, idx) => {
-          const { index, offset, reason } = res;
-          if(!index || index===null){
-            return (
-              <div className="result"><p>All good</p></div>
-            )
-          } else{
-            return (
-              <div className="result"><p key={idx}>{reason}</p></div>
-            );
-          }
-          
-        })}
-      </ul>
+      <ol>
+        {dt.grammar.errors.map((res, idx) => (
+            <li><span style={{fontWeight: "600"}}>Error</span>: {res.bad}   <span style={{fontWeight: "600"}}>Suggestion</span>: {res.description.en}</li>
+        ))}
+        <li><span style={{fontWeight: "600"}}>Emotion</span>: positive: {dt.stats.emotion.positive} negative: {dt.stats.emotion.negative}</li>
+        <li><span style={{fontWeight: "600"}}>Grade</span>: {dt.stats.fleschKincaid.grade}</li>
+        <li><span style={{fontWeight: "600"}}>Interpretation</span>: {dt.stats.fleschKincaid.interpretation}</li>
+      </ol>
     );
   }
 
