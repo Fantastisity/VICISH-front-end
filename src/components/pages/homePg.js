@@ -24,7 +24,7 @@ export default function Home() {
               <span id="home-content1">Start A New Journey</span>
             </h1>
             <h1>
-              <span id="home-content2">in Victoria</span>
+              <span id="home-content2" style={{marginLeft: "6%"}}>in Victoria</span>
             </h1>
           </div>
         </div>
