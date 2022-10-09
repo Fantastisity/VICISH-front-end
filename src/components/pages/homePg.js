@@ -36,7 +36,7 @@ export default function Home() {
               </p>
               <img src={homeIcon1} style={{ marginLeft: "1%" }} />
               <div className="IconP1" style={{ marginLeft: "12%" }}>
-              <CountUp start={0} end={1.27} duration={2} decimals={2} suffix={" million"}>
+              <CountUp start={0} end={166319} duration={2}>
                 {({ countUpRef, start }) => (
                   <VisibilitySensor onChange={start}>
                     <span ref={countUpRef}  style={{fontSize:"24px"}}/>
