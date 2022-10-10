@@ -60,13 +60,13 @@ const SlangQuiz = () => {
           {quizzes.length && index.map((i, key) => {
             return (
               <div key={key} className="slangcard">
-                <div style={{backgroundColor: colors[key]}} className="content">
+                <div style={{backgroundColor: colors[key], borderRadius: "20px", border: "1px solid `${colors[key]}`"}} className="content">
                   <div className="front">
                     <p>{quizzes[i].Slang}</p>
                     <br></br>
                   </div>
 
-                  <div style={{backgroundColor: colors[key]}} className="back">
+                  <div style={{backgroundColor: colors[key], borderRadius: "20px", border: "1px solid `${colors[key]}`"}} className="back">
                     <p className="description">
                       {quizzes[i].Meaning}
                     </p>
