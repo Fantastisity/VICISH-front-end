@@ -237,7 +237,7 @@ const StatisticsPg = () => {
             backgroundColor: "#FFFFFF",
             boxShadow: '5px 5px 9px #F4AAB9',
             padding: "1%",
-            width:"fit-content",
+            width:"84rem",
             display: "block"
           }}>
              <div className="statRow">
