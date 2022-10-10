@@ -263,7 +263,7 @@ const StatisticsPg = () => {
             marginTop: "5%",
             marginLeft: "3rem",
             borderRadius: "20px",
-            width: "84rem",
+            width: "80rem",
             backgroundColor: "#FFFFFF",
             boxShadow: '1px 2px 9px #F4AAB9'
           }}
