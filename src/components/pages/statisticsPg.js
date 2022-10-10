@@ -244,17 +244,17 @@ const StatisticsPg = () => {
              <div><img src={zooPic} style={{width:"320px", height:"300px"}}></img></div>
              <div><img src={parPic} style={{width:"320px", height:"300px"}}></img></div>
              <div><img src={artPic} style={{width:"320px", height:"300px"}}></img></div>
-             <p style={{width:"320px", height:"300px", backgroundColor:"#FFF4E2", padding: "2%", fontWeight: "600"}}>Melbourne has many places desires to visit Federation Square,
+             <div style={{width:"320px", height:"300px", backgroundColor:"#FFF4E2", padding: "2%", fontWeight: "600"}}>Melbourne has many places desires to visit Federation Square,
               Melbourne's cultural hub, features avant-garde art from the
               Australian Centre for the Moving Image (ACMI) and Aboriginal works
               from the Ian Potter Centre at the National Gallery of Victoria
               (NGV Australia), showcasing different aspects of Australia's human
-              culture.</p>
+              culture.</div>
              </div>
              <div className="statRow">
-             <p style={{width:"320px", height:"300px", backgroundColor:"#F0AB98", padding: "2%", fontWeight: "600"}}>Melbourne is just over an hour's drive south to the Mornington Peninsula, with its bays, beaches, wineries and orchards. You can also enjoy a Turkish bath in the spa area</p>
+             <div style={{width:"320px", height:"300px", backgroundColor:"#F0AB98", padding: "2%", fontWeight: "600"}}>Melbourne is just over an hour's drive south to the Mornington Peninsula, with its bays, beaches, wineries and orchards. You can also enjoy a Turkish bath in the spa area</div>
              <div><img src={libPic} style={{width:"320px", height:"300px"}}></img></div>
-             <p style={{width:"320px", height:"300px", backgroundColor:"#EC7F6A", padding: "2%", fontWeight: "600"}}>Melbourne's most fashionable venues are in the South Yarra district, such as the popular Two Birds One Stone breakfast place. Chapel Street separates this neighbourhood from the popular Two Birds One Stone breakfast restaurant and is lined with boutiques all the way to Prahran, where you can visit the crowded Parham Market and turn into the eclectic Greville Street.</p>
+             <div style={{width:"320px", height:"300px", backgroundColor:"#EC7F6A", padding: "2%", fontWeight: "600"}}>Melbourne's most fashionable venues are in the South Yarra district, such as the popular Two Birds One Stone breakfast place. Chapel Street separates this neighbourhood from the popular Two Birds One Stone breakfast restaurant and is lined with boutiques all the way to Prahran, where you can visit the crowded Parham Market and turn into the eclectic Greville Street.</div>
              <div><img src={cinPic} style={{width:"320px", height:"300px"}}></img></div>
              </div>
              
