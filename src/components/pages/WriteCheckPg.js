@@ -31,7 +31,7 @@ const WriteCheck = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#F0BA98", height: "100%" }}>
+    <div style={{ backgroundColor: "#F0BA98", height: "auto" }}>
       <div
         className="headerBg"
         style={{
@@ -75,10 +75,11 @@ const WriteCheck = () => {
       </div>
       <div
         style={{
-          width: "30%",
+          width: "40%",
           marginLeft: "5%",
           paddingBottom: "5%",
           backgroundColor: "#F0BA98", 
+          position: "relative"
         }}
       >
         <Accordion
@@ -91,9 +92,7 @@ const WriteCheck = () => {
             aria-controls="panel1bh-content"
             id="panel1bh-header"
           >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>
-              Learning Tips
-            </Typography>
+            <p style={{fontWeight: "600"}}>Learning Tips</p>
           </AccordionSummary>
           <AccordionDetails>
             <img

@@ -7,6 +7,8 @@ import cinPic from "../../images/cinPic.png";
 import artPic from "../../images/artPic.png";
 import parPic from "../../images/parPic.png";
 import zooPic from "../../images/zooPic.png";
+import { Doughnut } from 'react-chartjs-2';
+import "chartjs-plugin-datalabels";
 
 const StatisticsPg = () => {
   const [stat, setStat] = useState([]);
@@ -83,117 +85,88 @@ const StatisticsPg = () => {
     },
   };
 
-  const state2 = {
-    series: [],
-    options: {
-      chart: {
-        height: 390,
-        type: "radialBar",
+  const data = {
+    labels: ["Popular music",
+    "Classical music concerts/ Musicals and operas",
+    "Performing arts",
+    "Art galleries",
+    "Zoological parks, wildlife parks and aquariums",
+    "Botanic gardens",
+    "Museums",
+    "Libraries and Archives",
+    "Cinemas"],
+    datasets: [
+      {
+        label: '# of Visits',
+        data: [],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.5)',
+          'rgba(54, 162, 235, 0.5)',
+          'rgba(255, 206, 86, 0.5)',
+          'rgba(75, 192, 192, 0.5)',
+          'rgba(153, 102, 255, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          "rgba(214, 111, 164, 0.8)",
+          'rgba(156, 214, 111, 0.8)',
+          'rgba(201, 179, 162, 0.8)'
+        ],
+        borderColor:  [
+          'rgba(255, 99, 132, 0.5)',
+          'rgba(54, 162, 235, 0.5)',
+          'rgba(255, 206, 86, 0.5)',
+          'rgba(75, 192, 192, 0.5)',
+          'rgba(153, 102, 255, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          "rgba(214, 111, 164, 0.8)",
+          'rgba(156, 214, 111, 0.8)',
+          'rgba(201, 179, 162, 0.8)'
+        ],
+        borderWidth: 1,
       },
-      plotOptions: {
-        radialBar: {
-          inverseOrder: false,
-          startAngle: 0,
-          endAngle: 270,
-          offsetX: -200,
-          offsetY: 0,
-          hollow: {
-              margin: 5,
-              size: '50%',
-              background: 'transparent',
-              image: undefined,
-              imageWidth: 150,
-              imageHeight: 150,
-              imageOffsetX: 0,
-              imageOffsetY: 0,
-              imageClipped: true,
-              position: 'front',
-              dropShadow: {
-                enabled: false,
-                top: 0,
-                left: 0,
-                blur: 3,
-                opacity: 0.5
-              }
-          },
-          dataLabels: {
-            name: {
-              show: true,
-            },
-            value: {
-              show: false,
-            },
-          },
-        },
-      },
-      colors: [
-        "#f23000",
-        "#f24900",
-        "#f28100",
-        "#f2a500",
-        "#e9f507",
-        "#aaf507",
-        "#62f507",
-        "#07f57e",
-        "#07f5ed",
-      ],
-      labels: [
-        "Popular music",
-        "Classical music concerts/ Musicals and operas",
-        "Performing arts",
-        "Art galleries",
-        "Zoological parks, wildlife parks and aquariums",
-        "Botanic gardens",
-        "Museums",
-        "Libraries and Archives",
-        "Cinemas",
-      ],
-      legend: {
-        show: true,
-        floating: true,
-        fontSize: "15px",
-        position: "left",
-        offsetX: 347,
-        width: 500,
-        offsetY: 35,
-        labels: {
-          useSeriesColors: true,
-        },
-        markers: {
-          size: 0,
-        },
-        formatter: function (seriesName, opts) {
-          return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
-        },
-        itemMargin: {
-          vertical: 3,
-        },
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            legend: {
-              show: false,
-            },
-          },
-        },
-      ],
+    ],
+  };
+
+  const options = {
+    cutoutPercentage: 50,
+    layout: {
+      padding: 0
     },
+    legend: {
+      display: true,
+      position: "right",
+      align: "middle",
+      labels: {
+        boxWidth: 30,
+        padding: 20
+      }
+    },
+    plugins: {
+      datalabels: {
+        color: "#1f4e56",
+        font: {
+          weight: "bold",
+          size: 16
+        },
+        padding: 6,
+        formatter: (value) => {
+          return value;
+        }
+      }
+    }
   };
 
   const gen = () => {
     for (var i in stat) {
       if (i == 15) {
-        state2.series.push(stat[i].Popular_music);
-        state2.series.push(stat[i].Classical_music);
-        state2.series.push(stat[i].Performing_arts);
-        state2.series.push(stat[i].Art_galleries);
-        state2.series.push(stat[i].Zoological_parks);
-        state2.series.push(stat[i].Botanic_gardens);
-        state2.series.push(stat[i].Museums);
-        state2.series.push(stat[i].Libraries_and_Archives);
-        state2.series.push(stat[i].Cinemas);
+        data.datasets[0].data.push(stat[i].Popular_music);
+        data.datasets[0].data.push(stat[i].Classical_music);
+        data.datasets[0].data.push(stat[i].Performing_arts);
+        data.datasets[0].data.push(stat[i].Art_galleries);
+        data.datasets[0].data.push(stat[i].Zoological_parks);
+        data.datasets[0].data.push(stat[i].Botanic_gardens);
+        data.datasets[0].data.push(stat[i].Museums);
+        data.datasets[0].data.push(stat[i].Libraries_and_Archives);
+        data.datasets[0].data.push(stat[i].Cinemas);
         continue;
       }
       state.options.xaxis.categories.push(stat[i].Place);
@@ -240,17 +213,18 @@ const StatisticsPg = () => {
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: "20px",
-              width: "70%",
+              width: "52%",
               marginRight: "3%",
               boxShadow: '1px 2px 9px #F4AAB9'
             }}
           >
-            <ReactApexChart
+            {/* <ReactApexChart
               options={state2.options}
-              series={state2.series}
+              series={data.datasets[0].data}
               type="radialBar"
               height={350}
-            />
+            /> */}
+            <Doughnut data={data} options={options}/>
           </div>
         </div>
 
@@ -289,7 +263,7 @@ const StatisticsPg = () => {
             marginTop: "5%",
             marginLeft: "3rem",
             borderRadius: "20px",
-            width: "94%",
+            width: "84rem",
             backgroundColor: "#FFFFFF",
             boxShadow: '1px 2px 9px #F4AAB9'
           }}
@@ -301,7 +275,7 @@ const StatisticsPg = () => {
             height={350}
           />
         </div>
-        {/* <ReactApexChart options={state2.options} series={state2.series} type="radialBar" height={390} />
+        {/* <ReactApexChart options={state2.options} series={data.datasets[0].data} type="radialBar" height={390} />
            <ReactApexChart options={state.options} series={state.series} type="bar" height={350} /> */}
       </div>
     );

@@ -180,7 +180,7 @@ const userData = [
 const BankPg = () => {
   return (
     <div style={{backgroundColor: "#FFF4E2", height: "100%"}}>
-      <div className="headerBg" style={{backgroundImage:`url(${bankBg}`, backgroundSize:"cover", color:"#000000"}}>Set up Bank Account</div>
+      <div className="headerBg" style={{backgroundImage:`url(${bankBg}`, backgroundSize:"cover", color:"#000"}}>Set up Bank Account</div>
       <div className="mainBankPage">
         <div className="slideLayout">
           <Slideshow />

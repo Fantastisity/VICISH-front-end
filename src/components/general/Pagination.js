@@ -35,6 +35,7 @@ const Pagination = props => {
   return (
     <ul
       className={classnames('pagination-container', { [className]: className })}
+      style={{paddingBottom: "2%", paddingTop: "2%"}}
     >
       <li
         className={classnames('pagination-item', {
