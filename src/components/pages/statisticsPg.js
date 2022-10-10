@@ -237,7 +237,7 @@ const StatisticsPg = () => {
             boxShadow: '5px 5px 9px #F4AAB9',
             padding: "1%",
             width:"fit-content",
-            display: "flex"
+            display: "inline-flex"
           }}>
              <div style={{display:"inline-flex", gap: "1%"}}>
              <div><img src={zooPic} style={{width:"320px", height:"300px"}}></img></div>
