@@ -214,7 +214,7 @@ const StatisticsPg = () => {
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: "20px",
-              width: "52%",
+              width: "55%",
               marginRight: "3%",
               boxShadow: '1px 2px 9px #F4AAB9'
             }}
@@ -281,7 +281,7 @@ const StatisticsPg = () => {
             marginTop: "5%",
             marginLeft: "3rem",
             borderRadius: "20px",
-            width: "82rem",
+            width: "84rem",
             backgroundColor: "#FFFFFF",
             boxShadow: '1px 2px 9px #F4AAB9'
           }}
@@ -293,8 +293,6 @@ const StatisticsPg = () => {
             height={350}
           />
         </div>
-        {/* <ReactApexChart options={state2.options} series={data.datasets[0].data} type="radialBar" height={390} />
-           <ReactApexChart options={state.options} series={state.series} type="bar" height={350} /> */}
       </div>
     );
   };
