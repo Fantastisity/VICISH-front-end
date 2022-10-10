@@ -1,0 +1,7 @@
+.statRow {
+  display: inline-flex;
+-webkit-display: inline-flex;
+-moz-display: inline-flex;
+-ms--display: inline-flex;
+  gap: 1%;
+}
