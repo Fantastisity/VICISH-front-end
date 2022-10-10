@@ -57,16 +57,16 @@ const SlangQuiz = () => {
             Learn the ten popular slang using flip cards, and then welcome to play our Australian Slang Game!
       </div>
       <div className="learnSlang">
-          {quizzes.length && index.map((i, key) => {
+          {quizzes.length ? index.map((i, key) => {
             return (
               <div key={key} className="slangcard">
-                <div style={{backgroundColor: colors[key], borderRadius: "20px", border: "1px solid `${colors[key]}`"}} className="content">
+                <div style={{backgroundColor: colors[key], borderRadius: "20px", border: "2px solid `${colors[key]}`", boxShadow: "5px 10px `${colors[key]}`"}} className="content">
                   <div className="front">
                     <p>{quizzes[i].Slang}</p>
                     <br></br>
                   </div>
 
-                  <div style={{backgroundColor: colors[key], borderRadius: "20px", border: "1px solid `${colors[key]}`"}} className="back">
+                  <div style={{backgroundColor: colors[key], borderRadius: "20px", border: "2px solid `${colors[key]}`", boxShadow: "5px 10px `${colors[key]}`"}} className="back">
                     <p className="description">
                       {quizzes[i].Meaning}
                     </p>
@@ -74,7 +74,7 @@ const SlangQuiz = () => {
                 </div>
               </div>
             )
-          })}
+          }) : <p style={{textAlign: "center"}}>Loading...</p>}
           <Button variant="contained" onClick={() => changeIndex()} style = {{marginLeft: "44%", backgroundColor: "#e8b17d", color: "black"}}>
             Show New Phrases
           </Button>
