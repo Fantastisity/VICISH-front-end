@@ -253,9 +253,6 @@ const BankPg = () => {
                         show: true,
                         total: {
                           show: true,
-                          formatter: (value) => {
-                            return value + " million";
-                          },
                           fontSize: 15,
                           color: "#f90000",
                         },
