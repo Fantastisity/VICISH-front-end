@@ -251,10 +251,20 @@ const BankPg = () => {
                     donut: {
                       labels: {
                         show: true,
+                        value: {
+                          formatter: function (val) {
+                              return val + " million"
+                            }
+                        }
                         total: {
                           show: true,
                           fontSize: 15,
                           color: "#f90000",
+                          formatter: function (w) {
+                    return w.globals.seriesTotals.reduce((a, b) => {
+                      return a + b
+                    }, 0) + " million"
+                  }
                         },
                       },
                     },
