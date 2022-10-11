@@ -21,10 +21,10 @@ export default function Home() {
         <div className="homepageDivider">
           <div className="titlePos">
             <h1>
-              <span id="home-content1">Start A New Journey</span>
+              <span id="home-content1" style={{textAlign: "center"}}>Start A New Journey</span>
             </h1>
             <h1>
-              <span id="home-content2" style={{marginLeft: "2%"}}>in Victoria</span>
+              <span id="home-content2" style={{textAlign: "center"}}>in Victoria</span>
             </h1>
           </div>
         </div>
