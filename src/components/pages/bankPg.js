@@ -255,7 +255,7 @@ const BankPg = () => {
                           formatter: function (val) {
                               return val + " million"
                             }
-                        }
+                        },
                         total: {
                           show: true,
                           fontSize: 15,
