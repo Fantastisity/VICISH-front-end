@@ -243,8 +243,7 @@ const BankPg = () => {
                 ],
                 title: {
                   text: "The donut chart below shows the proportion of users' choice between the Four Big Banks in Australia.(in millions)",
-                  align: 'center',
-                  offsetX: "10rem"
+                  align: 'center'
                 },
 
                 plotOptions: {
@@ -252,9 +251,6 @@ const BankPg = () => {
                     donut: {
                       labels: {
                         show: true,
-                        name: {
-                          offsetX: "-4rem"
-                        },
                         total: {
                           show: true,
                          
