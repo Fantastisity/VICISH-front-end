@@ -230,6 +230,7 @@ const BankPg = () => {
             <h2 className="text-left" style={{color: "#EC5F55"}}>Users Proportion of Big Four Banks</h2>
             <Chart
             className="chartSize"
+            style={{textAlign: "center"}}
               type="donut"
               // width={1200}
               // height={500}
