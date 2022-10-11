@@ -230,7 +230,6 @@ const BankPg = () => {
             <h2 className="text-left" style={{color: "#EC5F55"}}>Users Proportion of Big Four Banks</h2>
             <Chart
             className="chartSize"
-            style={{textAlign: "center"}}
               type="donut"
               // width={1200}
               // height={500}
@@ -244,6 +243,7 @@ const BankPg = () => {
                 ],
                 title: {
                   text: "The donut chart below shows the proportion of users' choice between the Four Big Banks in Australia.(in millions)",
+                  align: 'center'
                 },
 
                 plotOptions: {
