@@ -242,7 +242,7 @@ const BankPg = () => {
                   "Australia and NEW Zealand Banking Group (ANZ)",
                 ],
                 title: {
-                  text: "The donut chart below shows the proportion of users' choice between the Four Big Banks in Australia.(in millions)",
+                  text: "The donut chart below shows the proportion of users' choice between the Four Big Banks in Australia (in millions)",
                   align: 'center'
                 },
 
