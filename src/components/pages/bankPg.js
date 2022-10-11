@@ -222,11 +222,6 @@ const BankPg = () => {
                 </div>
               ))}
             </form>
-            <div className="download-div">
-            <a href="../../Checklist.pdf" download>
-            Click to download
-          </a>
-          </div>
           </div>
         </div>
 
