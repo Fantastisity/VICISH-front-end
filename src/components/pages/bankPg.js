@@ -226,8 +226,8 @@ const BankPg = () => {
         </div>
 
         <div className="chartLayout">
-          <div className="container-fluid mt-3 mb-3">
-            <h2 className="text-left">Users Proportion of Big Four Banks</h2>
+          <div className="container-fluid mt-3 mb-3" style={{textAlign: "center"}}>
+            <h2 className="text-left" style={{color: "#EC5F55"}}>Users Proportion of Big Four Banks</h2>
             <Chart
             className="chartSize"
               type="donut"
