@@ -21,8 +21,8 @@ export default function Home() {
         </div>
         <div className="homepageDivider">
           <div className="titlePos">
-              <span id="home-content1" style={{marginLeft: "-30%", position: "absolute", marginTop: "6%"}}>Start A New Journey in Victoria</span>
-              <button className="button1"  style={{marginLeft: "5%", position: "absolute", marginTop: "15%"}}>
+              <span id="home-content1" style={{marginLeft: "-24%", position: "absolute", marginTop: "3%"}}>Start A New Journey in Victoria</span>
+              <button className="button1"  style={{marginLeft: "5%", position: "absolute", marginTop: "10%"}}>
               <Link to='/slang' style={{textDecoration: 'none', color: "black", fontSize: "15px", fontWeight: "600" }}>
                     Start Exploring
               </Link>
