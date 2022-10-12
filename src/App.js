@@ -10,6 +10,7 @@ import VICISHMap from './components/landmark/VICISHMap';
 import SlangQuiz from './components/pages/slangQuizPg';
 import EnglishQuiz from './components/pages/englishQuiz';
 import Bank from './components/pages/bankPg';
+import UnmissablePg from './components/pages/unmissablePg';
 import WriteCheck from './components/pages/WriteCheckPg';
 import Diet from './components/pages/dietPg';
 import { RecipeReq } from "./components/recipe/recipeReqHandler";
@@ -21,6 +22,12 @@ import StatisticsPg from './components/pages/statisticsPg';
 import Artwork from './components/landmark/artworkPg';
 import Landmark from './components/landmark/landmarkPg';
 import MusicVenue from './components/landmark/musicPg';
+import SafePg from './components/pages/safePg';
+import SubSafePg1 from './components/pages/subSafePg1';
+ import SubSafePg2 from './components/pages/subSafePg2';
+ import SubSafePg3 from './components/pages/subSafePg3';
+ import SubSafePg4 from './components/pages/subSafePg4';
+
 function App() {
   return (
     <div className='App'>
@@ -37,15 +44,18 @@ function App() {
         <Route path='/english-quiz' element={<EnglishQuiz/>} />
         <Route path='/writing' element={<WriteCheck />}/>
         <Route path='/diet' element={<Diet/>} />
-        <Route path='/recipe' element={<RecipeReq/>} />
+        {/* <Route path='/recipe' element={<RecipeReq/>} /> */}
         <Route path='/ptv' element={<PTV/>} />
         <Route path='/bank' element={<Bank/>} />
         <Route path='/meal-plan' element={<MenuPlanner/>} />
         <Route path='/statistics' element={<StatisticsPg/>} />
         <Route path='/transport' element={<Transport/>} />
-        <Route path='/landmarks' element={<Landmark/>}/>
-        <Route path='/artworks' element={<Artwork/>}/>
-        <Route path='/music-venue' element={<MusicVenue/>}/>
+        <Route path='/Emergency' element={<SubSafePg1/>}/>
+         <Route path='/transport-personal' element={<SubSafePg2/>}/>
+         <Route path='/sun-and-water' element={<SubSafePg3/>}/>
+         <Route path='/fire' element={<SubSafePg4/>}/>
+         <Route path='/health-and-safety' element={<SafePg/>}/>
+         <Route path='/explore-city' element={<UnmissablePg/>}/>
       </Routes>
     </Router>
     </div>
