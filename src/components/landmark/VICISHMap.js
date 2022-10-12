@@ -249,7 +249,9 @@ export default function VICISHMap() {
             <Link to="/explore-melb">
               <img src={backicon} alt="" style={{width: "23px", position: "absolute", marginTop: "4%", marginLeft: "-40%"}}/>
             </Link>
-            <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>VENUE LOCATIONS</h1>
+            {type === 1 ? <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>LANDMARKs</h1> : 
+            (type === 2 ? <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>MUSIC VENUEs</h1>) :
+              <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>ART GALLERIES</h1>}
           </div>
           <div id='listings' className='listings'></div>
           {stores && stores.features && <Pagination
