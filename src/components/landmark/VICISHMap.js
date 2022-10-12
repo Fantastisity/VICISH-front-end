@@ -23,7 +23,7 @@ export default function VICISHMap() {
   const [stores, setStores] = useState({})
   var pageSize = 5;
   const [currentPage, setCurrentPage] = useState(0);
-  const [mapReady, setMapReady] = useState(0)
+  const [mapReady, setMapReady] = useState(false)
   const [data, setData] = useState([])
   useEffect(() => {
     setPageIsMounted(true)
@@ -58,6 +58,7 @@ export default function VICISHMap() {
   }, [type]);
 
   useEffect(() => {
+    console.log(mapReady, stores === null)
     if (mapReady && stores) {
       if (Map.getSource("places")) Map.removeSource("places");
       const firstPageIndex = (currentPage - 1) * pageSize;
