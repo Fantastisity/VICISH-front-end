@@ -62,12 +62,12 @@ const SlangQuiz = () => {
               <div key={key} className="slangcard">
                 <div style={{backgroundColor: colors[key], borderRadius: "23px", border: "3px solid", height: "12rem"}} className="content">
                   <div className="front">
-                    <p style={{marginTop: "8%"}}>{quizzes[i].Slang}</p>
+                    <p style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}>{quizzes[i].Slang}</p>
                     <br></br>
                   </div>
 
                   <div style={{backgroundColor: colors[key], borderRadius: "23px", border: "3px solid", height: "12rem"}} className="back">
-                    <p className="description">
+                    <p className="description" style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", overflowY: "scroll"}}>
                       {quizzes[i].Meaning}
                     </p>
                   </div>
