@@ -74,6 +74,7 @@ export default function VICISHMap() {
   }, [data]);
 
   useEffect(() => {
+    console.log(mapLoaded.current, stores.length)
     if (mapLoaded.current && stores) {
       const popUps = document.getElementsByClassName('mapboxgl-popup');
       if (popUps[0]) popUps[0].remove();
