@@ -112,7 +112,7 @@ export const socialObj = {
       col: "#f1e4e4",
     },
     {
-      title: "12 Unmissable things in Melbourne",
+      title: "Attractions in Melbourne",
       info: "empty",
       nav: "explore-city",
       col: "#ede3dd",
