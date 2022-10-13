@@ -29,7 +29,7 @@ const UnmissablePg = () => {
         className="headerBg"
         style={{ backgroundImage: `url(${exploreBg}`, backgroundSize: "cover" }}
       >
-        12 Amazing Things to Do in Melbourne (+ Day Trips!)
+        12 Amazing Things to Do in Melbourne
       </div>
       <div style={{ justifyContent: "center", alignItems: "center" }}>
         <div style={{ paddingBottom: "5%" }}>
