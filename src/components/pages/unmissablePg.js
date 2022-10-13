@@ -16,6 +16,8 @@ import li11 from "../../images/li11.jpg";
 import li111 from "../../images/li111.jpg";
 import li12 from "../../images/li12.jpg";
 import "./unmissablePg.css"
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 const UnmissablePg = () => {
   const [show, setShow] = useState(true);
@@ -75,7 +77,17 @@ const UnmissablePg = () => {
             }}
           >
             <p style={{ textAlign: "center" }}>Contents</p>
-            {<button className="unmissable-button" onClick={() => setShow(!show)}>toggle</button>}
+            <FormControlLabel
+        sx={{
+          display: 'block',
+          marginLeft: "43%"
+        }}
+        control={
+          <Switch checked={show} onChange={() => setShow(!show)} color="primary">toggle</Switch>
+        }
+        label={show ? "Hide" : "Show"}
+      />
+            
             {show ? (
               <ul style={{ listStyleType: "none" }}>
                 <li>
