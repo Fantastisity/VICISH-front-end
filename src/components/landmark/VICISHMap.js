@@ -17,9 +17,9 @@ const MAPBOX_TOKEN =
 export default function VICISHMap() {
   const location = useLocation();
   const { type } = location !== null ? location.state : null;
-  const [Map, setMap] = useState();
+  const [Map, setMap] = useState(null);
   const [currmarkers, setMarkers] = useState([])
-  const [stores, setStores] = useState({})
+  const [stores, setStores] = useState(null)
   var pageSize = 5;
   const [currentPage, setCurrentPage] = useState(0);
   const [mapReady, setMapReady] = useState(false)
@@ -55,6 +55,8 @@ export default function VICISHMap() {
   }, [type]);
   
   useMemo(() => {
+    console.log("map constructed: ", Map !== null)
+    console.log("data loaded: ", data.length > 0)
     if (data && Map) {
       let tmp = {'type': 'FeatureCollection', 'features': []}
       for (var i in data) {
@@ -71,6 +73,8 @@ export default function VICISHMap() {
   }, [data, Map]);
 
   useEffect(() => {
+    console.log("map loaded: ", mapLoaded.current !== null)
+    console.log("geojson constructed: ", stores !== null)
     if (mapLoaded.current && stores) {
       const popUps = document.getElementsByClassName('mapboxgl-popup');
       if (popUps[0]) popUps[0].remove();
