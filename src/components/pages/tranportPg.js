@@ -155,7 +155,7 @@ const Transport = () => {
       <p style={{fontSize: "26px", fontWeight: "600", color: "#ed674c", marginTop: "22%", marginLeft: "42%"}}>Myki Fare Calculator</p>
       <div className="main-myki">
         <form onSubmit={handleSubmit} style={{position: "absolute", marginTop: "-24%"}}>
-          <div className="box">
+          <div className="trans-box">
             <h2>1. Select a fare type</h2>
             <select value={option1} onChange={handleChangeOption1} style={{width: "140%", marginTop: "3%", marginLeft: "-17%", border: "1px solid black"}}>
               {options1.map((option) => (
@@ -164,7 +164,7 @@ const Transport = () => {
             </select>
           </div>
           <br></br>
-          <div className="box">
+          <div className="trans-box">
             <h2>2. Select a day</h2>
             {/* <Select value = {option2} options = {options2} onChange={handleChangeOption2} autoFocus={true} defaultValue={option2}></Select> */}
             <select value={option2} onChange={handleChangeOption2} style={{width: "140%", marginTop: "3%", marginLeft: "-17%", border: "1px solid black"}}>
@@ -174,7 +174,7 @@ const Transport = () => {
             </select>
           </div>
           <br></br>
-          <div className="box">
+          <div className="trans-box">
             <h2>3. Select a product</h2>
             {/* <Select value = {option3} options = {options3} onChange={handleChangeOption3} autoFocus={true} defaultValue={option3}></Select> */}
             <select  value={option3} onChange={handleChangeOption3} style={{width: "140%", marginTop: "3%", marginLeft: "-17%", border: "1px solid black"}}>
@@ -184,7 +184,7 @@ const Transport = () => {
             </select>
           </div>
           <br></br>
-          <div className="box">
+          <div className="trans-box">
             <h2>4. Select a Zone</h2>
             <select value={option4} onChange={handleChangeOption4} style={{width: "140%", marginTop: "3%", marginLeft: "-17%", border: "1px solid black"}}>
               {options4.map((option) => (
