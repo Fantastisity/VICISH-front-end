@@ -18,6 +18,8 @@ import li12 from "../../images/li12.jpg";
 import "./unmissablePg.css"
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import StickyBox from "react-sticky-box";
+import Divider from "@mui/material/Divider";
 
 const UnmissablePg = () => {
   const [show, setShow] = useState(true);
@@ -42,38 +44,15 @@ const UnmissablePg = () => {
             <img src={cityPic} alt=""></img>
           </div>
         </div>
-        <div style={{ paddingLeft: "25%", paddingRight: "25%" }}>
-          <p>
-            Melbourne, the cultural capital of Australia, is quite a popular
-            destination for tourists from all over the world heading to the Down
-            Under! For all those travelers looking for the best things to do in
-            Melbourne, Australia’s most “European” city, read on!
-          </p>
-          <br></br>
-          <p>
-            A hub for many interesting things including museums, vintage stores,
-            coffee shops, art galleries, events, festivals etc., there is
-            literally nothing you cannot do in this city!
-          </p>
-          <br></br>
-          <p>
-            In order to share all the love that I have for this city, I have
-            created this ultimate Melbourne travel guide that will take you
-            through the best places to visit in Melbourne and have included some
-            practical information at the end so as to help you organize your
-            Melbourne trip more efficiently.
-          </p>
-          <br></br>
-          <p>
-            Let’s get to it – here’s my list of the best things to do in
-            Melbourne City:
-          </p>
+        <StickyBox offsetTop={300} offsetBottom={20}>
           <div
             style={{
-              backgroundColor: "#f9f9f9",
+              backgroundColor: "#FFE4D8",
               border: "1px solid #aaa",
               padding: "10px",
-              marginTop: "2%",
+              marginTop: "15%",
+              width:"15%",
+              marginLeft:'1%'
             }}
           >
             <p style={{ textAlign: "center" }}>Contents</p>
@@ -90,27 +69,44 @@ const UnmissablePg = () => {
             
             {show ? (
               <ul style={{ listStyleType: "none" }}>
-                <li>
-                  <a href="#1">1. Explore the city Center</a>
+                <li style={{marginTop:"1%", marginBottom:'3%'}}>
+                  <a href="#1" style={{textDecoration: 'none', color:"black", }}>City Center</a>
                 </li>
-                <li>
-                  <a href="#2">2. Hop on a train at Flinders Street Station</a>
+                <Divider style={{ color: "black"}} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}>
+                  <a href="#2" style={{textDecoration: 'none', color:"black"}}>Flinders Street Station</a>
                 </li>
-                <li><a href="#3">3. Explore Queen Victoria Market</a></li>
-                <li><a href="#4">4. Try the famous Melbourne coffee</a></li>
-                <li><a href="#5"> 5. Become an art expert at National Gallery of Victoria (NGV)</a></li>
-                <li><a href="#6">6. Explore St Kilda and the iconic Luna Park in Melbourne</a></li>
-                <li><a href="#7">7. Learn more about aboriginal culture in Koorie Heritage
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#3" style={{textDecoration: 'none', color:"black"}}>Queen Victoria Market</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#4" style={{textDecoration: 'none', color:"black"}}>Melbourne coffee</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#5" style={{textDecoration: 'none', color:"black"}}>National Gallery of Victoria (NGV)</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#6" style={{textDecoration: 'none', color:"black"}}>St Kilda &amp; Luna Park in Melbourne</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#7" style={{textDecoration: 'none', color:"black"}}>Koorie Heritage
                   Trust</a>
                 </li>
-                <li><a href="#8">8. Celebrate multiculturality at the Immigration Museum</a></li>
-                <li><a href="#9">9. Admire the street art and sculptures</a></li>
-                <li><a href="#10"> 10. Enjoy a drink in one of Melbourne’s best rooftop bars</a></li>
-                <li><a href="#11">11. Relax at the Royal Botanic Gardens</a></li>
-                <li><a href="#12">12. Enjoy the view from Eureka Skydeck</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#8" style={{textDecoration: 'none', color:"black"}}>Immigration Museum</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#9" style={{textDecoration: 'none', color:"black"}}>Street art</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#10" style={{textDecoration: 'none', color:"black"}}>Dinning</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#11" style={{textDecoration: 'none', color:"black"}}>Royal Botanic Gardens</a></li>
+                <Divider style={{ color: "black" }} />
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#12" style={{textDecoration: 'none', color:"black"}}>Eureka Skydeck</a></li>
               </ul>
             ) : null}
           </div>
+          </StickyBox>
+        <div style={{ paddingLeft: "25%", paddingRight: "25%", marginTop:"-45%" }}>
+          <p>
+          Melbourne is a hub for many interesting things including museums, vintage stores, coffee shops, art galleries, events, festivals etc., there is literally nothing you cannot do in this city! This ultimate guide that will take you through the best places to visit in Melbourne.
+          </p>
+          <br></br>
 
           <div>
             <div style={{marginBottom:"3%"}}>
@@ -129,23 +125,11 @@ const UnmissablePg = () => {
                 <img src={li1} alt=""></img>
               </div>
               <p>
-                There are countless Melbourne city attractions to enjoy and see,
-                and the smartest way to go about it is by taking one of the
-                amazing Melbourne walking tours! Most walking tours take you
-                through the city centre.
+              There are countless Melbourne city attractions to enjoy and see, and the smartest way to go about it is by taking one of the amazing Melbourne walking tours! Most walking tours take you through the city centre and take you through Melbourne’s top sightseeing spots including Federation Square, Flinders Street Station and more!
               </p>
               <br></br>
               <p>
-                I recommend checking out this 2.5 hour Melbourne city tour, in
-                which a knowledgeable guide will take you through Melbourne’s
-                top sightseeing spots including Federation Square, Flinders
-                Street Station and more!
-              </p>
-              <br></br>
-              <p>
-                NOTE: If you are not the type of person who enjoys walking, did
-                you know there is also the option to hop on the free tram that
-                goes through the city centre?
+              NOTE: If you are not the type of person who enjoys walking, did you know there is also the option to hop on the free tram that goes through the city centre?
               </p>
             </div>
             <div style={{marginBottom:"3%"}}>
@@ -168,11 +152,7 @@ const UnmissablePg = () => {
               </p>
               <br></br>
               <p>
-              While you’re at Flinders Street Station, you can admire the beautiful yellow victorian building, explore its interiors and get lost going up and down the floors. On the third floor, there is an eerie old abandoned ballroom that is, unfortunately, closed for visitors! However, you can always take a leap of faith and kindly ask an employee to let you in!
-              </p>
-              <br></br>
-              <p>
-              Finally, make sure to also check out Federation Square, which is just across the street.
+              While at Flinders Street Station, you can admire the beautiful yellow Victorian building, explore its interiors and get lost going up and down the floors. Also check out Federation Square, which is just across the street.
               </p>
               <br></br>
               <p>FUN FACT: Flinders Street Station opened in 1854, which made it the first railway station in an Australian city!</p>
@@ -207,8 +187,6 @@ const UnmissablePg = () => {
               FUN FACT: Here’s an interesting story so you can get a better image of the way Australians are: In the 1960s, the mayor of Melbourne wanted to destroy Queen Victoria Market in order to build a parking lot, but the neighbors reacted and forced him to turn the building into a national trust, so that it could never be destroyed!
               </p>
               <br></br>
-              <p>You can also check it out with this 2-hour foodie tour that will take you through the amazing world of Queen Victoria Market. Great for every food loving people out there!</p>
-              <br></br>
               <p>PRICE: Free</p>
             </div>
 
@@ -233,10 +211,6 @@ const UnmissablePg = () => {
               <br></br>
               <p>
               And drinking it is one of the best activities to do in Melbourne! There are so many cafés in Australia’s cultural capital that the chances of you not coming across one of them are almost non-existent.
-              </p>
-              <br></br>
-              <p>
-              PRO TIP: You can try out the most delicious coffees on this 3-hour coffee walk.
               </p>
             </div>
 
@@ -286,7 +260,7 @@ const UnmissablePg = () => {
                 <img src={li6} alt=""></img>
               </div>
               <p>
-              St Kilda is Melbourne’s cutest neighborhood. With its historic buildings, seaside restaurants and cafés, beaches and exciting nightlife, St. Kilda is an awesome place for every traveler to spend a day and it can sometimes feel like a unique world on its own! St. Kilda is also home to Chapel Street – perfect for some entertainment, including shopping and events!
+              St Kilda with its historic buildings, seaside restaurants and cafés, beaches and exciting nightlife. 
               </p>
               <br></br>
               <p>
@@ -305,7 +279,7 @@ const UnmissablePg = () => {
               </div>
               <br></br>
               <p>
-              St. Kilda is also home to Luna Park in Melbourne – a historic amusement park built in 1912, which makes it a retro gem that will turn your Instagram feed into an aesthetic dream! Trust me, this park is a must see and one of the most fun things to do in Melbourne! Oh, and by the way, the park is also perfect for those who’d like to save a couple of bucks, as it is one of the best cheap things to do in the city, too!
+              St. Kilda is also home to Luna Park in Melbourne – a historic amusement park built in 1912, which makes it a retro gem that will turn your Instagram feed into an aesthetic dream! This park is a must see and one of the most fun things to do in Melbourne!
               </p>
               <br></br>
               <p>PRICE: Entry fee is AU$5</p>
@@ -327,7 +301,7 @@ const UnmissablePg = () => {
                 <img src={li7} alt=""></img>
               </div>
               <p>
-              Even though Australia is said to be a “young country”, this couldn’t be further away from the truth! The country is home to the oldest civilisation in the world (60.000 years old!) which has unfortunately been somewhat overshadowed by colonization.
+              Even though Australia is said to be a “young country”, this couldn’t be further away from the truth! The country is home to the oldest civilisation in the world (60.000 years old).
               </p>
               <br></br>
               <p>
@@ -353,7 +327,7 @@ const UnmissablePg = () => {
                 <img src={li8} alt=""></img>
               </div>
               <p>
-              The Immigration Museum is a museum that celebrates the multiculturality of the world that we live in and I recommend it if you are a little bit of an anthropologist or if you are simply curious!
+              The Immigration Museum is a museum that celebrates the multiculturality of the world that we live in.
               </p>
               <br></br>
               <p>
@@ -379,21 +353,17 @@ const UnmissablePg = () => {
                 <img src={li9} alt=""></img>
               </div>
               <p>
-              Melbourne is quite famous for its street art culture! A must see when heading to Melbourne is Hosier Lane, where you’ll always find street artists working on their pieces. You can also check out AC/DC lane and Centre place.
+              Melbourne is famous for its street art culture! A must see when heading to Melbourne is Hosier Lane, where you’ll always find street artists working on their pieces. You can also check out AC/DC lane and Centre place.
               </p>
               <br></br>
               <p>
               On another note, you’ll find, as you’re walking around Melbourne, that there are plenty of sculptures scattered all throughout the city. Ranging from surrealist to realist, each one of these sculptures shares its own story with those passing by.
               </p>
-              <br></br>
-              <p>PRO TIP: Check out this walking map: in just 56 minutes, this 3.7km walk guides you to some of the most famous sculptures in Melbourne!</p>
-              <br></br>
-              <p>If you’re quite into art, I would suggest you check out this Street Art Tour, in which you’ll get to admire the top Melbourne pieces – basically it’s one of those walking art gallery tours on the streets!</p>
             </div>
 
             <div style={{marginBottom:"3%"}}>
               <h1>
-                <span id="10">10. Enjoy a drink in one of Melbourne’s best rooftop bars</span>
+                <span id="10">10. Explore Melbourne’s food culture</span>
               </h1>
               <div
                 style={{
@@ -407,9 +377,9 @@ const UnmissablePg = () => {
                 <img src={li10} alt=""></img>
               </div>
               <p>
-              If you are a night owl or if you simply enjoy a little night fun on your trips, Melbourne has a wide array of cool bars that you can head to! And why settle for a regular bar, when you can go to a rooftop bar? Here are my favorite ones:
+              Melbourne has a wide array of cool restaurants that you can head to! 
               </p>
-              <br></br>
+              {/* <br></br>
               <ul>
                 <li>
                     <a href="https://www.easeys.com.au/" target="_blank" rel="noopener noreferrer">Easey’s</a>" – go there if you want to mingle with the young crowd"
@@ -426,10 +396,10 @@ const UnmissablePg = () => {
                 <li>
                     <a href="https://thealbion.bar/" target="_blank" rel="noopener noreferrer">Albion Rooftop Bar</a>" – for a fun night out!"
                 </li>
-              </ul>
+              </ul> */}
               <br></br>
               <p>
-              Alternatively, you can check out the Southbank Crown Casino. In case you didn’t know this (I know I didn’t) – Australians love gambling! That’s why each city’s casino is always a big landmark and a pretty fun stop, if you gamble in moderation!
+              Experience Melbourne's mix of cultures in its myriad restaurants, cafes, bistros and bars. Whether you're after modern, traditional, exotic or homespun flavours – Melbourne's eclectic dining scene offers a startling array of the world's great cuisines, from popular favourites to the truly groundbreaking.
               </p>
             </div>
 
@@ -449,14 +419,12 @@ const UnmissablePg = () => {
                 <img src={li11} alt=""></img>
               </div>
               <p>
-              Royal Botanic Gardens holds a place very close to my heart, as it is precisely where my brother and sister in law got married.
+              Visiting the botanic gardens is one of the top things to do in Melbourne! While you’re there, you can even see the Shrine Of Remembrance, a shrine commemorating World War I.
               </p>
               <br></br>
               <p>
-              Visiting the botanic gardens is one of my top things to do in Melbourne! While you’re there, you can even see the Shrine Of Remembrance, a shrine commemorating World War I!
+              PRO TIP: During the summer, you can attend one of the movie nights organized at the Royal Botanic Gardens! Admission is AU$19 – and you can even bring your own snacks and have a great picnic at the gardens!
               </p>
-              <br></br>
-              <p>If you want to visit the city and the Royal Botanic Gardens with an organized tour, I recommend this one that takes 4 hours.</p>
               <div
                 style={{
                   justifyContent: "center",
@@ -470,10 +438,8 @@ const UnmissablePg = () => {
               </div>
               <br></br>
               <p>
-              PRO TIP: During the summer, you can attend one of the movie nights organized at the Royal Botanic Gardens! Admission is AU$19 – and you can even bring your own snacks and have a great picnic at the gardens!
+              NOTE: Another place to relax at is Fitzroy Gardens, just a 20 min walk from the Botanic gardens. 
               </p>
-              <br></br>
-              <p>NOTE: Another place to relax at is Fitzroy Gardens, just a 20 min walk from the Botanic gardens. Check out their free guided walking tour that departs from the visitor centre every Saturday at 10am!</p>
               <br></br>
               <p>PRICE: Free</p>
             </div>
