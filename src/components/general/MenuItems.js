@@ -47,7 +47,7 @@ export const Entertainment = [
     cName: 'dropdown-link'
   },
   {
-    title: '12 Unmissable things in Melbourne',
+    title: '12 Attractions in Melbourne',
     path: '/explore-city',
     cName: 'dropdown-link'
   },
