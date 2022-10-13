@@ -75,20 +75,24 @@ export default function VICISHMap() {
   useEffect(() => {
     console.log("map loaded: ", mapLoaded.current !== null)
     console.log("geojson constructed: ", stores !== null)
-    if (mapLoaded.current && stores) {
-      const popUps = document.getElementsByClassName('mapboxgl-popup');
-      if (popUps[0]) popUps[0].remove();
-      const firstPageIndex = (currentPage - 1) * pageSize;
+    if (stores) {
+       const firstPageIndex = (currentPage - 1) * pageSize;
       const lastPageIndex = firstPageIndex + pageSize;
       const currentTableData = {'type': 'FeatureCollection', 'features' : stores.features.slice(firstPageIndex, lastPageIndex)}
+      buildLocationList(currentTableData);
+      if (mapLoaded.current) {
+      const popUps = document.getElementsByClassName('mapboxgl-popup');
+      if (popUps[0]) popUps[0].remove();
       if (Map.getSource("places")) Map.removeSource("places");
       Map.addSource('places', {
           'type': 'geojson',
           'data': currentTableData
         });
-        buildLocationList(currentTableData);
         addMarkers(currentTableData);
     }
+    }
+    
+    
   }, [currentPage])
   /**
    * Add a marker to the map for every store listing.
