@@ -9,7 +9,7 @@ import { fadeInDown } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 import exploreBg from "../../images/exploreBg.png";
 
-import React, {useState, useEffect} from "react";
+import React from "react";
 
 const styles = {
   fadeInDown1: {
@@ -35,8 +35,8 @@ const ExplorePg = () => {
           marginLeft: "30%",
           marginTop: "30px",
           borderRadius: "60px",
-          padding: "25px",
-          width: "40%",
+          padding: "1%",
+          width: "42%",
           fontSize: "20px",
           textAlign: "center",
         }}
