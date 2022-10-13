@@ -23,7 +23,7 @@
 }
 
 .result-div{
-  margin-top: 35%;
+  margin-top: 30%;
   margin-left: -30rem;
 }
 
@@ -97,12 +97,12 @@ body {
     height: auto;
   } */
 
-.box {
+.trans-box {
   position: relative;
   transform: translate(-50%, -50%);
 }
 
-.box select {
+.trans-box select {
   background-color: #fff4e2;
   color: rgb(0, 0, 0);
   padding: 12px;
@@ -115,7 +115,7 @@ body {
   outline: none;
 }
 
-.box::before {
+.trans-box::before {
   top: 0;
   right: 0;
   width: 20%;
@@ -128,12 +128,12 @@ body {
   pointer-events: none;
 }
 
-.box:hover::before {
+.trans-box:hover::before {
   color: rgba(255, 255, 255, 0.6);
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.box select option {
+.trans-box select option {
   padding: 30px;
 }
 
