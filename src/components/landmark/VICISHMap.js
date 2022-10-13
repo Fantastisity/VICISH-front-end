@@ -59,6 +59,8 @@ export default function VICISHMap() {
 
   useEffect(() => {
     if (mapReady && stores) {
+      const popUps = document.getElementsByClassName('mapboxgl-popup');
+      if (popUps[0]) popUps[0].remove();
       const firstPageIndex = (currentPage - 1) * pageSize;
       const lastPageIndex = firstPageIndex + pageSize;
       const currentTableData = {'type': 'FeatureCollection', 'features' : stores.features.slice(firstPageIndex, lastPageIndex)}
