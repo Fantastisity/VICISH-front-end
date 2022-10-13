@@ -22,7 +22,7 @@ const SafePg = () => {
     <div style={{ backgroundColor: "#FFF4E2" }}>
       <div
         className="headerBg"
-        style={{ backgroundImage: `url(${exploreBg}`, backgroundSize: "cover" }}
+        style={{ backgroundImage: `url(${exploreBg}`, backgroundSize: "cover", fontSize: 65px }}
       >
         Health and safety
       </div>
