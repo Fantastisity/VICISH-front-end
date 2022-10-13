@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useMemo} from "react";
 import { Link, useLocation } from "react-router-dom";
 // import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -58,13 +58,12 @@ export default function VICISHMap() {
   }, [type]);
 
   useEffect(() => {
-    console.log(mapReady, stores === null)
     if (mapReady && stores) {
-      if (Map.getSource("places")) Map.removeSource("places");
       const firstPageIndex = (currentPage - 1) * pageSize;
       const lastPageIndex = firstPageIndex + pageSize;
       const currentTableData = {'type': 'FeatureCollection', 'features' : stores.features.slice(firstPageIndex, lastPageIndex)}
-        Map.addSource('places', {
+      if (Map.getSource("places")) Map.removeSource("places");
+      Map.addSource('places', {
           'type': 'geojson',
           'data': currentTableData
         });
@@ -73,7 +72,7 @@ export default function VICISHMap() {
     }
   }, [currentPage])
 
-  useEffect(() => {
+  useMemo(() => {
     if (data && pageIsMounted) {
       let tmp = {'type': 'FeatureCollection', 'features': []}
       for (var i in data) {
@@ -249,9 +248,7 @@ export default function VICISHMap() {
             <Link to="/explore-melb">
               <img src={backicon} alt="" style={{width: "23px", position: "absolute", marginTop: "4%", marginLeft: "-40%"}}/>
             </Link>
-            {type === 1 ? <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>LANDMARKS</h1> : 
-            (type === 2 ? <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>MUSIC VENUES</h1> :
-              <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>ART GALLERIES</h1>)}
+            <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>VENUE LOCATIONS</h1>
           </div>
           <div id='listings' className='listings'></div>
           {stores && stores.features && <Pagination
