@@ -61,7 +61,7 @@ const SafePg = () => {
           <h2>Browse Topics</h2>
         </div>
 
-        <Box sx={{ width: "80%" }} style={{ marginLeft: "17%", marginTop:  "2%" }}>
+        <Box sx={{ width: "80%" }} style={{ marginLeft: "8%", marginTop:  "2%" }}>
           <Grid
             container
             rowSpacing={1}
