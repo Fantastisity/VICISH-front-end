@@ -67,7 +67,7 @@ const SlangQuiz = () => {
                   </div>
 
                   <div style={{backgroundColor: colors[key], borderRadius: "23px", border: "3px solid"}} className="back">
-                    <p className="description" style={{marginTop: "2%"}}>
+                    <p className="description">
                       {quizzes[i].Meaning}
                     </p>
                   </div>
