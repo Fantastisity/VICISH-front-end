@@ -18,7 +18,6 @@ export default function VICISHMap() {
   const location = useLocation();
   const { type } = location !== null ? location.state : null;
   const [Map, setMap] = useState();
-  const [pageIsMounted, setPageIsMounted] = useState(false);
   const [currmarkers, setMarkers] = useState([])
   const [stores, setStores] = useState({})
   var pageSize = 5;
@@ -27,7 +26,16 @@ export default function VICISHMap() {
   const [data, setData] = useState([])
   const mapLoaded = useRef(false);
   useEffect(() => {
-    setPageIsMounted(true)
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [144.9621, -37.8166],
+      zoom: 12.5,
+      accessToken: MAPBOX_TOKEN
+    });
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+    setMap(map);
     switch (type) {
       case 1:
         Axios.get("https://vicish.herokuapp.com/landmark").then((response) => {
@@ -44,21 +52,10 @@ export default function VICISHMap() {
           setData(response.data);
         })
     }
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: [144.9621, -37.8166],
-      zoom: 12.5,
-      accessToken: MAPBOX_TOKEN
-    });
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-    setMap(map);
-
   }, [type]);
   
   useMemo(() => {
-    if (data && pageIsMounted) {
+    if (data) {
       let tmp = {'type': 'FeatureCollection', 'features': []}
       for (var i in data) {
         tmp.features.push({'type': "Feature", 'geometry': {'type': "Point", 'coordinates': [data[i].lon, data[i].lat]}, 'properties': {
@@ -74,7 +71,6 @@ export default function VICISHMap() {
   }, [data]);
 
   useEffect(() => {
-    console.log(mapLoaded.current, stores.length)
     if (mapLoaded.current && stores) {
       const popUps = document.getElementsByClassName('mapboxgl-popup');
       if (popUps[0]) popUps[0].remove();
