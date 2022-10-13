@@ -50,7 +50,8 @@ export default function VICISHMap() {
       zoom: 12.5,
       accessToken: MAPBOX_TOKEN
     });
-
+    map._isReady = false
+    map.ready = () => map._isReady
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
     setMap(map);
@@ -58,7 +59,7 @@ export default function VICISHMap() {
   }, [type]);
 
   useEffect(() => {
-    if (mapReady && stores) {
+    if (Map.ready() && stores) {
       const popUps = document.getElementsByClassName('mapboxgl-popup');
       if (popUps[0]) popUps[0].remove();
       const firstPageIndex = (currentPage - 1) * pageSize;
@@ -82,10 +83,10 @@ export default function VICISHMap() {
           'description': data[i].Description, 'title': data[i].Title, 'id': i
         }})
       }
-      Map.on('load', () => {
+      Map.once('load', () => {
         setStores(tmp)
-        setMapReady(true);
-        setCurrentPage(1);
+        Map._isReady = true
+        setCurrentPage(1)
       });
     }
   }, [data]);
