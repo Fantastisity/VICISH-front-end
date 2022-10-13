@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useMemo} from "react";
+import React, {useState, useEffect, useMemo, useRef} from "react";
 import { Link, useLocation } from "react-router-dom";
 // import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -25,6 +25,7 @@ export default function VICISHMap() {
   const [currentPage, setCurrentPage] = useState(0);
   const [mapReady, setMapReady] = useState(false)
   const [data, setData] = useState([])
+  const mapLoaded = useRef(false);
   useEffect(() => {
     setPageIsMounted(true)
     switch (type) {
@@ -50,16 +51,30 @@ export default function VICISHMap() {
       zoom: 12.5,
       accessToken: MAPBOX_TOKEN
     });
-    map._isReady = false
-    map.ready = () => map._isReady
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
     setMap(map);
 
   }, [type]);
+  
+  useMemo(() => {
+    if (data && pageIsMounted) {
+      let tmp = {'type': 'FeatureCollection', 'features': []}
+      for (var i in data) {
+        tmp.features.push({'type': "Feature", 'geometry': {'type': "Point", 'coordinates': [data[i].lon, data[i].lat]}, 'properties': {
+          'description': data[i].Description, 'title': data[i].Title, 'id': i
+        }})
+      }
+      Map.once('load', () => {
+        setStores(tmp)
+        mapLoaded.current = true
+        setCurrentPage(1)
+      });
+    }
+  }, [data]);
 
   useEffect(() => {
-    if (Map.ready() && stores) {
+    if (mapLoaded.current && stores) {
       const popUps = document.getElementsByClassName('mapboxgl-popup');
       if (popUps[0]) popUps[0].remove();
       const firstPageIndex = (currentPage - 1) * pageSize;
@@ -74,22 +89,6 @@ export default function VICISHMap() {
         addMarkers(currentTableData);
     }
   }, [currentPage])
-
-  useMemo(() => {
-    if (data && pageIsMounted) {
-      let tmp = {'type': 'FeatureCollection', 'features': []}
-      for (var i in data) {
-        tmp.features.push({'type': "Feature", 'geometry': {'type': "Point", 'coordinates': [data[i].lon, data[i].lat]}, 'properties': {
-          'description': data[i].Description, 'title': data[i].Title, 'id': i
-        }})
-      }
-      Map.once('load', () => {
-        setStores(tmp)
-        Map._isReady = true
-        setCurrentPage(1)
-      });
-    }
-  }, [data]);
   /**
    * Add a marker to the map for every store listing.
    **/
