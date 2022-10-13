@@ -55,7 +55,7 @@ export default function VICISHMap() {
   }, [type]);
   
   useMemo(() => {
-    if (data) {
+    if (data && Map) {
       let tmp = {'type': 'FeatureCollection', 'features': []}
       for (var i in data) {
         tmp.features.push({'type': "Feature", 'geometry': {'type': "Point", 'coordinates': [data[i].lon, data[i].lat]}, 'properties': {
@@ -68,7 +68,7 @@ export default function VICISHMap() {
         setCurrentPage(1)
       });
     }
-  }, [data]);
+  }, [data, Map]);
 
   useEffect(() => {
     if (mapLoaded.current && stores) {
