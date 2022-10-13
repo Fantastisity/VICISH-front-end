@@ -42,7 +42,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q2: {questions[1].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[1].questionText}</span>
+          <span style={{color: "#c70808"}}>q2: {questions[1].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[1].answers[2].answerText}</span>
           </>
@@ -52,7 +52,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q3: {questions[2].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[2].questionText}</span>
+          <span style={{color: "#c70808"}}>q3: {questions[2].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[2].answers[0].answerText}</span>
           </>
@@ -62,7 +62,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q4: {questions[3].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[3].questionText}</span>
+          <span style={{color: "#c70808"}}>q4: {questions[3].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[3].answers[1].answerText}</span>
           </>
@@ -72,7 +72,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q5: {questions[4].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[4].questionText}</span>
+          <span style={{color: "#c70808"}}>q5: {questions[4].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[4].answers[1].answerText}</span>
           </>
@@ -82,7 +82,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q6: {questions[5].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[5].questionText}</span>
+          <span style={{color: "#c70808"}}>q6: {questions[5].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[5].answers[2].answerText}</span>
           </>
@@ -92,7 +92,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q7: {questions[6].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[0].questionText}</span>
+          <span style={{color: "#c70808"}}>q7: {questions[0].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[0].answers[3].answerText}</span>
           </>
@@ -102,7 +102,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q8: {questions[7].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[7].questionText}</span>
+          <span style={{color: "#c70808"}}>q8: {questions[7].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[7].answers[2].answerText}</span>
           </>
@@ -112,7 +112,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q9: {questions[8].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[8].questionText}</span>
+          <span style={{color: "#c70808"}}>q9: {questions[8].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[8].answers[2].answerText}</span>
           </>
@@ -122,7 +122,7 @@ export const FinalSlangPage = ({
         if (val) return <span style={{color: "green"}}>q10: {questions[9].questionText} correct</span>
         else return (
           <>
-          <span style={{color: "#c70808"}}>q1: {questions[9].questionText}</span>
+          <span style={{color: "#c70808"}}>q10: {questions[9].questionText}</span>
           <br/>
           <span>Correct Answer: {questions[9].answers[3].answerText}</span>
           </>
