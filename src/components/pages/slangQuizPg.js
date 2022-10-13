@@ -62,19 +62,19 @@ const SlangQuiz = () => {
               <div key={key} className="slangcard">
                 <div style={{backgroundColor: colors[key], borderRadius: "23px", border: "3px solid"}} className="content">
                   <div className="front">
-                    <p style={{marginTop: "5%"}}>{quizzes[i].Slang}</p>
+                    <p style={{marginTop: "8%"}}>{quizzes[i].Slang}</p>
                     <br></br>
                   </div>
 
                   <div style={{backgroundColor: colors[key], borderRadius: "23px", border: "3px solid"}} className="back">
-                    <p className="description" style={{marginTop: "5%"}}>
+                    <p className="description" style={{marginTop: "8%"}}>
                       {quizzes[i].Meaning}
                     </p>
                   </div>
                 </div>
               </div>
             )
-          }) : <p style={{textAlign: "center", paddingBottom: "1%"}}>Loading...</p>}
+          }) : <p style={{textAlign: "center", paddingBottom: "2%"}}>Loading...</p>}
           <Button variant="contained" onClick={() => changeIndex()} style = {{marginLeft: "40%", backgroundColor: "#e8b17d", color: "black"}}>
             Show New Phrases
           </Button>
