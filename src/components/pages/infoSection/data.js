@@ -111,6 +111,12 @@ export const socialObj = {
       nav: "statistics",
       col: "#f1e4e4",
     },
+    {
+      title: "12 Unmissable things in Melbourne",
+      info: "empty",
+      nav: "explore-city",
+      col: "#ede3dd",
+    }
   ],
   img: require("../../../images/entertain.jpg"),
   alt: "svg3",
