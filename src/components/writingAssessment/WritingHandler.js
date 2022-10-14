@@ -32,7 +32,7 @@ const WritingHandler = () => {
     return (
       <div>
         {dt.grammar.errors.length ? <div style={{backgroundColor:"#FFFFFF", borderRadius:"20px"}}>
-        <h1 style={{ color: 'red', marginLeft:"8%"}}>Error</h1>
+        <h1 style={{ color: 'black', marginLeft:"8%"}}>Solution</h1>
         <ol style={{ listStyleType: 'decimal' }}>
         {dt.grammar.errors.map((res, idx) => (
             <li style={{ listStyleType: 'decimal',marginTop:"1%",marginLeft:"8%", marginRight:"2%" }}><span style={{fontWeight: "700"}}>Error</span>: <span style={{color:"red"}}>{res.bad}</span>   <span style={{fontWeight: "600"}}>&nbsp;&nbsp;  Suggestion</span>: {res.description.en}</li>
