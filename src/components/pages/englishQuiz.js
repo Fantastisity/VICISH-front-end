@@ -42,7 +42,7 @@ const EnglishQuiz = () => {
       <div style={{backgroundColor: "#F0BA98", height: "1500px"}}>
         <div className="headerBg" style={{backgroundImage:`url(${learnBg}`, backgroundSize:"cover", color:"#EC7F6A"}}>Grammar Ability Test</div>
         <div className="slangIntro" style={{
-          marginLeft: "50%", 
+          marginLeft: "20%", 
            marginTop: "5%", 
           borderRadius: "60px",
           padding: "25px",
@@ -55,7 +55,7 @@ const EnglishQuiz = () => {
           <div
         style={{
           width: "40%",
-          marginLeft: "5%",
+          marginLeft: "35%",
           paddingBottom: "5%",
           backgroundColor: "#F0BA98", 
           position: "relative"
