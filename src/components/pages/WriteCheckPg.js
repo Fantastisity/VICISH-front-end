@@ -1,7 +1,6 @@
 import React from "react";
 import WritingHandler from "../writingAssessment/WritingHandler";
 import "./WriteCheck.css";
-import GrammarPic from "../../images/grammarPic.png";
 import GrammarPic2 from "../../images/GrammarPic2.png";
 import { fadeInDown } from "react-animations";
 import Radium, { StyleRoot } from "radium";
@@ -21,12 +20,6 @@ const styles = {
 };
 
 const WriteCheck = () => {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
-
   return (
     <div style={{ backgroundColor: "#F0BA98", height: "auto" }}>
       <div
