@@ -55,7 +55,7 @@ const EnglishQuiz = () => {
           <div
         style={{
           width: "40%",
-          marginLeft: "35%",
+          marginLeft: "32%",
           paddingBottom: "5%",
           backgroundColor: "#F0BA98", 
           position: "relative"
