@@ -50,7 +50,7 @@ const UnmissablePg = () => {
               backgroundColor: "#FFE4D8",
               border: "1px solid #aaa",
               padding: "10px",
-              marginTop: "-10%",
+              marginTop: "12%",
               width:"15%",
               marginLeft:'1%'
             }}
@@ -102,7 +102,7 @@ const UnmissablePg = () => {
             ) : null}
           </div>
           </StickyBox>
-        <div style={{ paddingLeft: "25%", paddingRight: "25%", marginTop:"-54%"}}>
+        <div style={{ paddingLeft: "25%", paddingRight: "25%", marginTop:"-52%"}}>
           <p>
           Melbourne is a hub for many interesting things including museums, vintage stores, coffee shops, art galleries, events, festivals etc., there is literally nothing you cannot do in this city! This ultimate guide that will take you through the best places to visit in Melbourne.
           </p>
