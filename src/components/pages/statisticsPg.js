@@ -218,7 +218,7 @@ const StatisticsPg = () => {
             }}
           >
             <p style={{ padding: "12%", fontSize: "20px" }}>
-            The annual report in Victoria surveyed 9 popular recreational activities and its attendance, including music festivals, art shows, art galleries, zoos, and cinemas. Overall, the most frequently visited recreational areas are cinemas, followed by music festivals, and art festivals.
+            The 2013-2014 annual report in Victoria surveyed 9 popular recreational activities and its attendance, including music festivals, art shows, art galleries, zoos, and cinemas. Overall, the most frequently visited recreational areas are cinemas, followed by music festivals, and art festivals.
             </p>
           </div>
           <div
