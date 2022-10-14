@@ -1,13 +1,14 @@
 import React, {useState, useEffect, useMemo, useRef} from "react";
 import { Link, useLocation } from "react-router-dom";
-// import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
+import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import "./VICISHMap.css";
 import Axios from "axios";
+import Tooltip from "@mui/material/Tooltip";
 import titleicon from "../../images/titleicon.png";
 import backicon from "../../images/back.png";
 import Pagination from "../general/Pagination";
-// import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
+import "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css";
 import mapboxgl from 'mapbox-gl';
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default; // eslint-disable-line
 
@@ -17,14 +18,14 @@ const MAPBOX_TOKEN =
 export default function VICISHMap() {
   const location = useLocation();
   const { type } = location !== null ? location.state : null;
-  const [Map, setMap] = useState(null);
   const [currmarkers, setMarkers] = useState([])
-  const [stores, setStores] = useState(null)
   var pageSize = 5;
-  const [currentPage, setCurrentPage] = useState(0);
-  const [mapReady, setMapReady] = useState(false)
-  const [data, setData] = useState([])
+  const [currentPage, setCurrentPage] = useState(1);
+  const data = useRef(null), fetchedData = useRef(null)
   const mapLoaded = useRef(false);
+  const Map = useRef(null);
+  const [tooltipIsOpen, setTooltipIsOpen] = useState(false);
+  const Directions = useRef(null)
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: 'map',
@@ -33,70 +34,82 @@ export default function VICISHMap() {
       zoom: 12.5,
       accessToken: MAPBOX_TOKEN
     });
+    const directions = new MapboxDirections({
+      accessToken: MAPBOX_TOKEN,
+      unit: "metric",
+      profile: "mapbox/driving",
+  });
+  map.addControl(directions, "top-left");
+    map.addControl(new mapboxgl.NavigationControl());
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-    setMap(map);
+    Map.current = map;
+    Directions.current = directions
+  }, [type]);
+
+  const preloadMap = (dt) => {
+    if (Map.current) {
+      let tmp = {'type': 'FeatureCollection', 'features': []}
+      for (var i in dt) {
+        tmp.features.push({'type': "Feature", 'geometry': {'type': "Point", 'coordinates': [dt[i].lon, dt[i].lat]}, 'properties': {
+          'description': dt[i].Description, 'title': dt[i].Title, 'id': i
+        }})
+      }
+      Map.current.on('load', () => {
+        data.current = tmp;
+        const firstPageIndex = 0;
+        const lastPageIndex = pageSize;
+        const currentTableData = {'type': 'FeatureCollection', 'features' : data.current.features.slice(firstPageIndex, lastPageIndex)}  
+        const popUps = document.getElementsByClassName('mapboxgl-popup');
+        if (popUps[0]) popUps[0].remove();
+        if (Map.current.getSource("places")) Map.current.removeSource("places");
+        Map.current.addSource('places', {
+            'type': 'geojson',
+            'data': currentTableData
+          });
+        buildLocationList(currentTableData);  
+        addMarkers(currentTableData);
+        mapLoaded.current = true
+      });
+    }
+  }
+  
+  useEffect(() => {
     switch (type) {
       case 1:
         Axios.get("https://vicish.herokuapp.com/landmark").then((response) => {
-          setData(response.data);
+          preloadMap(response.data)
         });
         break;
       case 2:
         Axios.get("https://vicish.herokuapp.com/music").then((response) => {
-          setData(response.data);
+          preloadMap(response.data)
         })
         break;
       case 3:
         Axios.get("https://vicish.herokuapp.com/artwork").then((response) => {
-          setData(response.data);
+          preloadMap(response.data)
         })
-    }
-  }, [type]);
-  
-  useMemo(() => {
-    console.log("map constructed: ", Map !== null)
-    console.log("data loaded: ", data.length > 0)
-    if (data && Map) {
-      let tmp = {'type': 'FeatureCollection', 'features': []}
-      for (var i in data) {
-        tmp.features.push({'type': "Feature", 'geometry': {'type': "Point", 'coordinates': [data[i].lon, data[i].lat]}, 'properties': {
-          'description': data[i].Description, 'title': data[i].Title, 'id': i
-        }})
-      }
-      Map.once('load', () => {
-        setStores(tmp)
-        mapLoaded.current = true
-        setCurrentPage(1)
-      });
-    }
-  }, [data, Map]);
+    } 
+  }, [Map.current]);
 
   useEffect(() => {
-    console.log("map loaded: ", mapLoaded.current !== null)
-    console.log("geojson constructed: ", stores !== null)
-    if (stores) {
-       const firstPageIndex = (currentPage - 1) * pageSize;
+    if (mapLoaded.current && data.current) {
+      const firstPageIndex = (currentPage - 1) * pageSize;
       const lastPageIndex = firstPageIndex + pageSize;
-      const currentTableData = {'type': 'FeatureCollection', 'features' : stores.features.slice(firstPageIndex, lastPageIndex)}
-      buildLocationList(currentTableData);
-      if (mapLoaded.current) {
+      const currentTableData = {'type': 'FeatureCollection', 'features' : data.current.features.slice(firstPageIndex, lastPageIndex)}  
       const popUps = document.getElementsByClassName('mapboxgl-popup');
       if (popUps[0]) popUps[0].remove();
-      if (Map.getSource("places")) Map.removeSource("places");
-      Map.addSource('places', {
+      if (Map.current.getSource("places")) Map.current.removeSource("places");
+      Map.current.addSource('places', {
           'type': 'geojson',
           'data': currentTableData
-        });
-        addMarkers(currentTableData);
-    }
-    }
-    
-    
+      });
+      buildLocationList(currentTableData);  
+      addMarkers(currentTableData);
+    }    
   }, [currentPage])
-  /**
-   * Add a marker to the map for every store listing.
-   **/
+
    function addMarkers(dt) {
     const el = document.createElement('div');
     el.innerHTML = ''
@@ -106,35 +119,20 @@ export default function VICISHMap() {
         currmarkers[i].remove();
       }
     }
-    /* For each feature in the GeoJSON object above: */
+
     for (const marker of dt.features) {
-      /* Create a div element for the marker. */
       const el = document.createElement('div');
-      /* Assign a unique `id` to the marker. */
       el.id = `marker-${marker.properties.id}`;
-      /* Assign the `marker` class to each marker for styling. */
       el.className = 'marker';
 
-      /**
-       * Create a marker using the div element
-       * defined above and add it to the map.
-       **/
       var mker = new mapboxgl.Marker(el, { offset: [0, -23] })
       .setLngLat(marker.geometry.coordinates)
-      .addTo(Map)
+      .addTo(Map.current)
       currentMarkers.push(mker)
-      /**
-       * Listen to the element and when it is clicked, do three things:
-       * 1. Fly to the point
-       * 2. Close all other popups and display popup for clicked store
-       * 3. Highlight listing in sidebar (and remove highlight for all other listings)
-       **/
+      
       el.addEventListener('click', (e) => {
-        /* Fly to the point */
-        flyToStore(marker);
-        /* Close all other popups and display popup for clicked store */
+        zoomInMarker(marker);
         createPopUp(marker);
-        /* Highlight listing in sidebar */
         const activeItem = document.getElementsByClassName('active');
         e.stopPropagation();
         if (activeItem[0]) {
@@ -149,66 +147,50 @@ export default function VICISHMap() {
     setMarkers(currentMarkers)
   }
 
-  /**
-   * Add a listing for each store to the sidebar.
-   **/
   function buildLocationList(dt) {
     const listings = document.getElementById('listings');
     listings.innerHTML = ''
     for(var i = 0; i < dt.features.length; i++) {
-      var store = dt.features[i]
-      /* Add a new listing section to the sidebar. */
+      var cur = dt.features[i]
       const listings = document.getElementById('listings');
       const listing = listings.appendChild(document.createElement('div'));
-      /* Assign a unique `id` to the listing. */
-      listing.id = `listing-${store.properties.id}`;
-      /* Assign the `item` class to each listing for styling. */
+      listing.id = `listing-${cur.properties.id}`;
       listing.className = 'item';
 
-      /* Add the link to the individual listing created above. */
       const link = listing.appendChild(document.createElement('div'));
       link.className = 'place-name';
       link.id = i;
-      link.innerHTML = "<img src=\"" + titleicon + "\"width=\"" + "20px" + "\">  " + `${store.properties.title}`;
-      /* Add details to the individual listing. */
+      link.innerHTML = "<img src=\"" + titleicon + "\"width=\"" + "20px" + "\">  " + `${cur.properties.title}`;
       
       listing.appendChild(document.createElement('br'))
-      let detail;
       if (type !== 2) {
-        detail = listing.appendChild(document.createElement('span'))
+        let detail = listing.appendChild(document.createElement('span'))
         const bt = listing.appendChild(document.createElement('button'));
         bt.innerHTML = "Show Description"
         bt.className = "desc_but"
         bt.id = i
+        detail.className = "detail"
         bt.addEventListener('click', function() {
           if (bt.innerHTML === "Show Description") bt.innerHTML = "Hide Description"
           else bt.innerHTML = "Show Description"
           if (detail.innerHTML.length) {
             detail.innerHTML = ''
           } else {
-            detail.innerHTML = dt.features[this.id].properties.description
+            detail.innerHTML = dt.features[this.id].properties.description + "<br/>" + "<br/>"
           }
         })
       }
       else {
-        detail = listing.appendChild(document.createElement('a'))
-        detail.href = dt.features[i].properties.description;
-        detail.innerHTML = "Go to Website"
-        detail.setAttribute("target", "_blank")
+        let tmp = listing.appendChild(document.createElement('a'))
+        tmp.className = "desc_but";
+        tmp.href = dt.features[i].properties.description;
+        tmp.innerHTML = "Go to Website"
+        tmp.setAttribute("target", "_blank")
       }
-      detail.className = "detail"
       
-      /**
-       * Listen to the element and when it is clicked, do four things:
-       * 1. Update the `currentFeature` to the store associated with the clicked link
-       * 2. Fly to the point
-       * 3. Close all other popups and display popup for clicked store
-       * 4. Highlight listing in sidebar (and remove highlight for all other listings)
-       **/
       link.addEventListener('click',  function() {
         var feature = dt.features[this.id]
-        console.log("cl")
-        flyToStore(feature);
+        zoomInMarker(feature);
         createPopUp(feature);
         const activeItem = document.getElementsByClassName('active');
         if (activeItem[0]) {
@@ -222,31 +204,36 @@ export default function VICISHMap() {
     }
   }
 
-  /**
-   * Use Mapbox GL JS's `flyTo` to move the camera smoothly
-   * a given center point.
-   **/
-  function flyToStore(currentFeature) {
-    Map.flyTo({
+  function zoomInMarker(currentFeature) {
+    Map.current.flyTo({
       center: currentFeature.geometry.coordinates,
       zoom: 15
     });
   }
 
-  /**
-   * Create a Mapbox GL JS `Popup`.
-   **/
+  const handlePopClick = (coord) => {
+    Directions.current.setDestination([coord[0], coord[1]]); 
+  }
+
   function createPopUp(currentFeature) {
     const popUps = document.getElementsByClassName('mapboxgl-popup');
     if (popUps[0]) popUps[0].remove();
+    const popup = document.createElement('div');
+    const title = document.createElement('h4')
+    title.innerHTML = currentFeature.properties.title;
+    const btn = document.createElement('button');
+    btn.innerHTML = `Go Here`;
+    btn.className = "dir-btn"
+    btn.addEventListener('click', (e) => {
+      handlePopClick(currentFeature.geometry.coordinates)
+    });
+    popup.appendChild(title)
+    popup.appendChild(btn)
     new mapboxgl.Popup({ closeOnClick: false })
       .setLngLat(currentFeature.geometry.coordinates)
-      .setHTML(
-        `<h4>${currentFeature.properties.title}</h4>`
-      )
-      .addTo(Map);
+      .setDOMContent(popup)
+      .addTo(Map.current);
   }
-
 
   return (
     <div>
@@ -258,10 +245,10 @@ export default function VICISHMap() {
             <h1 style={{fontSize: "22px", marginTop: "60px", lineHeight: "20px", padding: "20px 2px", color: "black"}}>VENUE LOCATIONS</h1>
           </div>
           <div id='listings' className='listings'></div>
-          {stores && stores.features && <Pagination
+          {data.current && data.current.features && <Pagination
             className="pagination-bar"
             currentPage={currentPage}
-            totalCount={stores.features.length}
+            totalCount={data.current.features.length}
             pageSize={pageSize}
             onPageChange={page => setCurrentPage(page)}
           />}
