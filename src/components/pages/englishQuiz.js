@@ -21,7 +21,7 @@ const EnglishQuiz = () => {
     const [showQuestionsPage, setShowQuestionsPage] = useState(false);
     const [showFinalPage, setShowFinalPage] = useState(false);
     const [answerRecord, setAnswerRecord] = useState({q1:0, q2:0, q3:0, q4:0, q5:0, q6:0, q7:0, q8:0, q9:0, q10:0});
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
