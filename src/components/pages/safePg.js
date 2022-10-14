@@ -116,7 +116,7 @@ const SafePg = () => {
             </Grid>
           </Grid>
         </Box>
-        <div style={{textAlign:"center"}}>
+        <div style={{textAlign:"center", paddingTop: "3%"}}>
           <p style={{fontSize:"23px"}}>
             Australia is generally a very safe and welcoming place to live and
             study, consistently ranking among the safest countries in the world.
