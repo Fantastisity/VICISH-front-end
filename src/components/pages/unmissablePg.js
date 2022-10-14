@@ -50,7 +50,7 @@ const UnmissablePg = () => {
               backgroundColor: "#FFE4D8",
               border: "1px solid #aaa",
               padding: "10px",
-              marginTop: "-10%"
+              marginTop: "-10%",
               width:"15%",
               marginLeft:'1%'
             }}
