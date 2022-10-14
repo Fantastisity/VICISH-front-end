@@ -52,37 +52,7 @@ const EnglishQuiz = () => {
           }}>
             Struggling where to start improving your English? Test your grammar ability first! See whether you are a starter or an advanced learner.
           </div>
-          <div
-        style={{
-          width: "40%",
-          marginLeft: "32%",
-          paddingBottom: "5%",
-          backgroundColor: "#F0BA98", 
-          position: "relative"
-        }}
-      >
-        <Accordion
-          expanded={expanded === "panel1"}
-          onChange={handleChange("panel1")}
-          style={{ backgroundColor: "#FFF4E2" }}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-          >
-            <p style={{fontWeight: "600"}}>Learning Tips</p>
-          </AccordionSummary>
-          <AccordionDetails>
-            <img
-              src={GrammarPic}
-              width="500"
-              height="1000"
-              style={{ marginLeft: "4%" }}
-            ></img>
-          </AccordionDetails>
-        </Accordion>
-      </div>
+         
       <div className="slangTotal">
         <div className="slangPage">
           <div>

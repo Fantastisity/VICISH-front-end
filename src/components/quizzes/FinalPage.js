@@ -139,7 +139,7 @@ export const FinalSlangPage = ({
 
       <h3 className="final_score">{score}</h3>
       <br/><br/>
-      <div style={{textAlign: "center"}}>{Object.entries(record).map(([key, value]) => (
+      <div style={{textAlign: "center", fontSize: "16px"}}>{Object.entries(record).map(([key, value]) => (
         <div key={key}>
           {handleResult(key, value)}
         </div>
@@ -288,7 +288,7 @@ export const FinalGrammarPage = ({
 
       <h3 className="final_score">{score}</h3>
       <br/><br/>
-      <div style={{textAlign: "center"}}>{Object.entries(record).map(([key, value]) => (
+      <div style={{textAlign: "center", fontSize: "16px"}}>{Object.entries(record).map(([key, value]) => (
         <div key={key}>
           {handleResult(key, value)}
         </div>
