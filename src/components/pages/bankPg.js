@@ -192,7 +192,7 @@ const BankPg = () => {
                 className="content"
               >
                 <div style={{ backgroundColor: account.color }} class="back">
-                  <p className="description" style={{marginTop: "-8%", textAlign: "left", fontSize: "12px"}}>{account.explain}</p>
+                  <p className="description" style={{marginTop: "-8%", textAlign: "left", fontSize: "15px"}}>{account.explain}</p>
                 </div>
               </div>
               <div className="type-name">{account.type}</div>
