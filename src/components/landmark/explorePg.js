@@ -49,7 +49,7 @@ const ExplorePg = () => {
       <StyleRoot>
         <div style={styles.fadeInDown1}>
           <Link to='/Map' style={{ textDecoration: 'none',color: "black"  }}
-          state={{ type: 1 }}>
+          state={{ type: 1 }} refresh="true">
           <div
             className="content-item"
             style={{
@@ -81,7 +81,7 @@ const ExplorePg = () => {
           <StyleRoot>
         <div style={styles.fadeInDown2}>
           <Link to='/Map' style={{ textDecoration: 'none',color: "black"  }}
-          state={{ type: 2 }}>
+          state={{ type: 2 }} refresh="true">
           <div
             className="content-item"
             style={{
@@ -115,7 +115,7 @@ const ExplorePg = () => {
           <StyleRoot>
         <div style={styles.fadeInDown3}>
           <Link to='/Map' style={{ textDecoration: 'none',color: "black"  }}
-          state={{ type: 3}}>
+          state={{ type: 3}} refresh="true">
             <div
               className="content-item"
               style={{
