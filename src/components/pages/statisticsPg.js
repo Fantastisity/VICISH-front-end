@@ -166,7 +166,7 @@ const StatisticsPg = () => {
         },
         padding: 6,
         formatter: (value) => {
-          return value + "k";
+          return value / 1000 + "k";
         }
       }
     }
@@ -175,15 +175,15 @@ const StatisticsPg = () => {
   const gen = () => {
     for (var i in stat) {
       if (i == 15) {
-        data.datasets[0].data.push(stat[i].Popular_music/1000);
-        data.datasets[0].data.push(stat[i].Classical_music/1000);
-        data.datasets[0].data.push(stat[i].Performing_arts/1000);
-        data.datasets[0].data.push(stat[i].Art_galleries/1000);
-        data.datasets[0].data.push(stat[i].Zoological_parks/1000);
-        data.datasets[0].data.push(stat[i].Botanic_gardens/1000);
-        data.datasets[0].data.push(stat[i].Museums/1000);
-        data.datasets[0].data.push(stat[i].Libraries_and_Archives/1000);
-        data.datasets[0].data.push(stat[i].Cinemas/1000);
+        data.datasets[0].data.push(stat[i].Popular_music);
+        data.datasets[0].data.push(stat[i].Classical_music);
+        data.datasets[0].data.push(stat[i].Performing_arts);
+        data.datasets[0].data.push(stat[i].Art_galleries);
+        data.datasets[0].data.push(stat[i].Zoological_parks);
+        data.datasets[0].data.push(stat[i].Botanic_gardens);
+        data.datasets[0].data.push(stat[i].Museums);
+        data.datasets[0].data.push(stat[i].Libraries_and_Archives);
+        data.datasets[0].data.push(stat[i].Cinemas);
         continue;
       }
       state.options.xaxis.categories.push(stat[i].Place);
