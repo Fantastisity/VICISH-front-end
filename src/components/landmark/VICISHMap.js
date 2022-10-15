@@ -21,30 +21,30 @@ export default function VICISHMap() {
   const [currmarkers, setMarkers] = useState([])
   var pageSize = 5;
   const [currentPage, setCurrentPage] = useState(1);
-  const data = useRef(null), fetchedData = useRef(null)
+  const data = useRef(null)  
   const mapLoaded = useRef(false);
   const Map = useRef(null);
-  const [tooltipIsOpen, setTooltipIsOpen] = useState(false);
   const Directions = useRef(null)
   useEffect(() => {
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: "mapbox://styles/mapbox/streets-v11",
-      center: [144.9621, -37.8166],
-      zoom: 12.5,
-      accessToken: MAPBOX_TOKEN
-    });
-    const directions = new MapboxDirections({
-      accessToken: MAPBOX_TOKEN,
-      unit: "metric",
-      profile: "mapbox/driving",
-  });
-  map.addControl(directions, "top-left");
-    map.addControl(new mapboxgl.NavigationControl());
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-    Map.current = map;
-    Directions.current = directions
+    if (type !== null) {
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [144.9621, -37.8166],
+        zoom: 12.5,
+        accessToken: MAPBOX_TOKEN
+      });
+      const directions = new MapboxDirections({
+        accessToken: MAPBOX_TOKEN,
+        unit: "metric",
+        profile: "mapbox/driving",
+      });
+      map.addControl(directions, "top-left");
+        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+        Map.current = map;
+        Directions.current = directions
+    }
   }, [type]);
 
   const preloadMap = (dt) => {
@@ -55,7 +55,7 @@ export default function VICISHMap() {
           'description': dt[i].Description, 'title': dt[i].Title, 'id': i
         }})
       }
-      Map.current.on('load', () => {
+      Map.current.once('load', () => {
         data.current = tmp;
         const firstPageIndex = 0;
         const lastPageIndex = pageSize;
@@ -224,7 +224,7 @@ export default function VICISHMap() {
     const btn = document.createElement('button');
     btn.innerHTML = `Go Here`;
     btn.className = "dir-btn"
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       handlePopClick(currentFeature.geometry.coordinates)
     });
     popup.appendChild(title)

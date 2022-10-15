@@ -21,7 +21,7 @@ const AccordionItem = ({ faq, active, onToggle }) => {
             : { height: "0px" }
         }
       >
-        <div className="transcard" style={{width: "600px", textAlign: "left"}}>{answer}</div>
+        <div className="transcard" style={{width: "600px", textAlign: "left", fontSize: "17px"}}>{answer}</div>
       </div>
     </li>
   );

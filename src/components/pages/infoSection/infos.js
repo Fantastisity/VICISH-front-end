@@ -1,6 +1,6 @@
 import React from 'react';
 import { InfoContainer, InfoWrapper, InfoRow, Column1, TextWrapper, TopLine, BtnWrap, Button,
-  Heading, Subtitle, Img, ImgWrap, Column2, CardWrapper, CardLayout, CardH2, CardP} from './element';
+  Heading, Subtitle, Img, ImgWrap, Column2, CardWrapper, CardLayout, CardH2, CardP, FlexButton} from './element';
 import { Link } from "react-router-dom";
 
 const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, showCard, cards,
@@ -16,13 +16,15 @@ const InfoSection = ({ lightBg, id, imgStart, topLine, lightText, showCard, card
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
               </TextWrapper>
+              <FlexButton>
               {showCard && cards.map((card, ind) => (
                   <BtnWrap>
                     <Button to={card.nav} smooth={true} duration={500} spy={true} exact='true' offset={-80} 
                     col={card.col} dark={dark ? 1 : 0} dark2={dark2 ? 1 : 0} 
                     style={{ textDecoration: 'none' }}>{card.title}</Button>
-                </BtnWrap>
+                  </BtnWrap>
               ))}
+              </FlexButton>
             </Column1>
           </InfoRow>
         </InfoWrapper>

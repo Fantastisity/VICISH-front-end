@@ -4,7 +4,7 @@ import musicPic from "../../images/music.jpg";
 import outdoorPic from "../../images/outdoor.jpg";
 import { Link } from "react-router-dom";
 import "animate.css/animate.min.css";
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+import Tooltip from "@mui/material/Tooltip";
 import { fadeInDown } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 import exploreBg from "../../images/exploreBg.png";
@@ -50,6 +50,7 @@ const ExplorePg = () => {
         <div style={styles.fadeInDown1}>
           <Link to='/Map' style={{ textDecoration: 'none',color: "black"  }}
           state={{ type: 1 }} refresh="true">
+          <Tooltip title="Go to Map">
           <div
             className="content-item"
             style={{
@@ -74,6 +75,7 @@ const ExplorePg = () => {
               <p>Discover Melbourne's best attractions and landmarks including beautiful gardens, impressive buildings, sporting arenas, markets and famous laneways.</p>
             </div>
           </div>
+          </Tooltip>
           </Link>
           </div>
           </StyleRoot>
@@ -82,6 +84,7 @@ const ExplorePg = () => {
         <div style={styles.fadeInDown2}>
           <Link to='/Map' style={{ textDecoration: 'none',color: "black"  }}
           state={{ type: 2 }} refresh="true">
+            <Tooltip title="Go to Map">
           <div
             className="content-item"
             style={{
@@ -108,6 +111,7 @@ const ExplorePg = () => {
               <p>Melbourne is widely known as one of the world's great music cities. Discover dedicated live music venues in Melbourne.</p>
             </div>
           </div>
+          </Tooltip>
           </Link>
           </div>
           </StyleRoot>
@@ -116,6 +120,7 @@ const ExplorePg = () => {
         <div style={styles.fadeInDown3}>
           <Link to='/Map' style={{ textDecoration: 'none',color: "black"  }}
           state={{ type: 3}} refresh="true">
+            <Tooltip title="Go to Map">
             <div
               className="content-item"
               style={{
@@ -142,6 +147,7 @@ const ExplorePg = () => {
                 <p>Discover Melbourne's outdoor artwork such as memorials and sculptures located around the city.</p>
               </div>
             </div>
+            </Tooltip>
           </Link>
           </div>
           </StyleRoot>

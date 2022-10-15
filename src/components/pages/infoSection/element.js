@@ -9,6 +9,17 @@ export const InfoContainer = styled.div`
   }
 `;
 
+export const FlexButton = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+max-width: 33vw;
+margin: auto;
+&>div:nth-child(even){
+  align-self: flex-end;
+} 
+`;
+
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
@@ -50,6 +61,7 @@ export const TextWrapper = styled.div`
   padding-top: 0;
   padding-bottom: 60px;
   margin-left: 150px;
+  position: relative;
 `;
 
 export const TopLine = styled.p`
@@ -81,6 +93,7 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   color: ${({ darkText }) => (darkText ? '#0B3F78' : '#fff')};
+  backdrop-filter: contrast(.8) opacity(0.9) blur(10px);
 `;
 
 export const Button = styled(Link)`
@@ -109,8 +122,8 @@ export const Button = styled(Link)`
 export const BtnWrap = styled.div`
   display: inline-block;
   padding:10px 2px;
-  margin-left: 160px;
-  margin-right: -88px;
+  margin-left: 22%;
+  margin-right: -7%;
   font-size:0;
   justify-content: space-evenly;
 `;
