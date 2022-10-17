@@ -22,7 +22,20 @@ import StickyBox from "react-sticky-box";
 import Divider from "@mui/material/Divider";
 
 const UnmissablePg = () => {
-  const [show, setShow] = useState(true);
+  const [btnColor, setBtnColor] = useState(
+    [
+      "black","black","black","black","black","black","black","black","black","black","black","black"
+    ]
+  )
+
+  const handleClick = (ind) => {
+    let tmp = []
+    for (var i = 0; i < 12; ++i) {
+      if (i === ind) tmp.push("#d44604")
+      else tmp.push("black")
+    }
+    setBtnColor(tmp)
+  }
   return (
     <div style={{ backgroundColor: "#FFF4E2" }}>
       <div
@@ -31,8 +44,8 @@ const UnmissablePg = () => {
       >
         12 Amazing Things to Do in Melbourne
       </div>
-      <div style={{ justifyContent: "center", alignItems: "center" }}>
-        <div style={{ paddingBottom: "5%" }}>
+      <div style={{display: "flex", flexDirection: "column"}}>
+      <div style={{ paddingBottom: "6%" }}>
           <div
             style={{
               justifyContent: "center",
@@ -42,9 +55,13 @@ const UnmissablePg = () => {
             }}
           >
             <img src={cityPic} alt=""></img>
+            <p style={{textAlign: "center", width: "70%", marginLeft: "15%", marginTop: "1%"}}>
+          Melbourne is a hub for many interesting things including museums, vintage stores, coffee shops, art galleries, events, festivals etc., there is literally nothing you cannot do in this city! This ultimate guide that will take you through the best places to visit in Melbourne.
+          </p>
           </div>
         </div>
-        <StickyBox offsetTop={300} offsetBottom={20}>
+      <div style={{ justifyContent: "center", alignItems: "center" }}>
+        <StickyBox offsetTop={200} offsetBottom={20}>
           <div
             style={{
               backgroundColor: "#FFE4D8",
@@ -56,56 +73,41 @@ const UnmissablePg = () => {
             }}
           >
             <p style={{ textAlign: "center" }}>Content</p>
-            <FormControlLabel
-        sx={{
-          display: 'block',
-          marginLeft: "43%"
-        }}
-        control={
-          <Switch checked={show} onChange={() => setShow(!show)} color="primary">toggle</Switch>
-        }
-        label={show ? "Hide" : "Show"}
-      />
-            
-            {show ? (
-              <ul style={{ listStyleType: "none" }}>
+            <ul style={{ listStyleType: "none" }}>
                 <li style={{marginTop:"1%", marginBottom:'3%'}}>
-                  <a href="#1" style={{textDecoration: 'none', color:"black", }}>City Center</a>
+                  <a href="#1" style={{textDecoration: 'none', color:btnColor[0]}} onClick={() => handleClick(0)}>City Center</a>
                 </li>
                 <Divider style={{ color: "black"}} />
                 <li style={{marginTop:"3%", marginBottom:'3%'}}>
-                  <a href="#2" style={{textDecoration: 'none', color:"black"}}>Flinders Street Station</a>
+                  <a href="#2" style={{textDecoration: 'none', color:btnColor[1]}} onClick={() => handleClick(1)}>Flinders Street Station</a>
                 </li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#3" style={{textDecoration: 'none', color:"black"}}>Queen Victoria Market</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#3" style={{textDecoration: 'none', color:btnColor[2]}} onClick={() => handleClick(2)}>Queen Victoria Market</a></li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#4" style={{textDecoration: 'none', color:"black"}}>Melbourne coffee</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#4" style={{textDecoration: 'none', color:btnColor[3]}} onClick={() => handleClick(3)}>Melbourne coffee</a></li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#5" style={{textDecoration: 'none', color:"black"}}>National Gallery of Victoria (NGV)</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#5" style={{textDecoration: 'none', color:btnColor[4]}} onClick={() => handleClick(4)}>National Gallery of Victoria (NGV)</a></li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#6" style={{textDecoration: 'none', color:"black"}}>St Kilda &amp; Luna Park in Melbourne</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#6" style={{textDecoration: 'none', color:btnColor[5]}} onClick={() => handleClick(5)}>St Kilda &amp; Luna Park in Melbourne</a></li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#7" style={{textDecoration: 'none', color:"black"}}>Koorie Heritage
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#7" style={{textDecoration: 'none', color:btnColor[6]}} onClick={() => handleClick(6)}>Koorie Heritage
                   Trust</a>
                 </li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#8" style={{textDecoration: 'none', color:"black"}}>Immigration Museum</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#8" style={{textDecoration: 'none', color:btnColor[7]}} onClick={() => handleClick(7)}>Immigration Museum</a></li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#9" style={{textDecoration: 'none', color:"black"}}>Street art</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#9" style={{textDecoration: 'none', color:btnColor[8]}} onClick={() => handleClick(8)}>Street art</a></li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#10" style={{textDecoration: 'none', color:"black"}}>Dinning</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#10" style={{textDecoration: 'none', color:btnColor[9]}} onClick={() => handleClick(9)}>Dinning</a></li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#11" style={{textDecoration: 'none', color:"black"}}>Royal Botanic Gardens</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#11" style={{textDecoration: 'none', color:btnColor[10]}} onClick={() => handleClick(10)}>Royal Botanic Gardens</a></li>
                 <Divider style={{ color: "black" }} />
-                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#12" style={{textDecoration: 'none', color:"black"}}>Eureka Skydeck</a></li>
+                <li style={{marginTop:"3%", marginBottom:'3%'}}><a href="#12" style={{textDecoration: 'none', color:btnColor[11]}} onClick={() => handleClick(11)}>Eureka Skydeck</a></li>
               </ul>
-            ) : null}
           </div>
           </StickyBox>
         <div style={{ paddingLeft: "25%", paddingRight: "25%", marginTop:"-52%"}}>
-          <p>
-          Melbourne is a hub for many interesting things including museums, vintage stores, coffee shops, art galleries, events, festivals etc., there is literally nothing you cannot do in this city! This ultimate guide that will take you through the best places to visit in Melbourne.
-          </p>
+         
           <br></br>
 
           <div>
@@ -127,7 +129,6 @@ const UnmissablePg = () => {
               <p>
               There are countless Melbourne city attractions to enjoy and see, and the smartest way to go about it is by taking one of the amazing Melbourne walking tours! Most walking tours take you through the city centre and take you through Melbourne’s top sightseeing spots including Federation Square, Flinders Street Station and more!
               </p>
-              <br></br>
               <p>
               NOTE: If you are not the type of person who enjoys walking, did you know there is also the option to hop on the free tram that goes through the city centre?
               </p>
@@ -470,6 +471,7 @@ const UnmissablePg = () => {
     
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
