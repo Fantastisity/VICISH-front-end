@@ -74,7 +74,7 @@ const SlangQuiz = () => {
                 </div>
               </div>
             )
-          }) : <p style={{textAlign: "center", paddingBottom: "2%"}}>Loading...</p>}
+          }) : <p style={{textAlign: "center", paddingBottom: "2%", marginLeft: "-2%"}}>Loading...</p>}
           <Button variant="contained" onClick={() => changeIndex()} style = {{marginLeft: "40%", backgroundColor: "#e8b17d", color: "black"}}>
             Show New Phrases
           </Button>

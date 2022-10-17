@@ -220,7 +220,7 @@ const StatisticsPg = () => {
           }}
         >
           <h1>
-          Victoria is vibrant, tropical and filled with great recreational venues and activities. Our locals are always more than happy to share their tips and favourite places to visit. This statistics page shows the preference of Victorian residents in choosing and attending entertaining activciteis.
+          Victoria is vibrant, tropical and filled with great recreational venues and activities. Our locals are always more than happy to share their tips and favourite places to visit. This statistics page illustrates the preference of Victorian residents in attending outdoor venues and events.
           </h1>
         </div>
       </section>

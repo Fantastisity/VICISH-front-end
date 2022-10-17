@@ -93,12 +93,12 @@ export default function Home() {
               </h1>
               <br></br>
               <p className="aboutP" style={{ marginLeft: "28%" }}>
-                This website is here to help young international students who
-                are just landing in this foreign country
+                This website is intended to help young Chinese international students who
+                are just landed in Victoria
               </p>
               <br></br>
               <p className="aboutP" style={{ marginLeft: "28%" }}>
-                Curious to learn more? Get an understanding of "Life in AU",
+                Curious to find out more? Quickly navigate to "Life in AU",
                 "Learning English" and "Explore Local Culture"
               </p>
             </div>

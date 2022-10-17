@@ -12,7 +12,7 @@
 
 .answer {
   padding: 10px;
-  background-color: rgb(178, 172, 155);
+  background-color: transparent;
   color: rgb(49, 38, 38);
   font-size: 1rem;
   font-weight: bold;
@@ -23,11 +23,11 @@
   letter-spacing: 2px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 5px;
+  border: 2px solid #3b3938;
 }
 
 .answer:hover {
-  background-color: #ebb4a0;
+  background-color: #e6cdc4;
 }
 
 .score {

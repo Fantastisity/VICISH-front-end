@@ -190,7 +190,7 @@ const BankPg = () => {
           }}
         >
           <h1>
-          For international students and their parents, tuition and living expenses are the top priority. Therefore, a secure and stable bank is crucial. This page introduces three common types of bank accounts for students. For more information, visit the official websites of the four major Australian banks. The checklist provides information about what to bring on the day going to set up a bank account in a bank.
+          For international students and their parents, tuition and living expenses are the top priority. Therefore, a secure and stable bank is crucial. This page introduces three common types of bank accounts for students. For more information, visit the official websites of the four major Australian banks. The checklist provides information on what to bring on the day going to set up a bank account in a bank.
           </h1>
         </div>
       </section>
@@ -289,7 +289,7 @@ const BankPg = () => {
 
                 plotOptions: {
                   pie: {
-                    offsetX: -12,
+                    offsetX: -20,
                     donut: {
                       labels: {
                         show: true,

@@ -50,7 +50,7 @@ const EnglishQuiz = () => {
           fontSize: "30px",
           textAlign: "center"
           }}>
-            Struggling where to start improving your English? Test your grammar ability first! See whether you are a starter or an advanced learner.
+            Struggling on where to start improving your English? Test your grammar ability first! See whether you are a starter or an advanced learner.
           </div>
          
       <div className="slangTotal">
