@@ -43,9 +43,8 @@ const WritingHandler = () => {
               <span style={{fontWeight: "700"}}>Type</span>: <span>{res.type}</span>   
               <br/>
               <span style={{fontWeight: "600"}}>Description</span>: {res.description.en}
-              <br/>
-              <span style={{fontWeight: "600"}}> Suggestion:
-                {res.better.length ? <ol type="i" style={{marginLeft: "10%"}}>
+              {res.better.length ? <br/><span style={{fontWeight: "600"}}> Suggestion:
+                 <ol type="i" style={{marginLeft: "10%"}}>
                   {
                     res.better.map(sug => (
                       <li style={{color: "green"}}>
@@ -53,8 +52,10 @@ const WritingHandler = () => {
                       </li>
                     ))
                   }
-                </ol> : <></>}
-              </span>
+                </ol>
+                </span> : 
+<></>
+}    
             </li>
         ))}
         </ol>
