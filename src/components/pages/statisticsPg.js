@@ -208,38 +208,22 @@ const StatisticsPg = () => {
         >
           Venues and Events Statistics
         </div>
-        <div style={{ display: "flex", marginLeft: "4%", marginTop: "5%", gap: "2%" }}>
+        <section>
         <div
-            style={{
-              backgroundColor: "#FFFFFF",
-              borderRadius: "20px",
-              width: "40%",
-              boxShadow: '1px 2px 9px #F4AAB9'
-            }}
-          >
-            <p style={{ padding: "12%", fontSize: "20px" }}>
-            The 2013 annual report in Victoria surveyed 9 popular recreational activities and its attendance, including music festivals, art shows, art galleries, zoos, and cinemas. Overall, the most frequently visited recreational areas are cinemas, followed by music festivals, and art festivals.
-            </p>
-          </div>
-          <div
-            style={{
-              backgroundColor: "#FFFFFF",
-              borderRadius: "20px",
-              width: "55%",
-              marginRight: "3%",
-              boxShadow: '1px 2px 9px #F4AAB9'
-            }}
-          >
-            {/* <ReactApexChart
-              options={state2.options}
-              series={data.datasets[0].data}
-              type="radialBar"
-              height={350}
-            /> */}
-            <Doughnut data={data} options={options}/>
-          </div>
+          style={{
+            textAlign: "center",
+            marginLeft: "16%",
+            display: "block",
+            paddingTop: "5%",
+            paddingBottom: "1%",
+            width: "70%"
+          }}
+        >
+          <h1>
+          Victoria is vibrant, tropical and filled with great recreational venues and activities. Our locals are always more than happy to share their tips and favourite places to visit. This statistics page shows the preference of Victorian residents in choosing and attending entertaining activciteis.
+          </h1>
         </div>
-
+      </section>
         <div style={{
             marginTop: "5%",
             marginLeft: "3rem",
@@ -284,8 +268,39 @@ const StatisticsPg = () => {
              </div>
              <div><img src={cinPic} style={{width:"320px", height:"300px"}}></img></div>
              </div>
-             
         </div>
+        <div style={{ display: "flex", marginLeft: "4%", marginTop: "5%", gap: "2%" }}>
+        <div
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderRadius: "20px",
+              width: "40%",
+              boxShadow: '1px 2px 9px #F4AAB9'
+            }}
+          >
+            <p style={{ padding: "12%", fontSize: "20px" }}>
+            The 2013 annual report in Victoria surveyed 9 popular recreational activities and its attendance, including music festivals, art shows, art galleries, zoos, and cinemas. Overall, the most frequently visited recreational areas are cinemas, followed by music festivals, and art festivals.
+            </p>
+          </div>
+          <div
+            style={{
+              backgroundColor: "#FFFFFF",
+              borderRadius: "20px",
+              width: "55%",
+              marginRight: "3%",
+              boxShadow: '1px 2px 9px #F4AAB9'
+            }}
+          >
+            {/* <ReactApexChart
+              options={state2.options}
+              series={data.datasets[0].data}
+              type="radialBar"
+              height={350}
+            /> */}
+            <Doughnut data={data} options={options}/>
+          </div>
+        </div>
+
         <div
             style={{
               backgroundColor: "#FFFFFF",
@@ -318,6 +333,7 @@ const StatisticsPg = () => {
             height={750}
           />
         </div>
+        <br/><br/>
       </div>
     );
   };

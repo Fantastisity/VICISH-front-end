@@ -21,7 +21,7 @@ const styles = {
 
 const WriteCheck = () => {
   return (
-    <div style={{ backgroundColor: "#F0BA98", height: "auto" }}>
+    <div style={{ backgroundColor: "#FFF4E2", height: "auto" }}>
       <div
         className="headerBg"
         style={{
@@ -47,7 +47,7 @@ const WriteCheck = () => {
               borderRadius: "20px",
               padding: "20px",
               width: "60%",
-              backgroundColor: "#FFF4E2",
+              backgroundColor: "#fce5cf",
             }}
           >
             Wondering where to improve your grammar? This grammar check feature

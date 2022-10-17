@@ -16,7 +16,7 @@ import accountPic from "../../images/accountPic.png";
 import chequePic from "../../images/chequePic.png";
 import creditPic from "../../images/creditPic.png";
 import { borderColor, height } from "@mui/system";
-import bankBg from "../../images/bankBg.png";
+import bankBg from "../../images/exploreBg.png";
 
 const openInNewTab = (url) => {
   window.open(url, "_blank", "noopener,noreferrer");
@@ -177,7 +177,23 @@ const userData = [
 const BankPg = () => {
   return (
     <div style={{backgroundColor: "#FFF4E2", height: "100%"}}>
-      <div className="headerBg" style={{backgroundImage:`url(${bankBg}`, backgroundSize:"cover", color:"#000"}}>Set up Bank Account</div>
+      <div className="headerBg" style={{backgroundImage:`url(${bankBg}`, backgroundSize:"cover", color:"#fff"}}>Set up Bank Account</div>
+      <section>
+        <div
+          style={{
+            textAlign: "center",
+            marginLeft: "10%",
+            display: "block",
+            paddingTop: "5%",
+            paddingBottom: "1%",
+            width: "80%"
+          }}
+        >
+          <h1>
+          For international students and their parents, tuition and living expenses are the top priority. Therefore, a secure and stable bank is crucial. This page introduces three common types of bank accounts for students. For more information, visit the official websites of the four major Australian banks. The checklist provides information about what to bring on the day going to set up a bank account in a bank.
+          </h1>
+        </div>
+      </section>
       <div className="mainBankPage">
         <div className="bankCardLayout" style={{marginTop: "-9%", paddingBottom: "5%"}}>
           {accounts.map((account) => (
@@ -241,39 +257,16 @@ const BankPg = () => {
                         </ContactSupportIcon>
                         </Tooltip>
               </div>
-              {/* {userData.map((user, index) => {
-                if (index % 2 === 0) {
-                  return (
-                    <div key={index}>
-                      <FormControlLabel control={<Checkbox />} label={user.name} />
-                      <Tooltip title={user.note}>
-                        <ContactSupportIcon>
-                          Default Width [300px]
-                        </ContactSupportIcon>
-                      </Tooltip>
-
-                      <FormControlLabel control={<Checkbox />} label={user.name} />
-                      <Tooltip title={user.note}>
-                        <ContactSupportIcon>
-                          Default Width [300px]
-                        </ContactSupportIcon>
-                      </Tooltip>
-                    </div>
-                  )
-                }
-              })} */}
             </form>
           </div>
         </div>
 
         <div>
           <div className="container-fluid mt-3 mb-3" style={{textAlign: "center"}}>
-            <h2 className="text-left" style={{color: "#EC5F55", marginTop: "-5%"}}>Users Proportion of Big Four Banks</h2>
+            <h2 className="text-left" style={{color: "#EC5F55", marginTop: "-5%", marginLeft: "-10%"}}>Users Proportion of Big Four Banks</h2>
             <Chart
             className="chartSize"
               type="donut"
-              // width={1200}
-              // height={500}
               series={[17, 14, 9, 8.5]}
               options={{
                 labels: [
@@ -284,11 +277,19 @@ const BankPg = () => {
                 ],
                 title: {
                   text: "The donut chart below shows the proportion of users' choice between the Four Big Banks in Australia (in millions)",
-                  align: 'center'
+                  align: 'center',
+                  offsetX: 110
+                },
+
+                legend: {
+                  show: true,
+                  position: 'top',
+                  horizontalAlign: 'center',
                 },
 
                 plotOptions: {
                   pie: {
+                    offsetX: 110,
                     donut: {
                       labels: {
                         show: true,
@@ -313,7 +314,7 @@ const BankPg = () => {
                 },
 
                 dataLabels: {
-                  enabled: true,
+                  enabled: true
                 },
               }}
             />

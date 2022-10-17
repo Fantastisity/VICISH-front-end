@@ -27,6 +27,7 @@ import SubSafePg1 from './components/pages/subSafePg1';
  import SubSafePg2 from './components/pages/subSafePg2';
  import SubSafePg3 from './components/pages/subSafePg3';
  import SubSafePg4 from './components/pages/subSafePg4';
+import Footer from './components/general/Footer';
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
          <Route path='/health-and-safety' element={<SafePg/>}/>
          <Route path='/explore-city' element={<UnmissablePg/>}/>
       </Routes>
+      <Footer/>
     </Router>
     </div>
   );

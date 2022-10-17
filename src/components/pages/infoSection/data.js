@@ -28,7 +28,7 @@ export const lifeObj = {
       title: "Bank Account Set Up",
       info: "empty",
       nav: "bank",
-      col: "#fed6be",
+      col: "#c8dbf7",
     },
     {
       title: "Health and Safety",
@@ -109,7 +109,7 @@ export const socialObj = {
       title: "Venues & Events Statistics",
       info: "empty",
       nav: "statistics",
-      col: "#f1e4e4",
+      col: "#ebccc5",
     },
     {
       title: "Attractions in Melbourne",

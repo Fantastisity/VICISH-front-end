@@ -39,7 +39,7 @@ const EnglishQuiz = () => {
       setAnswerRecord({...answerRecord, [q] : 1});
     }
     return (
-      <div style={{backgroundColor: "#F0BA98", height: "1500px"}}>
+      <div style={{backgroundColor: "#FFF4E2", height: "1500px"}}>
         <div className="headerBg" style={{backgroundImage:`url(${learnBg}`, backgroundSize:"cover", color:"#EC7F6A"}}>Grammar Ability Test</div>
         <div className="slangIntro" style={{
           marginLeft: "20%", 

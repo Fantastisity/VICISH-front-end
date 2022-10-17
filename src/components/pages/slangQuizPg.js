@@ -10,7 +10,7 @@ import { Button } from "@mui/material";
 import learnBg from "../../images/learnBg.png";
 
 const colors = [
-  "#FFF4E2", "#EC7F6A", "#D5E5DB", "#FFE0DB", "#FFF4E2", "#FFE0DB", "#FFF4E2", "#FFE4D8", "#EC7F6A", "#D5E5DB"
+  "#ffd2a3", "#f29b79", "#D5E5DB", "#FFE0DB", "#ffd2a3", "#FFE0DB", "#ffd2a3", "#FFE4D8", "#f29b79", "#D5E5DB"
 ]
 
 const SlangQuiz = () => {
@@ -43,7 +43,7 @@ const SlangQuiz = () => {
   },[]);
 
   return (
-    <div style={{backgroundColor: "#F0BA98", height: "100%"}}>
+    <div style={{backgroundColor: "#FFF4E2", height: "100%"}}>
 <div className="headerBg" style={{backgroundImage:`url(${learnBg}`, backgroundSize:"cover", color:"#EC7F6A"}}>Australia Slang Game</div>
       <div className="slangIntro" style={{
           marginLeft: "25%", 

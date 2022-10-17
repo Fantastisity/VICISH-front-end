@@ -236,7 +236,7 @@ export default function VICISHMap() {
   }
 
   return (
-    <div>
+    <div style={{height: "auto"}}>
         <div className='sidebar'>
           <div className='side-heading'>
             <Link to="/explore-melb">
