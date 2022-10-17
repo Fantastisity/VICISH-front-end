@@ -268,6 +268,7 @@ const BankPg = () => {
             className="chartSize"
               type="donut"
               series={[17, 14, 9, 8.5]}
+              width="1165"
               options={{
                 labels: [
                   "Commonwealth Bank of Australia (CBA)",
@@ -277,8 +278,7 @@ const BankPg = () => {
                 ],
                 title: {
                   text: "The donut chart below shows the proportion of users' choice between the Four Big Banks in Australia (in millions)",
-                  align: 'center',
-                  offsetX: 110
+                  align: 'center'
                 },
 
                 legend: {
@@ -289,7 +289,7 @@ const BankPg = () => {
 
                 plotOptions: {
                   pie: {
-                    offsetX: 110,
+                    offsetX: -12,
                     donut: {
                       labels: {
                         show: true,
