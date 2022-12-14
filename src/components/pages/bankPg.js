@@ -11,7 +11,7 @@ import "react-slideshow-image/dist/styles.css";
 import COMM from "../../images/common.webp";
 import ANZ from "../../images/ANZ.jpeg";
 import WEST from "../../images/west.jpg";
-import NBA from "../../images/nba.webp";
+import NAB from "../../images/nba.webp";
 import accountPic from "../../images/accountPic.png";
 import chequePic from "../../images/chequePic.png";
 import creditPic from "../../images/creditPic.png";
@@ -36,7 +36,7 @@ const slideImages = [
     caption: "https://www.westpac.com.au/",
   },
   {
-    pic: NBA,
+    pic: NAB,
     caption: "https://www.nab.com.au/",
   },
 ];
@@ -273,7 +273,7 @@ const BankPg = () => {
                 labels: [
                   "Commonwealth Bank of Australia (CBA)",
                   "Westpac Banking Corporation (WBC)",
-                  "National Australia Bank (NBA)",
+                  "National Bank of Australia (NAB)",
                   "Australia and NEW Zealand Banking Group (ANZ)",
                 ],
                 title: {
